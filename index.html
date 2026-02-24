@@ -7,86 +7,88 @@
 
 <style>
 :root{
-  --champagne:#cdbfa6;
-  --card:#d8ccb8;
+  --bg:#cdbfa6;
+  --card:#d8ccb6;
   --ink:#1f2937;
   --muted:#6b7280;
+  --gold:#b89b5e;
 }
 
-*{box-sizing:border-box;}
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(circle at 30% 20%, #d8c9ae, #bfae90);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:linear-gradient(180deg,#cdbfa6,#bfae92);
   display:flex;
   align-items:center;
   justify-content:center;
   min-height:100vh;
-  color:var(--ink);
 }
 
 .card{
   width:min(720px,92%);
   background:var(--card);
-  border-radius:26px;
-  padding:48px 32px 38px;
+  border-radius:28px;
+  padding:70px 40px 50px;
   text-align:center;
   box-shadow:0 30px 80px rgba(0,0,0,.18);
 }
 
+/* ✅ CERCLE BLANC PROPRE */
 .logo-wrap{
-  width:120px;
-  height:120px;
-  margin:0 auto 18px;
+  width:130px;
+  height:130px;
+  margin:-110px auto 10px;
   border-radius:50%;
   background:#ffffff;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 12px 28px rgba(0,0,0,.18);
+  box-shadow:0 18px 40px rgba(0,0,0,.25);
 }
 
 .logo{
-  width:84px;
+  width:88px;
   height:auto;
-  display:block;
+  object-fit:contain;
 }
 
 h1{
-  margin:0 0 6px;
+  margin:10px 0 8px;
   font-size:34px;
+  color:var(--ink);
 }
 
 .rule{
-  width:90px;
+  width:120px;
   height:3px;
-  margin:10px auto 16px;
+  margin:12px auto 18px;
   border-radius:999px;
-  background:#b89b5e;
+  background:var(--gold);
 }
 
 .sub{
-  margin:0 0 22px;
   color:var(--muted);
+  margin-bottom:22px;
 }
 
+/* ✅ bouton plus élégant */
 .cta{
   display:inline-block;
   padding:14px 26px;
   border-radius:14px;
-  background:#334155;
+  background:#34495e;
   color:#fff;
   text-decoration:none;
   font-weight:600;
-  box-shadow:0 12px 26px rgba(0,0,0,.25);
+  box-shadow:0 12px 24px rgba(0,0,0,.25);
 }
 
 .links{
-  margin-top:20px;
+  margin-top:22px;
   display:flex;
   gap:12px;
   justify-content:center;
-  flex-wrap:wrap;
 }
 
 .btn{
@@ -95,14 +97,14 @@ h1{
   background:#fff;
   color:#111;
   text-decoration:none;
-  border:1px solid rgba(0,0,0,.15);
   font-weight:600;
+  border:1px solid rgba(0,0,0,.12);
 }
 
 footer{
-  margin-top:18px;
+  margin-top:20px;
   font-size:12px;
-  color:#555;
+  color:#6b7280;
 }
 </style>
 </head>
@@ -112,12 +114,12 @@ footer{
 <div class="card">
 
   <div class="logo-wrap">
-    <img src="logo-festival.png" alt="Festival Franco-Mexicano" class="logo">
+    <img src="LOGO.jpg" class="logo" alt="Festival Franco-Mexicano">
   </div>
 
   <h1>Festival Franco-Mexicano</h1>
   <div class="rule"></div>
-  <p class="sub">Presentación e información oficial</p>
+  <div class="sub">Presentación e información oficial</div>
 
   <a class="cta" href="P1_FEST.pdf" target="_blank">
     Abrir la presentación (PDF)
