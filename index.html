@@ -1,17 +1,120 @@
-.logo-wrap{
-  width:130px;
-  height:130px;
-  margin:-110px auto 10px;
-  border-radius:50%;
-  background:#e9e9e9; /* ⭐ gris ajusté du logo */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festival Franco-Mexicano</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg,#cdbb9b,#bfae8e);
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 18px 40px rgba(0,0,0,.25);
+  height:100vh;
 }
 
-.logo{
-  width:82px;
-  height:82px;
+/* CARTE */
+.card{
+  width:520px;
+  max-width:92%;
+  background:#cbbfa9;
+  border-radius:24px;
+  padding:70px 30px 40px;
+  text-align:center;
+  box-shadow:0 30px 70px rgba(0,0,0,0.25);
+  position:relative;
+}
+
+/* ===== LOGO FIX PROPRE ===== */
+.logo-wrap{
+  position:absolute;
+  top:-65px;
+  left:50%;
+  transform:translateX(-50%);
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:#e6e6e6; /* gris du logo */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+  overflow:hidden;
+}
+
+.logo-wrap img{
+  width:90px;
+  height:90px;
   object-fit:contain;
 }
+
+/* TITRES */
+h1{
+  margin-top:10px;
+  font-size:30px;
+  color:#1f2a37;
+}
+
+.subtitle{
+  color:#6b7280;
+  margin:10px 0 25px;
+}
+
+/* BOUTON */
+.btn{
+  display:inline-block;
+  background:#2f4156;
+  color:white;
+  padding:14px 26px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.socials{
+  margin-top:25px;
+}
+
+.socials a{
+  display:inline-block;
+  background:#f1f1f1;
+  padding:10px 18px;
+  border-radius:10px;
+  margin:0 6px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="logo-wrap">
+    <!-- ⚠️ IMPORTANT : nom exact du fichier -->
+    <img src="LOGO.jpg" alt="Festival Franco-Mexicano">
+  </div>
+
+  <h1>Festival Franco-Mexicano</h1>
+  <div class="subtitle">Presentación e información oficial</div>
+
+  <a class="btn" href="presentation.pdf" target="_blank">
+    Abrir la presentación (PDF)
+  </a>
+
+  <div class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">X</a>
+    <a href="#">Facebook</a>
+  </div>
+
+</div>
+
+</body>
+</html>
