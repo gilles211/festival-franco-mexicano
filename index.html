@@ -13,8 +13,8 @@ body {
 }
 
 .logo {
-  width: 180px;
-  margin-bottom: 20px;
+  width: 160px;
+  margin-bottom: 25px;
 }
 
 h1 {
@@ -27,45 +27,62 @@ p {
   margin-bottom: 30px;
 }
 
-.btn {
+.btn-pdf {
   display: inline-block;
-  padding: 14px 22px;
-  margin: 8px;
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
+  padding: 14px 26px;
+  border-radius: 10px;
   text-decoration: none;
-  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 35px;
 }
 
-.social a {
+.social {
+  margin-top: 10px;
+}
+
+.social-btn {
   display: inline-block;
+  padding: 10px 18px;
   margin: 6px;
-  padding: 10px 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 8px;
   text-decoration: none;
-  color: black;
-  background: white;
+  color: #333;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.footer {
+  margin-top: 40px;
+  color: #999;
+  font-size: 13px;
 }
 </style>
 </head>
 
 <body>
 
-<img src="LOGO.jpg" class="logo">
+<img src="LOGO.jpg" alt="Festival Franco-Mexicano" class="logo">
 
 <h1>Festival Franco-Mexicano</h1>
-<p>Presentación e información oficial.</p>
+<p>Presentación e información oficial</p>
 
-<a class="btn" href="P1 FEST.pdf" target="_blank">
+<a class="btn-pdf" href="P1 FEST.pdf" target="_blank">
 Abrir la presentación (PDF)
 </a>
 
 <div class="social">
-  <a href="https://www.instagram.com/festivalfrancomexicano" target="_blank">Instagram</a>
-  <a href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank">Facebook</a>
-  <a href="https://x.com/festivalfrances" target="_blank">X</a>
+  <a class="social-btn" href="https://www.instagram.com/festivalfrancomexicano" target="_blank">Instagram</a>
+  <a class="social-btn" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank">Facebook</a>
+  <a class="social-btn" href="https://x.com/festivalfrances" target="_blank">X</a>
 </div>
 
-</body>
-</html>
+<div class="footer">
