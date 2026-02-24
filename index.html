@@ -20,6 +20,7 @@
     }
 
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -35,7 +36,7 @@
     }
 
     .card{
-      width:min(920px, 94vw);
+      width:min(980px, 94vw);
       background: var(--card);
       border-radius: 28px;
       padding: 58px 54px 46px;
@@ -44,100 +45,203 @@
       position:relative;
     }
 
+    /* LOGO rond, masque tout carré */
     .logo-wrap{
-      width:132px;height:132px;border-radius:50%;
+      width:132px;
+      height:132px;
+      border-radius:50%;
       background:#fff;
-      display:flex;align-items:center;justify-content:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       margin:-108px auto 18px;
       box-shadow: 0 18px 45px rgba(0,0,0,.22);
       overflow:hidden;
     }
-    .logo{ width:100%;height:100%;object-fit:cover;border-radius:50%;display:block; }
+    .logo{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      display:block;
+    }
 
-    h1{ margin:0; font-size: clamp(28px, 3.2vw, 44px); letter-spacing:.2px; }
-    .divider{ width:120px;height:3px;background:var(--accent);border-radius:999px;margin:14px auto 18px; }
-    .subtitle{ margin:0; color:var(--muted); font-size:14px; }
+    h1{
+      margin:0;
+      font-size: clamp(28px, 3.2vw, 44px);
+      letter-spacing:.2px;
+    }
+
+    .divider{
+      width:120px;
+      height:3px;
+      background: var(--accent);
+      border-radius:999px;
+      margin:14px auto 18px;
+    }
+
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size: 14px;
+    }
 
     .cta{
       margin:26px auto 18px;
-      display:inline-flex;align-items:center;gap:10px;
-      background:var(--btn);color:#fff;text-decoration:none;
-      padding:14px 20px;border-radius:14px;
-      box-shadow:0 12px 30px rgba(0,0,0,.25);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      background: var(--btn);
+      color:#fff;
+      text-decoration:none;
+      padding: 14px 20px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
       font-weight:600;
       transition: transform .08s ease, background .15s ease;
     }
-    .cta:hover{ background:var(--btnHover); transform: translateY(-1px); }
+    .cta:hover{ background: var(--btnHover); transform: translateY(-1px); }
 
     .social{
       margin-top:18px;
-      display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
     }
+
     .pill{
-      background:var(--pill);
+      background: var(--pill);
       border:1px solid rgba(31,42,55,.08);
-      border-radius:14px;
-      padding:10px 18px;
-      color:var(--ink);
+      border-radius: 14px;
+      padding: 10px 18px;
+      color: var(--ink);
       text-decoration:none;
       font-weight:600;
       min-width:120px;
       display:inline-flex;
       justify-content:center;
     }
+    .pill:hover{ background:#fff; }
 
-    /* ✅ GALERIE */
-    .gallery{
-      margin:26px auto 0;
-      width:min(820px, 100%);
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:12px;
-    }
-    .gallery a{
-      display:block;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(31,42,55,.10);
-      box-shadow:0 10px 22px rgba(0,0,0,.10);
-      background:#fff;
-    }
-    .gallery img{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-      display:block;
-      transition: transform .15s ease;
-    }
-    .gallery a:hover img{ transform: scale(1.02); }
-
-    @media (max-width:820px){
-      .gallery{ grid-template-columns: repeat(2, 1fr); }
-      .gallery img{ height:170px; }
-    }
-    @media (max-width:520px){
-      .card{ padding:54px 18px 38px; }
-      .logo-wrap{ width:118px;height:118px;margin:-96px auto 16px; }
-      .gallery{ grid-template-columns: 1fr; }
-      .gallery img{ height:200px; }
-    }
-
+    /* Email sous les réseaux */
     .contact{
-      margin-top:14px;
+      margin-top:12px;
       font-size:12px;
       color: rgba(31,42,55,.55);
       text-align:center;
     }
-    .contact a{ color:inherit; text-decoration:none; border-bottom:1px solid rgba(31,42,55,.25); }
+    .contact a{
+      color: inherit;
+      text-decoration:none;
+      border-bottom:1px solid rgba(31,42,55,.25);
+      padding-bottom:1px;
+    }
+    .contact a:hover{
+      color: rgba(31,42,55,.75);
+      border-bottom-color: rgba(31,42,55,.35);
+    }
 
-    .footer{ margin-top:10px; font-size:12px; color: rgba(31,42,55,.45); }
+    /* Galerie */
+    .gallery-title{
+      margin:26px 0 10px;
+      font-size:13px;
+      color: rgba(31,42,55,.65);
+    }
+
+    .gallery{
+      margin:0 auto;
+      width:min(900px, 100%);
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+
+    .gallery button{
+      padding:0;
+      border:0;
+      background:transparent;
+      cursor:pointer;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(31,42,55,.10);
+      box-shadow:0 10px 22px rgba(0,0,0,.10);
+      display:block;
+    }
+
+    .gallery img{
+      width:100%;
+      height:190px;
+      object-fit:cover;
+      display:block;
+      transition: transform .15s ease;
+      background:#fff;
+    }
+    .gallery button:hover img{ transform: scale(1.02); }
+
+    @media (max-width:820px){
+      .gallery{ grid-template-columns: repeat(2, 1fr); }
+      .gallery img{ height:180px; }
+    }
+    @media (max-width:520px){
+      .card{ padding:54px 18px 38px; }
+      .logo-wrap{ width:118px; height:118px; margin:-96px auto 16px; }
+      .gallery{ grid-template-columns: 1fr; }
+      .gallery img{ height:220px; }
+    }
+
+    .footer{
+      margin-top:16px;
+      font-size:12px;
+      color: rgba(31,42,55,.45);
+    }
+
+    /* Lightbox (plein écran) */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.75);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:9999;
+    }
+    .lightbox.open{ display:flex; }
+    .lightbox-inner{
+      width:min(1100px, 100%);
+      position:relative;
+    }
+    .lightbox img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:18px;
+      background:#111;
+      box-shadow:0 25px 80px rgba(0,0,0,.45);
+    }
+    .lb-close{
+      position:absolute;
+      top:-10px;
+      right:-10px;
+      width:44px;
+      height:44px;
+      border-radius:999px;
+      border:0;
+      background:#fff;
+      color:#111;
+      font-size:18px;
+      cursor:pointer;
+      box-shadow:0 14px 40px rgba(0,0,0,.35);
+    }
   </style>
 </head>
 
 <body>
   <main class="card">
 
-    <div class="logo-wrap">
+    <div class="logo-wrap" aria-label="Logo del Festival">
       <img id="logo" class="logo" src="LOGO.png?v=1" alt="Festival Franco-Mexicano" />
     </div>
 
@@ -155,34 +259,72 @@
       <a class="pill" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank" rel="noopener">Facebook</a>
     </div>
 
-    <!-- ✅ GALERIE : remplace les noms par tes vrais fichiers -->
-    <section class="gallery" aria-label="Galería de fotos">
-      <a href="foto1.jpg" target="_blank" rel="noopener"><img src="foto1.jpg" alt="Foto 1"></a>
-      <a href="foto2.jpg" target="_blank" rel="noopener"><img src="foto2.jpg" alt="Foto 2"></a>
-      <a href="foto3.jpg" target="_blank" rel="noopener"><img src="foto3.jpg" alt="Foto 3"></a>
-      <a href="foto4.jpg" target="_blank" rel="noopener"><img src="foto4.jpg" alt="Foto 4"></a>
-      <a href="foto5.jpg" target="_blank" rel="noopener"><img src="foto5.jpg" alt="Foto 5"></a>
-      <a href="foto6.jpg" target="_blank" rel="noopener"><img src="foto6.jpg" alt="Foto 6"></a>
-    </section>
-
     <p class="contact">
       <a href="mailto:festival.frances@gmail.com">festival.frances@gmail.com</a>
     </p>
 
-    <div class="footer">© Festival Franco-Mexicano</div>
+    <div class="gallery-title">Galería de fotos</div>
 
+    <section class="gallery" aria-label="Galería de fotos">
+      <button type="button" data-full="galerie-01.jpg"><img src="galerie-01.jpg" alt="Galería 1"></button>
+      <button type="button" data-full="galerie-02.jpg"><img src="galerie-02.jpg" alt="Galería 2"></button>
+      <button type="button" data-full="galerie-03.jpg"><img src="galerie-03.jpg" alt="Galería 3"></button>
+      <button type="button" data-full="galerie-04.jpg"><img src="galerie-04.jpg" alt="Galería 4"></button>
+      <button type="button" data-full="galerie-05.jpg"><img src="galerie-05.jpg" alt="Galería 5"></button>
+      <button type="button" data-full="galerie-06.jpg"><img src="galerie-06.jpg" alt="Galería 6"></button>
+      <button type="button" data-full="galerie-07.jpg"><img src="galerie-07.jpg" alt="Galería 7"></button>
+    </section>
+
+    <div class="footer">© Festival Franco-Mexicano</div>
   </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button>
+      <img id="lbImg" src="" alt="Foto ampliada">
+    </div>
+  </div>
 
   <script>
     (function(){
       const v = Date.now();
+
+      // Logo : tente PNG puis JPG + anti-cache
       const logo = document.getElementById("logo");
       logo.src = "LOGO.png?v=" + v;
       logo.onerror = function(){
         this.onerror = null;
         this.src = "LOGO.jpg?v=" + v;
       };
-      document.getElementById("pdfLink").href = "P1%20FEST.pdf?v=" + v;
+
+      // PDF anti-cache (nom avec espace)
+      const pdf = document.getElementById("pdfLink");
+      pdf.href = "P1%20FEST.pdf?v=" + v;
+
+      // Lightbox
+      const lb = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lbImg");
+      const lbClose = document.getElementById("lbClose");
+
+      document.querySelectorAll(".gallery button").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          const src = btn.getAttribute("data-full");
+          lbImg.src = src + "?v=" + v;
+          lb.classList.add("open");
+          lb.setAttribute("aria-hidden","false");
+        });
+      });
+
+      function closeLB(){
+        lb.classList.remove("open");
+        lb.setAttribute("aria-hidden","true");
+        lbImg.src = "";
+      }
+
+      lbClose.addEventListener("click", closeLB);
+      lb.addEventListener("click", (e)=>{ if(e.target === lb) closeLB(); });
+      document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeLB(); });
     })();
   </script>
 </body>
