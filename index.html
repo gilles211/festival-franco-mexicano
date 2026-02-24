@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,6 +20,7 @@
     }
 
     *{ box-sizing:border-box; }
+
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -49,14 +50,15 @@
       width:132px;
       height:132px;
       border-radius:50%;
-      background:#ffffff;              /* fond blanc, simple */
+      background:#ffffff;
       display:flex;
       align-items:center;
       justify-content:center;
       margin:-108px auto 18px;
       box-shadow: 0 18px 45px rgba(0,0,0,.22);
-      overflow:hidden;                 /* <- la ligne clé */
+      overflow:hidden; /* ligne clé */
     }
+
     .logo{
       width:100%;
       height:100%;
@@ -70,6 +72,7 @@
       font-size: clamp(28px, 3.2vw, 44px);
       letter-spacing:.2px;
     }
+
     .divider{
       width:120px;
       height:3px;
@@ -77,26 +80,11 @@
       border-radius:999px;
       margin:14px auto 18px;
     }
+
     .subtitle{
       margin:0;
       color:var(--muted);
       font-size: 14px;
-    }
-
-    .contact{
-      margin:10px 0 0;
-      font-size: 13px;
-      color:var(--muted);
-    }
-    .contact a{
-      color:var(--muted);
-      text-decoration:none;
-      border-bottom:1px solid rgba(107,114,128,.35);
-      padding-bottom:1px;
-    }
-    .contact a:hover{
-      color:var(--ink);
-      border-bottom-color: rgba(31,42,55,.35);
     }
 
     .cta{
@@ -123,6 +111,7 @@
       gap:14px;
       flex-wrap:wrap;
     }
+
     .pill{
       background: var(--pill);
       border:1px solid rgba(31,42,55,.08);
@@ -138,8 +127,26 @@
     }
     .pill:hover{ transform: translateY(-1px); background:#fff; }
 
+    /* EMAIL DISCRET EN BAS */
+    .contact{
+      margin:18px 0 0;
+      font-size:12px;
+      color: rgba(31,42,55,.55);
+      text-align:center;
+    }
+    .contact a{
+      color: inherit;
+      text-decoration:none;
+      border-bottom:1px solid rgba(31,42,55,.22);
+      padding-bottom:1px;
+    }
+    .contact a:hover{
+      color: rgba(31,42,55,.75);
+      border-bottom-color: rgba(31,42,55,.35);
+    }
+
     .footer{
-      margin-top:16px;
+      margin-top:10px;
       font-size:12px;
       color: rgba(31,42,55,.45);
     }
@@ -154,9 +161,8 @@
 
 <body>
   <main class="card">
-    <div class="logo-wrap" aria-label="Logo du Festival">
-      <!-- On tente LOGO.png puis LOGO.jpg, avec anti-cache -->
-      <img id="logo" class="logo" src="LOGO.png?v=7" alt="Festival Franco-Mexicano" />
+    <div class="logo-wrap" aria-label="Logo del Festival">
+      <img id="logo" class="logo" src="LOGO.png?v=1" alt="Festival Franco-Mexicano" />
     </div>
 
     <h1>Festival Franco-Mexicano</h1>
@@ -164,11 +170,6 @@
 
     <p class="subtitle">Presentación e información oficial</p>
 
-    <p class="contact">
-      <a href="mailto:festival.frances@gmail.com">festival.frances@gmail.com</a>
-    </p>
-
-    <!-- Bouton PDF : essaie P1 FEST.pdf puis fallback P1_FEST.pdf -->
     <a id="pdfLink" class="cta" href="P1%20FEST.pdf" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z" stroke="currentColor" stroke-width="1.8" />
@@ -184,36 +185,30 @@
       <a class="pill" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank" rel="noopener">Facebook</a>
     </div>
 
+    <p class="contact">
+      <a href="mailto:festival.frances@gmail.com">festival.frances@gmail.com</a>
+    </p>
+
     <div class="footer">© Festival Franco-Mexicano</div>
   </main>
 
   <script>
-    // 1) Fix logo if png doesn't exist -> try jpg (anti-cache)
     (function(){
-      const v = Date.now(); // cache-buster fort
+      // Anti-cache fort
+      const v = Date.now();
+
+      // LOGO: essaie PNG puis JPG
       const logo = document.getElementById("logo");
       logo.src = "LOGO.png?v=" + v;
       logo.onerror = function(){
         this.onerror = null;
         this.src = "LOGO.jpg?v=" + v;
       };
-    })();
 
-    // 2) PDF fallback: if P1 FEST.pdf doesn't exist, redirect to P1_FEST.pdf
-    (function(){
+      // PDF: on pointe vers "P1 FEST.pdf" (espace encodé)
+      // Si un jour tu renommes en P1_FEST.pdf, remplace juste href ci-dessus.
       const link = document.getElementById("pdfLink");
-      const primary = "P1%20FEST.pdf";
-      const fallback = "P1_FEST.pdf";
-      // Try a HEAD via fetch; if blocked, on click we still try fallback.
-      fetch(primary, { method: "HEAD" })
-        .then(r => { if (!r.ok) link.href = fallback; })
-        .catch(() => { /* ignore (GitHub pages may block HEAD) */ });
-
-      link.addEventListener("click", function(){
-        // If user gets 404, they can still open fallback quickly by long-press new tab,
-        // but we also try to set fallback if primary fails to load (best-effort).
-        // Nothing else needed here.
-      });
+      link.href = "P1%20FEST.pdf?v=" + v;
     })();
   </script>
 </body>
