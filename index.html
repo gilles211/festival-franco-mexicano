@@ -21,17 +21,19 @@
     }
 
     *{ box-sizing:border-box; }
+
+    /* IMPORTANT: on aligne en haut + padding top pour que le logo ne soit JAMAIS coupé */
     body{
       margin:0;
       min-height:100vh;
       display:flex;
-      align-items:center;
+      align-items:flex-start;      /* au lieu de center */
       justify-content:center;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--ink);
       background: radial-gradient(1200px 800px at 50% 10%, rgba(255,255,255,.25), transparent 60%),
                   linear-gradient(180deg, var(--bg1), var(--bg2));
-      padding: 34px 16px;
+      padding: 90px 16px 34px;     /* laisse de l’air en haut */
     }
 
     .wrap{
@@ -44,32 +46,32 @@
       background: var(--card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 92px 44px 34px; /* IMPORTANT: laisse de la place au logo */
-      overflow: visible;       /* IMPORTANT: ne coupe pas le logo */
+      padding: 78px 44px 34px;     /* place pour le logo à l’intérieur */
+      overflow: visible;
     }
 
-    /* --- LOGO --- */
+    /* --- LOGO (NON TRONQUÉ + TOUJOURS ROND) --- */
     .logo-wrap{
       position:absolute;
       left:50%;
-      top:-62px; /* ajuste la hauteur ici si tu veux plus/moins haut */
+      top: 18px;                   /* PLUS de valeur négative */
       transform:translateX(-50%);
       width:132px;
       height:132px;
       border-radius:50%;
       background:#ffffff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
       box-shadow: 0 18px 40px rgba(0,0,0,.25);
-      overflow:hidden; /* IMPORTANT: rend le logo rond même si l'image est carrée */
-      z-index: 10;     /* IMPORTANT: passe au-dessus de la carte */
+      overflow:hidden;             /* clip rond */
+      z-index: 10;
     }
+
+    /* IMPORTANT: on force un crop rond sur l'image elle-même */
     .logo{
-      width:98px;
-      height:98px;
-      object-fit:contain;
+      width:100%;
+      height:100%;
       display:block;
+      object-fit: cover;           /* au lieu de contain -> évite l'effet "carré" */
+      border-radius:50%;
     }
 
     h1{
@@ -145,7 +147,6 @@
     }
     .contact a:hover{ color: var(--ink); }
 
-    /* --- GALERIE --- */
     .section-title{
       text-align:center;
       font-size: 12px;
@@ -183,7 +184,7 @@
     }
 
     @media (max-width: 860px){
-      .card{ padding: 92px 22px 28px; }
+      .card{ padding: 78px 22px 28px; }
       .gallery{ grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 520px){
@@ -197,9 +198,8 @@
   <main class="wrap">
     <section class="card">
 
-      <!-- LOGO -->
       <div class="logo-wrap" aria-label="Logo Festival Franco-Mexicano">
-        <!-- mets ton fichier logo ici (ex: LOGO.png / LOGO.jpg) -->
+        <!-- IMPORTANT: adapte seulement le nom du fichier si besoin -->
         <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano" />
       </div>
 
@@ -219,7 +219,6 @@
         <a class="pill" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
       </div>
 
-      <!-- MAIL: sous les boutons -->
       <div class="contact">
         <a href="mailto:festival.frances@gmail.com">festival.frances@gmail.com</a>
       </div>
