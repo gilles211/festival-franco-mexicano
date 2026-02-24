@@ -1,220 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Festival Franco-Mexicano</title>
-  <style>
-    :root{
-      /* Fond général "champagne" */
-      --bgTop:#d9c8a7;
-      --bgMid:#cdbb9b;
-      --bgBot:#c2b08f;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festival Franco-Mexicano</title>
 
-      /* Carte (le grand rectangle central) : un peu plus soutenu, moins blanc */
-      --card:#d4c7ad;
-      --cardLine: rgba(15,23,42,.10);
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg,#cdbb9d,#b8a789);
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-      --ink:#111827;
-      --muted: rgba(17,24,39,.55);
+/* carte centrale */
+.card{
+  background:#d6cbb7;
+  width:90%;
+  max-width:720px;
+  padding:80px 40px 50px;
+  border-radius:24px;
+  text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,0.25);
+  position:relative;
+}
 
-      --shadow: 0 22px 70px rgba(0,0,0,.18);
-      --radius: 26px;
+/* cercle logo PROPRE */
+.logo-wrap{
+  position:absolute;
+  top:-65px;
+  left:50%;
+  transform:translateX(-50%);
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:#ffffff; /* ← fond blanc propre */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 18px 40px rgba(0,0,0,0.25);
+}
 
-      /* Bouton PDF */
-      --cta:#2b3a4a;
-      --ctaHover:#243142;
+.logo-wrap img{
+  width:82px;
+  height:82px;
+  object-fit:contain;
+}
 
-      /* Petit filet sous le titre */
-      --rule:#b89b57;
-    }
+/* titre */
+h1{
+  margin-top:10px;
+  color:#1f2a37;
+  font-size:34px;
+}
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+/* sous-titre */
+.subtitle{
+  color:#6b7280;
+  margin:15px 0 30px;
+}
 
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      color:var(--ink);
+/* bouton PDF */
+.btn{
+  display:inline-block;
+  background:#2f435b;
+  color:white;
+  padding:16px 28px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  transition:.2s;
+}
 
-      background:
-        radial-gradient(1200px 700px at 18% 12%, rgba(255,255,255,.22), transparent 58%),
-        radial-gradient(900px 560px at 86% 78%, rgba(255,255,255,.18), transparent 60%),
-        linear-gradient(180deg, var(--bgTop), var(--bgMid) 55%, var(--bgBot));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:44px 16px;
-    }
+.btn:hover{
+  transform:translateY(-2px);
+}
 
-    .wrap{
-      width:min(980px, 100%);
-      display:flex;
-      justify-content:center;
-    }
+/* réseaux */
+.social{
+  margin-top:30px;
+}
 
-    /* Carte plus grande (+30%) et plus rectangulaire */
-    .card{
-      width:min(760px, 100%);
-      padding:52px 42px 40px;
-      border-radius:var(--radius);
-      background:var(--card);
-      border:1px solid var(--cardLine);
-      box-shadow:var(--shadow);
-      text-align:center;
-      position:relative;
-      overflow:visible;
-    }
-
-    /* Cercle logo : fond BLANC, point final */
-    .logo-wrap{
-      width:140px;
-      height:140px;
-      margin:-96px auto 18px;
-      border-radius:50%;
-      background:#fff;                 /* <= demandé */
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow: 0 18px 44px rgba(0,0,0,.22);
-      overflow:hidden;                 /* masque tout ce qui dépasse */
-    }
-
-    /* Le logo : on l’adapte au cercle */
-    .logo{
-      width:92px;
-      height:92px;
-      object-fit:contain;
-      display:block;
-    }
-
-    h1{
-      margin:0 0 10px;
-      font-size:44px;
-      letter-spacing:-.6px;
-      line-height:1.05;
-    }
-
-    .rule{
-      width:170px;
-      height:3px;
-      margin:10px auto 18px;
-      border-radius:999px;
-      background: var(--rule);
-      opacity:.95;
-    }
-
-    .sub{
-      margin:0 0 26px;
-      color:var(--muted);
-      font-size:15px;
-    }
-
-    .cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:15px 20px;
-      border-radius:14px;
-      background:var(--cta);
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-      box-shadow: 0 14px 30px rgba(0,0,0,.18);
-      border:1px solid rgba(255,255,255,.12);
-      min-width: 270px;
-      transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
-    }
-    .cta:hover{
-      background:var(--ctaHover);
-      transform: translateY(-1px);
-      box-shadow: 0 18px 38px rgba(0,0,0,.20);
-    }
-    .cta:active{ transform: translateY(0px); }
-    .cta svg{ width:18px; height:18px; opacity:.95; }
-
-    .links{
-      margin-top:20px;
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:11px 18px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:700;
-      font-size:14px;
-      color:#111;
-      background:#fff;
-      border:1px solid rgba(0,0,0,.10);
-      min-width:120px;
-      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-    }
-    .btn:hover{
-      border-color: rgba(0,0,0,.18);
-      box-shadow: 0 12px 26px rgba(0,0,0,.10);
-      transform: translateY(-1px);
-    }
-
-    footer{
-      margin-top:18px;
-      color:rgba(17,24,39,.45);
-      font-size:12px;
-    }
-
-    /* Mobile */
-    @media (max-width:520px){
-      .card{ padding:48px 18px 32px; }
-      h1{ font-size:34px; }
-      .logo-wrap{ width:124px; height:124px; margin:-86px auto 16px; }
-      .logo{ width:84px; height:84px; }
-      .cta{ min-width: 240px; }
-    }
-  </style>
+.social a{
+  display:inline-block;
+  margin:0 8px;
+  padding:10px 18px;
+  background:#eeeeee;
+  border-radius:12px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <main class="card" aria-label="Festival Franco-Mexicano">
 
-      <!-- Logo : garde ton fichier actuel "LOGO.jpg" -->
-      <!-- Si tu utilises plutôt un PNG transparent, remplace juste LOGO.jpg par LOGO.png -->
-      <div class="logo-wrap" aria-label="Logo Festival Franco-Mexicano">
-        <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano" />
-      </div>
+<div class="card">
 
-      <h1>Festival Franco-Mexicano</h1>
-      <div class="rule" aria-hidden="true"></div>
-      <p class="sub">Presentación e información oficial</p>
-
-      <!-- PDF : ton fichier uploadé s’appelle "P1 FEST.pdf" => on encode l’espace -->
-      <a class="cta" href="P1%20FEST.pdf" target="_blank" rel="noopener">
-        <!-- OPTION si tu renommes ton fichier en P1_FEST.pdf :
-        <a class="cta" href="P1_FEST.pdf" target="_blank" rel="noopener">
-        -->
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M7 18H17M7 14H17M7 10H13" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <path d="M6 2H14L18 6V22H6V2Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-        </svg>
-        Abrir la presentación (PDF)
-      </a>
-
-      <!-- Ordre demandé : Instagram — X — Facebook -->
-      <div class="links" role="navigation" aria-label="Redes sociales">
-        <a class="btn" href="https://www.instagram.com/festivalfrancomexicano/" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn" href="https://x.com/festivalfrances" target="_blank" rel="noopener">X</a>
-        <a class="btn" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank" rel="noopener">Facebook</a>
-      </div>
-
-      <footer>© Festival Franco-Mexicano</footer>
-    </main>
+  <!-- LOGO -->
+  <div class="logo-wrap">
+    <img src="LOGO.jpg" alt="Festival Franco Mexicano">
   </div>
+
+  <h1>Festival Franco-Mexicano</h1>
+
+  <div class="subtitle">
+    Presentación e información oficial
+  </div>
+
+  <!-- BOUTON PDF -->
+  <a class="btn" href="P1 FEST.pdf" target="_blank">
+    Abrir la presentación (PDF)
+  </a>
+
+  <!-- RESEAUX -->
+  <div class="social">
+    <a href="#">Instagram</a>
+    <a href="#">X</a>
+    <a href="#">Facebook</a>
+  </div>
+
+</div>
+
 </body>
 </html>
