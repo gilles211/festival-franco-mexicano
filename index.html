@@ -1,17 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festival Franco-Mexicano</title>
+
+<style>
+:root{
+  --bg1:#d7c7a8;
+  --bg2:#cbb895;
+  --card:#e6dcc9;
+  --ink:#1f2a37;
+  --muted:#6b7280;
+  --btn:#2f3f52;
+  --btnHover:#243344;
+  --pill:#f7f4ee;
+  --shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:var(--ink);
+}
+
+.wrap{
+  max-width:920px;
+  margin:120px auto 60px;
+  padding:40px 28px 36px;
+  background:var(--card);
+  border-radius:26px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  position:relative;
+}
+
+/* ✅ LOGO FIXÉ */
 .logo-wrap{
   position:absolute;
-  top:-50px;              /* ← AVANT: -70px */
+  top:-55px;
   left:50%;
   transform:translateX(-50%);
   width:120px;
   height:120px;
   border-radius:50%;
-  background:#ffffff;
+  background:#fff;
   display:flex;
   align-items:center;
   justify-content:center;
   box-shadow:0 18px 40px rgba(0,0,0,.25);
   overflow:hidden;
+  z-index:10;
 }
 
 .logo{
@@ -20,3 +62,133 @@
   object-fit:contain;
   display:block;
 }
+
+h1{
+  margin:10px 0 6px;
+  font-size:34px;
+}
+
+.sub{
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 26px;
+  background:var(--btn);
+  color:#fff;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:600;
+  margin-bottom:18px;
+}
+
+.btn:hover{
+  background:var(--btnHover);
+}
+
+.social{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  margin:10px 0 6px;
+}
+
+.pill{
+  background:var(--pill);
+  padding:8px 18px;
+  border-radius:999px;
+  text-decoration:none;
+  color:var(--ink);
+  font-size:14px;
+}
+
+.mail{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+/* GALERÍA */
+.gallery-title{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:14px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.gallery img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+footer{
+  margin-top:22px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width:700px){
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .wrap{
+    margin-top:110px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <!-- LOGO -->
+  <div class="logo-wrap">
+    <img src="LOGO.png?v=5" class="logo" alt="Festival Franco Mexicano">
+  </div>
+
+  <h1>Festival Franco-Mexicano</h1>
+  <div class="sub">Presentación e información oficial</div>
+
+  <a class="btn" href="P1 FEST.pdf" target="_blank">
+    Abrir la presentación (PDF)
+  </a>
+
+  <div class="social">
+    <a class="pill" href="#">Instagram</a>
+    <a class="pill" href="#">X</a>
+    <a class="pill" href="#">Facebook</a>
+  </div>
+
+  <div class="mail">festival.frances@gmail.com</div>
+
+  <div class="gallery-title">Galeria de fotos</div>
+
+  <div class="gallery">
+    <img src="galerie-01.jpg">
+    <img src="galerie-02.jpg">
+    <img src="galerie-03.jpg">
+    <img src="galerie-04.jpg">
+    <img src="galerie-05.jpg">
+    <img src="galerie-06.jpg">
+    <img src="galerie-07.jpg">
+    <img src="galerie-08.jpg">
+    <img src="galerie-09.jpg">
+  </div>
+
+  <footer>© Festival Franco-Mexicano</footer>
+</div>
+
+</body>
+</html>
