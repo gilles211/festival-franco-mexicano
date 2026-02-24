@@ -1,114 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Festival Franco-Mexicano</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Festival Franco-Mexicano</title>
 
-<style>
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(180deg,#cdbb9b,#bfae8e);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:100vh;
-}
+  <style>
+    :root{
+      /* Champagne / sable (fond) */
+      --bg-top:#d7c7a6;
+      --bg-mid:#cdbb9a;
+      --bg-bot:#c3b08f;
 
-.card{
-  width:520px;
-  max-width:92%;
-  background:#cbbfa9;
-  border-radius:24px;
-  padding:70px 30px 40px;
-  text-align:center;
-  box-shadow:0 30px 70px rgba(0,0,0,0.25);
-  position:relative;
-}
+      /* Carte */
+      --card:#d2c5ad;            /* un ton plus soutenu (moins “blanc”) */
+      --card-border:rgba(255,255,255,.18);
 
-.logo-wrap{
-  position:absolute;
-  top:-65px;
-  left:50%;
-  transform:translateX(-50%);
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  background:#e9e9e9;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 20px 40px rgba(0,0,0,0.25);
-}
+      /* Texte */
+      --ink:#1f2a37;
+      --muted:rgba(31,42,55,.55);
 
-.logo-wrap img{
-  width:90px;
-  height:90px;
-  object-fit:contain;
-}
+      /* Accent doré discret */
+      --gold:#b99a57;
 
-h1{
-  margin-top:10px;
-  font-size:30px;
-  color:#1f2a37;
-}
+      /* Boutons */
+      --cta:#2f4156;
+      --cta-hover:#263446;
 
-.subtitle{
-  color:#6b7280;
-  margin:10px 0 25px;
-}
+      /* B&W réseaux */
+      --bw:#f4f4f4;
+      --bw-border:rgba(0,0,0,.08);
 
-.btn{
-  display:inline-block;
-  background:#2f4156;
-  color:white;
-  padding:14px 26px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:600;
-  box-shadow:0 10px 25px rgba(0,0,0,0.25);
-}
+      /* Cercle logo = “gris du logo” */
+      --logo-bg:#e9e9e9;
+    }
 
-.socials{
-  margin-top:25px;
-}
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 700px at 30% 15%, rgba(255,255,255,.18), transparent 60%),
+        radial-gradient(900px 600px at 80% 85%, rgba(0,0,0,.06), transparent 55%),
+        linear-gradient(180deg,var(--bg-top),var(--bg-mid) 55%,var(--bg-bot));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:36px 16px;
+    }
 
-.socials a{
-  display:inline-block;
-  background:#f1f1f1;
-  padding:10px 18px;
-  border-radius:10px;
-  margin:0 6px;
-  text-decoration:none;
-  color:#333;
-  font-size:14px;
-}
-</style>
+    .wrap{ width:min(980px,100%); }
+
+    /* plus rectangulaire + grand (≈ +30%) */
+    .card{
+      width:min(760px, 100%);
+      margin:0 auto;
+      background:var(--card);
+      border:1px solid var(--card-border);
+      border-radius:28px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.28);
+      padding:72px 44px 42px;
+      text-align:center;
+      position:relative;
+      overflow:visible;
+    }
+
+    /* Logo “pro” : cercle gris + masque pour “effacer” visuellement le carré */
+    .logo-wrap{
+      position:absolute;
+      top:-60px;
+      left:50%;
+      transform:translateX(-50%);
+      width:132px;
+      height:132px;
+      border-radius:999px;
+      background:var(--logo-bg);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 22px 45px rgba(0,0,0,.25);
+    }
+
+    /* Ce halo interne aide à fondre le carré (très efficace visuellement) */
+    .logo-wrap::after{
+      content:"";
+      position:absolute;
+      inset:10px;
+      border-radius:999px;
+      box-shadow:
+        inset 0 0 0 16px var(--logo-bg),      /* “masque” gris */
+        inset 0 2px 10px rgba(0,0,0,.10);     /* relief léger */
+      pointer-events:none;
+    }
+
+    .logo{
+      width:92px;
+      height:92px;
+      object-fit:contain;
+      display:block;
+      position:relative;
+      z-index:1;
+      /* évite les rendus “crénelés” sur certains navigateurs */
+      image-rendering:auto;
+    }
+
+    h1{
+      margin:10px 0 10px;
+      font-size:34px;
+      letter-spacing:-0.3px;
+      font-weight:750;
+    }
+
+    .rule{
+      width:110px;
+      height:2px;
+      background:var(--gold);
+      margin:8px auto 14px;
+      border-radius:999px;
+      opacity:.9;
+    }
+
+    .sub{
+      margin:0 0 24px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      min-width: 280px;
+      border-radius:14px;
+      text-decoration:none;
+      color:#fff;
+      background:var(--cta);
+      box-shadow: 0 14px 30px rgba(0,0,0,.22);
+      font-weight:700;
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .cta:hover{ background:var(--cta-hover); transform: translateY(-1px); }
+    .cta:active{ transform: translateY(0px); }
+
+    .cta svg{ width:18px;height:18px; opacity:.95; }
+
+    .socials{
+      margin-top:22px;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    /* Noir & blanc seulement */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      min-width:118px;
+      border-radius:12px;
+      text-decoration:none;
+      color:#111;
+      background:var(--bw);
+      border:1px solid var(--bw-border);
+      box-shadow: 0 10px 22px rgba(0,0,0,.10);
+      font-weight:650;
+      font-size:14px;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0px); }
+
+    footer{
+      margin-top:16px;
+      font-size:12px;
+      color:rgba(31,42,55,.42);
+    }
+
+    /* Mobile */
+    @media (max-width:520px){
+      .card{ padding:68px 22px 34px; border-radius:22px; }
+      h1{ font-size:28px; }
+      .cta{ min-width: 240px; }
+      .btn{ min-width: 104px; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="wrap">
+    <main class="card" aria-label="Festival Franco-Mexicano">
+      <!-- IMPORTANT : garde le nom de fichier existant -->
+      <div class="logo-wrap" aria-hidden="true">
+        <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano" />
+      </div>
 
-<div class="card">
+      <h1>Festival Franco-Mexicano</h1>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="sub">Presentación e información oficial</p>
 
-  <div class="logo-wrap">
-    <img src="LOGO.jpg" alt="Festival Franco-Mexicano">
+      <!-- IMPORTANT : mets ici le nom EXACT du PDF sur ton serveur -->
+      <a class="cta" href="P1_FEST.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 18H17M7 14H17M7 10H13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6 2H14L18 6V22H6V2Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        Abrir la presentación (PDF)
+      </a>
+
+      <!-- Ordre demandé : Instagram / X / Facebook -->
+      <nav class="socials" aria-label="Redes sociales">
+        <a class="btn" href="https://www.instagram.com/festivalfrancomexicano/" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn" href="https://x.com/festivalfrances" target="_blank" rel="noopener">X</a>
+        <a class="btn" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank" rel="noopener">Facebook</a>
+      </nav>
+
+      <footer>© Festival Franco-Mexicano</footer>
+    </main>
   </div>
-
-  <h1>Festival Franco-Mexicano</h1>
-  <div class="subtitle">Presentación e información oficial</div>
-
-  <a class="btn" href="presentation.pdf" target="_blank">
-    Abrir la presentación (PDF)
-  </a>
-
-  <div class="socials">
-    <a href="#">Instagram</a>
-    <a href="#">X</a>
-    <a href="#">Facebook</a>
-  </div>
-
-</div>
-
 </body>
 </html>
