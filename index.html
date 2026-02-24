@@ -1,147 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Festival Franco-Mexicano</title>
-
-<style>
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:linear-gradient(135deg,#cbb892,#bda67a);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:100vh;
-}
-
-/* CARTE */
-.card{
-  width:640px;
-  max-width:92%;
-  background:#d9cfbb;
-  border-radius:26px;
-  padding:90px 40px 50px;
-  text-align:center;
-  box-shadow:0 30px 70px rgba(0,0,0,.25);
-  position:relative;
-}
-
-/* CERCLE BLANC PROPRE */
-.logo-wrap{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  background:#ffffff;
-  position:absolute;
-  top:-70px;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 18px 40px rgba(0,0,0,.25);
-  overflow:hidden; /* ⭐ CLÉ : coupe le carré */
-}
-
-/* IMAGE ROGNÉE EN CERCLE */
-.logo{
-  width:120px;
-  height:120px;
-  object-fit:cover;
-  border-radius:50%; /* ⭐ CLÉ : masque le carré gris */
-}
-
-/* TITRE */
-h1{
-  margin-top:10px;
-  font-size:34px;
-  color:#1f2a37;
-  margin-bottom:10px;
-}
-
-.separator{
-  width:120px;
-  height:3px;
-  background:#b8965a;
-  margin:12px auto 22px;
-  border-radius:2px;
-}
-
-.subtitle{
-  color:#6b7280;
-  margin-bottom:28px;
-}
-
-.btn{
-  display:inline-block;
-  background:#2f435d;
-  color:white;
-  padding:14px 26px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:600;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-  margin-bottom:30px;
-}
-
-.social{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-  flex-wrap:wrap;
-}
-
-.social a{
-  background:white;
-  color:#111;
-  padding:10px 18px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:500;
-  box-shadow:0 6px 16px rgba(0,0,0,.15);
-}
-
-.footer{
-  margin-top:26px;
-  font-size:12px;
-  color:#777;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Festival Franco-Mexicano</title>
+  <style>
+    :root{
+      --bg1:#d7c8aa; --bg2:#cdbb9a; --bg3:#c2af8e;
+      --panel:#d2c4a8; --ink:#0f172a; --muted:rgba(15,23,42,.55);
+      --gold:#b8944a; --cta:#2f4155; --ctaH:#253445;
+      --bw:#ffffff; --bwB:rgba(0,0,0,.12);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(255,255,255,.20), transparent 60%),
+        radial-gradient(1000px 600px at 85% 85%, rgba(0,0,0,.08), transparent 55%),
+        linear-gradient(180deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+      display:flex; align-items:center; justify-content:center;
+      padding:36px 16px;
+      color:var(--ink);
+    }
+    .card{
+      width:min(860px,100%);
+      background:rgba(210,196,168,.84);
+      border:1px solid rgba(15,23,42,.10);
+      border-radius:28px;
+      box-shadow:0 26px 80px rgba(0,0,0,.22);
+      text-align:center;
+      padding:80px 38px 34px;
+      position:relative;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .logoWrap{
+      width:130px; height:130px; border-radius:50%;
+      background:#fff;
+      display:flex; align-items:center; justify-content:center;
+      position:absolute; left:50%; top:-55px; transform:translateX(-50%);
+      box-shadow:0 18px 40px rgba(0,0,0,.22);
+      overflow:hidden;
+    }
+    .logo{
+      width:104px; height:104px; object-fit:contain; display:block;
+    }
+    h1{margin:16px 0 10px; font-size:42px; font-weight:800; letter-spacing:-.5px}
+    .rule{width:160px; height:3px; background:var(--gold); margin:10px auto 16px; border-radius:999px}
+    .sub{margin:0 0 24px; color:var(--muted); font-size:14.5px}
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:14px 20px; min-width:280px;
+      border-radius:14px; text-decoration:none;
+      background:var(--cta); color:#fff; font-weight:750;
+      box-shadow:0 14px 30px rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.12);
+      transition:transform .12s ease, background .12s ease;
+    }
+    .cta:hover{transform:translateY(-1px); background:var(--ctaH)}
+    .cta:active{transform:translateY(0)}
+    .cta svg{width:18px;height:18px;opacity:.95}
+    .hint{
+      margin-top:12px;
+      font-size:13px;
+      color:rgba(15,23,42,.55);
+    }
+    .warn{
+      margin:14px auto 0;
+      width:min(620px,100%);
+      background:rgba(255,255,255,.65);
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:14px;
+      padding:12px 14px;
+      text-align:left;
+      color:rgba(15,23,42,.75);
+      font-size:13px;
+      display:none;
+    }
+    .warn b{color:rgba(15,23,42,.92)}
+    .links{
+      margin-top:18px;
+      display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 16px; min-width:118px;
+      border-radius:12px; text-decoration:none;
+      background:var(--bw); color:#111; font-weight:650; font-size:14px;
+      border:1px solid var(--bwB);
+      box-shadow:0 10px 22px rgba(0,0,0,.10);
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:hover{transform:translateY(-1px); box-shadow:0 14px 26px rgba(0,0,0,.12)}
+    footer{margin-top:16px; font-size:12px; color:rgba(15,23,42,.42)}
+    @media (max-width:520px){
+      .card{padding:70px 18px 26px}
+      h1{font-size:32px}
+      .logoWrap{width:120px;height:120px;top:-50px}
+      .logo{width:96px;height:96px}
+      .cta{min-width:240px}
+    }
+  </style>
 </head>
 
 <body>
+  <main class="card">
+    <!-- Change seulement le nom si ton logo s’appelle autrement -->
+    <div class="logoWrap">
+      <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano">
+    </div>
 
-<div class="card">
+    <h1>Festival Franco-Mexicano</h1>
+    <div class="rule"></div>
+    <p class="sub">Presentación e información oficial</p>
 
-  <div class="logo-wrap">
-    <!-- ⚠️ NOM EXACT DU FICHIER -->
-    <img class="logo" src="LOGO.jpg?v=fix2" alt="Festival Franco-Mexicano">
-  </div>
+    <a id="pdfBtn" class="cta" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M7 18H17M7 14H17M7 10H13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M6 2H14L18 6V22H6V2Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+      Abrir la presentación (PDF)
+    </a>
 
-  <h1>Festival Franco-Mexicano</h1>
-  <div class="separator"></div>
+    <div class="hint" id="pdfHint">Buscando el PDF…</div>
 
-  <div class="subtitle">
-    Presentación e información oficial
-  </div>
+    <div class="warn" id="pdfWarn">
+      <b>PDF no encontrado.</b><br>
+      Coloca el PDF en el mismo lugar que <b>index.html</b> (carpeta raíz del sitio).<br>
+      Nombres aceptados: <b>festival.pdf</b>, <b>P1_FEST.pdf</b>, <b>P1 FEST.pdf</b>, etc.
+    </div>
 
-  <a class="btn" href="PRESENTACION.pdf" target="_blank">
-    Abrir la presentación (PDF)
-  </a>
+    <nav class="links" aria-label="Redes sociales">
+      <a class="btn" href="https://www.instagram.com/festivalfrancomexicano/" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" href="https://x.com/festivalfrances" target="_blank" rel="noopener">X</a>
+      <a class="btn" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank" rel="noopener">Facebook</a>
+    </nav>
 
-  <div class="social">
-    <a href="https://www.instagram.com/festivalfrancomexicano/" target="_blank">Instagram</a>
-    <a href="https://x.com/festivalfrances" target="_blank">X</a>
-    <a href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank">Facebook</a>
-  </div>
+    <footer>© Festival Franco-Mexicano</footer>
+  </main>
 
-  <div class="footer">
-    © Festival Franco-Mexicano
-  </div>
+<script>
+(function(){
+  // Liste de noms possibles (tu peux en ajouter si tu veux)
+  const candidates = [
+    "festival.pdf",
+    "P1_FEST.pdf",
+    "P1 FEST.pdf",
+    "P1%20FEST.pdf",
+    "P1%20FEST.PDF",
+    "P1_FEST.PDF",
+    "P1%20FEST%20(1).pdf",
+    "P1%20FEST%20(2).pdf"
+  ];
 
-</div>
+  const btn = document.getElementById("pdfBtn");
+  const hint = document.getElementById("pdfHint");
+  const warn = document.getElementById("pdfWarn");
 
+  function head(url){
+    return fetch(url + (url.includes("?") ? "&" : "?") + "v=" + Date.now(), { method:"HEAD" })
+      .then(r => r.ok ? url : null)
+      .catch(() => null);
+  }
+
+  (async function(){
+    for (const name of candidates){
+      const url = name;
+      const ok = await head(url);
+      if (ok){
+        btn.href = ok;
+        hint.textContent = "PDF listo.";
+        warn.style.display = "none";
+        return;
+      }
+    }
+    // aucun trouvé
+    btn.href = "#";
+    hint.textContent = "";
+    warn.style.display = "block";
+    btn.addEventListener("click", (e)=>e.preventDefault());
+  })();
+})();
+</script>
 </body>
 </html>
