@@ -27,51 +27,45 @@ p {
   margin-bottom: 30px;
 }
 
-.boton {
+.btn {
   display: inline-block;
-  padding: 12px 22px;
+  padding: 14px 22px;
   margin: 8px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.pdf {
   background: black;
   color: white;
+  text-decoration: none;
+  border-radius: 8px;
 }
 
-.social {
-  background: #eaeaea;
-  color: #333;
+.social a {
+  display: inline-block;
+  margin: 6px;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  background: white;
 }
 </style>
 </head>
 
 <body>
 
-<img src="LOGO.jpg" alt="Festival Franco Mexicano" class="logo">
+<img src="LOGO.jpg" class="logo">
 
 <h1>Festival Franco-Mexicano</h1>
 <p>Presentación e información oficial.</p>
 
-<a href="P1 FEST.pdf" class="boton pdf" target="_blank">
+<a class="btn" href="P1 FEST.pdf" target="_blank">
 Abrir la presentación (PDF)
 </a>
 
-<br><br>
-
-<a href="https://www.instagram.com/festivalfrancomexicano" class="boton social" target="_blank">
-Instagram
-</a>
-
-<a href="https://www.facebook.com/share/1T8RqWa9Av/" class="boton social" target="_blank">
-Facebook
-</a>
-
-<a href="https://x.com/festivalfrances" class="boton social" target="_blank">
-X
-</a>
+<div class="social">
+  <a href="https://www.instagram.com/festivalfrancomexicano" target="_blank">Instagram</a>
+  <a href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank">Facebook</a>
+  <a href="https://x.com/festivalfrances" target="_blank">X</a>
+</div>
 
 </body>
 </html>
