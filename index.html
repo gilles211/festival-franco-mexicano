@@ -1,190 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Festival Franco-Mexicano</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festival Franco-Mexicano</title>
 
-  <style>
-    :root{
-      --bg-top:#d7c6a6;   /* champagne un peu plus soutenu */
-      --bg-bot:#efe6d6;   /* sable clair */
-      --ink:#0f172a;
-      --muted:#6b7280;
+<style>
+:root{
+  --champagne:#cdbfa6;
+  --champagne-soft:#d8ccb6;
+  --card:#d6cbb8;
+  --ink:#1f2937;
+  --muted:#6b7280;
+}
 
-      --card:#e7dece;     /* carte champagne (pas trop blanche) */
-      --card-line: rgba(15,23,42,.10);
-      --shadow: 0 24px 70px rgba(0,0,0,.18);
-      --radius: 34px;
+*{box-sizing:border-box;margin:0;padding:0;}
 
-      --accent:#c7a35a;   /* ligne sous le titre (or/champagne) */
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:
+    radial-gradient(1200px 600px at 20% 10%, rgba(0,0,0,.05), transparent 60%),
+    linear-gradient(180deg, var(--champagne-soft), var(--champagne));
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 16px;
+  color:var(--ink);
+}
 
-      --btn:#2f4154;      /* bouton PDF (bleu gris premium) */
-      --btnHover:#243444;
-    }
+.wrap{
+  width:min(900px,100%);
+}
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+.card{
+  width:min(760px,100%);
+  margin:auto;
+  background:var(--card);
+  border-radius:28px;
+  padding:56px 40px 46px;
+  text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.18);
+}
 
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(1100px 650px at 18% 15%, rgba(255,255,255,.25), transparent 55%),
-        radial-gradient(900px 560px at 85% 78%, rgba(255,255,255,.20), transparent 60%),
-        linear-gradient(180deg, var(--bg-top), var(--bg-bot));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:48px 18px;
-    }
+/* ================= LOGO ================= */
 
-    .wrap{ width:min(980px, 100%); }
+.logo-wrap{
+  width:150px;
+  height:150px;
+  margin:0 auto 26px;
+  border-radius:50%;
+  background:#ffffff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.9);
+  overflow:hidden;
+}
 
-    /* Carte plus grande + un peu rectangulaire */
-    .card{
-      width:min(820px, 100%);
-      margin:0 auto;
-      background:var(--card);
-      border:1px solid var(--card-line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:60px 34px 38px;
-      text-align:center;
-      position:relative;
-    }
+.logo{
+  width:105px;
+  height:105px;
+  object-fit:contain;
+  display:block;
+  border-radius:50%;
+}
 
-    /* Médaillon du logo : cercle BLANC pour fondre le carré du JPG */
-    .logo-wrap{
-      width:132px;
-      height:132px;
-      margin:0 auto 22px;
-      border-radius:50%;
-      background:#ffffff; /* IMPORTANT: blanc plein */
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      box-shadow:
-        0 16px 34px rgba(0,0,0,.18),
-        inset 0 1px 0 rgba(255,255,255,.95);
-    }
+/* ================= TITRES ================= */
 
-    .logo{
-      width:92px;
-      height:auto;
-      display:block;
-    }
+h1{
+  font-size:42px;
+  margin-bottom:10px;
+  letter-spacing:-0.4px;
+}
 
-    h1{
-      margin:0 0 10px;
-      font-size:42px;
-      letter-spacing:-.6px;
-      font-weight:750;
-    }
+.rule{
+  width:140px;
+  height:3px;
+  margin:14px auto 18px;
+  border-radius:999px;
+  background:#b89b5e;
+}
 
-    .rule{
-      width:150px;
-      height:3px;
-      margin:10px auto 18px;
-      border-radius:999px;
-      background: var(--accent);
-      opacity:.95;
-    }
+.sub{
+  color:var(--muted);
+  margin-bottom:26px;
+  font-size:15px;
+}
 
-    .sub{
-      margin:0 0 26px;
-      color:rgba(15,23,42,.55);
-      font-size:15px;
-    }
+/* ================= BOUTON PDF ================= */
 
-    .cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:14px 18px;
-      border-radius:14px;
-      background:var(--btn);
-      color:#fff;
-      text-decoration:none;
-      font-weight:650;
-      box-shadow: 0 14px 28px rgba(0,0,0,.18);
-      border:1px solid rgba(255,255,255,.18);
-      min-width: 260px;
-      transition: transform .12s ease, background .12s ease;
-    }
-    .cta:hover{ background:var(--btnHover); transform: translateY(-1px); }
-    .cta:active{ transform: translateY(0px); }
-    .cta svg{ width:18px; height:18px; opacity:.95; }
+.cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:16px 26px;
+  border-radius:14px;
+  background:#334155;
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 14px 30px rgba(0,0,0,.25);
+  margin-bottom:26px;
+  transition:.2s ease;
+}
 
-    .links{
-      margin-top:18px;
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
+.cta:hover{
+  transform:translateY(-2px);
+}
 
-    /* Réseaux : noir sur blanc, simple */
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 16px;
-      border-radius:12px;
-      text-decoration:none;
-      font-weight:650;
-      font-size:14px;
-      color:#111;
-      background:#fff;
-      border:1px solid rgba(0,0,0,.10);
-      min-width:120px;
-      box-shadow: 0 8px 16px rgba(0,0,0,.06);
-      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-    }
-    .btn:hover{
-      border-color: rgba(0,0,0,.22);
-      box-shadow: 0 12px 22px rgba(0,0,0,.10);
-      transform: translateY(-1px);
-    }
+/* ================= SOCIAL ================= */
 
-    footer{
-      margin-top:18px;
-      color:rgba(15,23,42,.45);
-      font-size:12px;
-    }
-  </style>
+.links{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:6px;
+}
+
+.btn{
+  background:#ffffff;
+  color:#111;
+  padding:10px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  border:1px solid rgba(0,0,0,.08);
+  min-width:120px;
+}
+
+.btn:hover{
+  box-shadow:0 10px 20px rgba(0,0,0,.10);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  margin-top:22px;
+  font-size:12px;
+  color:rgba(0,0,0,.45);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:640px){
+  .card{
+    padding:42px 22px 36px;
+  }
+
+  h1{
+    font-size:30px;
+  }
+
+  .logo-wrap{
+    width:130px;
+    height:130px;
+  }
+
+  .logo{
+    width:92px;
+    height:92px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <main class="card" aria-label="Festival Franco-Mexicano">
-      <div class="logo-wrap">
-        <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano" />
-      </div>
 
-      <h1>Festival Franco-Mexicano</h1>
-      <div class="rule" aria-hidden="true"></div>
-      <p class="sub">Presentación e información oficial</p>
+<div class="wrap">
+  <main class="card">
 
-      <a class="cta" href="P1_FEST.pdf" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M7 18H17M7 14H17M7 10H13" stroke="white" stroke-width="2" stroke-linecap="round"/>
-          <path d="M6 2H14L18 6V22H6V2Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-        </svg>
-        Abrir la presentación (PDF)
-      </a>
+    <div class="logo-wrap">
+      <img class="logo" src="LOGO.png" alt="Festival Franco-Mexicano">
+    </div>
 
-      <!-- ordre demandé : Instagram – X – Facebook -->
-      <div class="links" role="navigation" aria-label="Redes sociales">
-        <a class="btn" href="https://www.instagram.com/festivalfrancomexicano/" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn" href="https://x.com/festivalfrances" target="_blank" rel="noopener">X</a>
-        <a class="btn" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank" rel="noopener">Facebook</a>
-      </div>
+    <h1>Festival Franco-Mexicano</h1>
+    <div class="rule"></div>
+    <p class="sub">Presentación e información oficial</p>
 
-      <footer>© Festival Franco-Mexicano</footer>
-    </main>
-  </div>
+    <a class="cta" href="P1_FEST.pdf" target="_blank">
+      Abrir la presentación (PDF)
+    </a>
+
+    <div class="links">
+      <a class="btn" href="https://www.instagram.com/festivalfrancomexicano/" target="_blank">Instagram</a>
+      <a class="btn" href="https://x.com/festivalfrances" target="_blank">X</a>
+      <a class="btn" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank">Facebook</a>
+    </div>
+
+    <footer>© Festival Franco-Mexicano</footer>
+
+  </main>
+</div>
+
 </body>
 </html>
