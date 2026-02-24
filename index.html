@@ -1,228 +1,247 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Festival Franco-Mexicano</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Festival Franco-Mexicano</title>
 
-<style>
-:root{
-  --bg1:#d7c7ab;
-  --bg2:#cbb895;
-  --card:#e6dcc9;
-  --ink:#1f2a37;
-  --muted:#6b7280;
-  --accent:#b8944b;
-  --btn:#2f3f52;
-  --btnHover:#243344;
-  --shadow:0 30px 80px rgba(0,0,0,.25);
-}
+  <style>
+    :root{
+      --bg1:#d7c7ab;
+      --bg2:#cbb895;
+      --card:#e6dcc9;
+      --ink:#1f2a37;
+      --muted:#6b7280;
+      --accent:#b8944b;
+      --btn:#2f3f52;
+      --btnHover:#243344;
+      --pill:#f7f4ee;
+      --shadow: 0 30px 80px rgba(0,0,0,.25);
+      --radius: 28px;
+    }
 
-*{box-sizing:border-box;margin:0;padding:0}
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background: radial-gradient(1200px 800px at 50% 10%, rgba(255,255,255,.25), transparent 60%),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+      padding: 34px 16px;
+    }
 
-body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  background:linear-gradient(135deg,var(--bg1),var(--bg2));
-  color:var(--ink);
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:40px 20px;
-}
+    .wrap{
+      width:min(980px, 100%);
+      position:relative;
+    }
 
-/* ===== CARD ===== */
+    .card{
+      position:relative;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 92px 44px 34px; /* IMPORTANT: laisse de la place au logo */
+      overflow: visible;       /* IMPORTANT: ne coupe pas le logo */
+    }
 
-.card{
-  width:100%;
-  max-width:900px;
-  background:var(--card);
-  border-radius:28px;
-  box-shadow:var(--shadow);
-  padding:90px 40px 50px;
-  text-align:center;
-  position:relative;
-}
+    /* --- LOGO --- */
+    .logo-wrap{
+      position:absolute;
+      left:50%;
+      top:-62px; /* ajuste la hauteur ici si tu veux plus/moins haut */
+      transform:translateX(-50%);
+      width:132px;
+      height:132px;
+      border-radius:50%;
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 18px 40px rgba(0,0,0,.25);
+      overflow:hidden; /* IMPORTANT: rend le logo rond même si l'image est carrée */
+      z-index: 10;     /* IMPORTANT: passe au-dessus de la carte */
+    }
+    .logo{
+      width:98px;
+      height:98px;
+      object-fit:contain;
+      display:block;
+    }
 
-/* ===== LOGO ===== */
+    h1{
+      margin: 0;
+      text-align:center;
+      font-size: clamp(28px, 3.2vw, 44px);
+      letter-spacing:.2px;
+    }
+    .underline{
+      width: 86px;
+      height: 3px;
+      background: var(--accent);
+      margin: 14px auto 18px;
+      border-radius: 99px;
+      opacity:.9;
+    }
+    .subtitle{
+      text-align:center;
+      color: var(--muted);
+      margin: 0 0 18px;
+      font-size: 13px;
+    }
 
-.logo-wrap{
-  position:absolute;
-  top:-65px;
-  left:50%;
-  transform:translateX(-50%);
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  background:#ffffff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 18px 40px rgba(0,0,0,.25);
-  overflow:hidden;
-}
+    .cta{
+      display:flex;
+      justify-content:center;
+      margin: 14px 0 18px;
+    }
+    .btn{
+      background: var(--btn);
+      color:#fff;
+      text-decoration:none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+      box-shadow: 0 14px 26px rgba(0,0,0,.18);
+      transition: transform .12s ease, background .12s ease;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+    .btn:hover{ background: var(--btnHover); transform: translateY(-1px); }
 
-.logo{
-  width:80%;
-  height:80%;
-  object-fit:contain;
-  display:block;
-}
+    .social{
+      display:flex;
+      gap: 14px;
+      justify-content:center;
+      margin: 6px 0 8px;
+      flex-wrap: wrap;
+    }
+    .pill{
+      background: var(--pill);
+      color: var(--ink);
+      text-decoration:none;
+      padding: 10px 16px;
+      border-radius: 14px;
+      min-width: 120px;
+      text-align:center;
+      font-weight: 500;
+      box-shadow: 0 10px 18px rgba(0,0,0,.10);
+    }
 
-/* ===== TITRES ===== */
+    .contact{
+      text-align:center;
+      margin: 6px 0 14px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .contact a{
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(107,114,128,.6);
+    }
+    .contact a:hover{ color: var(--ink); }
 
-h1{
-  font-size:34px;
-  margin-bottom:12px;
-}
+    /* --- GALERIE --- */
+    .section-title{
+      text-align:center;
+      font-size: 12px;
+      color: var(--muted);
+      margin: 10px 0 12px;
+      letter-spacing:.2px;
+    }
 
-.subtitle{
-  color:var(--muted);
-  margin-bottom:26px;
-}
+    .gallery{
+      width:min(820px, 100%);
+      margin: 0 auto;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .ph{
+      border-radius: 16px;
+      overflow:hidden;
+      box-shadow: 0 14px 24px rgba(0,0,0,.18);
+      background: rgba(255,255,255,.25);
+      aspect-ratio: 16 / 10;
+    }
+    .ph img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
 
-.accent{
-  width:70px;
-  height:3px;
-  background:var(--accent);
-  margin:14px auto 22px;
-  border-radius:2px;
-}
+    footer{
+      text-align:center;
+      margin-top: 18px;
+      font-size: 12px;
+      color: rgba(0,0,0,.35);
+    }
 
-/* ===== BUTTON ===== */
-
-.btn{
-  display:inline-block;
-  background:var(--btn);
-  color:#fff;
-  text-decoration:none;
-  padding:14px 26px;
-  border-radius:14px;
-  font-weight:600;
-  margin-bottom:26px;
-  transition:.25s;
-}
-
-.btn:hover{background:var(--btnHover)}
-
-/* ===== SOCIAL ===== */
-
-.social{
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  margin-bottom:8px;
-}
-
-.social a{
-  background:#efeae0;
-  padding:10px 18px;
-  border-radius:12px;
-  text-decoration:none;
-  color:#333;
-  font-weight:500;
-  font-size:14px;
-}
-
-/* ===== EMAIL ===== */
-
-.email{
-  font-size:13px;
-  color:#7a7a7a;
-  margin-bottom:26px;
-}
-
-.email a{
-  color:#7a7a7a;
-  text-decoration:none;
-}
-
-/* ===== GALERIE ===== */
-
-.gallery-title{
-  font-size:14px;
-  color:#7a7a7a;
-  margin-bottom:16px;
-}
-
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px;
-}
-
-.gallery img{
-  width:100%;
-  height:150px;
-  object-fit:cover;
-  border-radius:14px;
-  display:block;
-}
-
-/* ===== FOOTER ===== */
-
-.footer{
-  margin-top:28px;
-  font-size:12px;
-  color:#8a8a8a;
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:640px){
-  .card{padding:80px 22px 40px}
-  h1{font-size:26px}
-  .logo-wrap{width:110px;height:110px;top:-55px}
-}
-</style>
+    @media (max-width: 860px){
+      .card{ padding: 92px 22px 28px; }
+      .gallery{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px){
+      .gallery{ grid-template-columns: 1fr; }
+      .pill{ min-width: 96px; }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="wrap">
+    <section class="card">
 
-<div class="card">
+      <!-- LOGO -->
+      <div class="logo-wrap" aria-label="Logo Festival Franco-Mexicano">
+        <!-- mets ton fichier logo ici (ex: LOGO.png / LOGO.jpg) -->
+        <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano" />
+      </div>
 
-  <div class="logo-wrap">
-    <!-- 🔥 IMPORTANT : garde ton vrai fichier LOGO.png -->
-    <img class="logo" src="LOGO.png?v=5" alt="Festival Franco Mexicano">
-  </div>
+      <h1>Festival Franco-Mexicano</h1>
+      <div class="underline"></div>
+      <p class="subtitle">Presentación e información oficial</p>
 
-  <h1>Festival Franco-Mexicano</h1>
-  <div class="accent"></div>
-  <div class="subtitle">Presentación e información oficial</div>
+      <div class="cta">
+        <a class="btn" href="P1%20FEST.pdf" target="_blank" rel="noopener">
+          Ouvrir la présentation (PDF)
+        </a>
+      </div>
 
-  <a class="btn" href="P1 FEST.pdf" target="_blank">
-    Abrir la presentación (PDF)
-  </a>
+      <div class="social">
+        <a class="pill" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a class="pill" href="https://x.com/" target="_blank" rel="noopener">X</a>
+        <a class="pill" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+      </div>
 
-  <div class="social">
-    <a href="#">Instagram</a>
-    <a href="#">X</a>
-    <a href="#">Facebook</a>
-  </div>
+      <!-- MAIL: sous les boutons -->
+      <div class="contact">
+        <a href="mailto:festival.frances@gmail.com">festival.frances@gmail.com</a>
+      </div>
 
-  <div class="email">
-    <a href="mailto:festival.frances@gmail.com">
-      festival.frances@gmail.com
-    </a>
-  </div>
+      <div class="section-title">Galerie de fotos</div>
 
-  <div class="gallery-title">Galería de fotos</div>
+      <div class="gallery">
+        <div class="ph"><img src="galerie-01.jpg" alt="Galerie 1" onerror="this.closest('.ph').style.display='none'"></div>
+        <div class="ph"><img src="galerie-02.jpg" alt="Galerie 2" onerror="this.closest('.ph').style.display='none'"></div>
+        <div class="ph"><img src="galerie-03.jpg" alt="Galerie 3" onerror="this.closest('.ph').style.display='none'"></div>
 
-  <div class="gallery">
-    <img src="galerie-01.jpg">
-    <img src="galerie-02.jpg">
-    <img src="galerie-03.jpg">
-    <img src="galerie-04.jpg">
-    <img src="galerie-05.jpg">
-    <img src="galerie-06.jpg">
-    <img src="galerie-07.jpg">
-    <img src="galerie-08.jpg">
-    <img src="galerie-09.jpg">
-  </div>
+        <div class="ph"><img src="galerie-04.jpg" alt="Galerie 4" onerror="this.closest('.ph').style.display='none'"></div>
+        <div class="ph"><img src="galerie-05.jpg" alt="Galerie 5" onerror="this.closest('.ph').style.display='none'"></div>
+        <div class="ph"><img src="galerie-06.jpg" alt="Galerie 6" onerror="this.closest('.ph').style.display='none'"></div>
 
-  <div class="footer">© Festival Franco-Mexicano</div>
+        <div class="ph"><img src="galerie-07.jpg" alt="Galerie 7" onerror="this.closest('.ph').style.display='none'"></div>
+        <div class="ph"><img src="galerie-08.jpg" alt="Galerie 8" onerror="this.closest('.ph').style.display='none'"></div>
+        <div class="ph"><img src="galerie-09.jpg" alt="Galerie 9" onerror="this.closest('.ph').style.display='none'"></div>
+      </div>
 
-</div>
-
+      <footer>© Festival Franco-Mexicano</footer>
+    </section>
+  </main>
 </body>
 </html>
