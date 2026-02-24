@@ -1,146 +1,195 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Festival Franco-Mexicano</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Festival Franco-Mexicano</title>
 
-<style>
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg,#cdbb9d,#b8a789);
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
+  <style>
+    :root{
+      --bg1:#d7c7ab;   /* champagne */
+      --bg2:#cbb895;   /* champagne + soutenu */
+      --card:#e6dcc9;  /* beige/gris-jaune (moins blanc) */
+      --ink:#1f2a37;
+      --muted:#6b7280;
+      --accent:#b8944b;
+      --btn:#2f3f52;
+      --btnHover:#243344;
+      --pill:#f7f4ee;
+      --shadow: 0 30px 80px rgba(0,0,0,.25);
+    }
 
-/* carte */
-.card{
-  background:#d6cbb7;
-  width:90%;
-  max-width:760px;
-  padding:90px 40px 55px;
-  border-radius:26px;
-  text-align:center;
-  box-shadow:0 30px 80px rgba(0,0,0,0.25);
-  position:relative;
-}
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:
+        radial-gradient(1200px 700px at 50% 35%, rgba(255,255,255,.35), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      padding:28px 16px;
+    }
 
-/* cercle logo */
-.logo-wrap{
-  position:absolute;
-  top:-70px;
-  left:50%;
-  transform:translateX(-50%);
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  background:#ffffff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 22px 50px rgba(0,0,0,0.28);
-  overflow:hidden;
-}
+    .card{
+      width:min(920px, 94vw);          /* bloc plus grand + plus rectangulaire */
+      background: var(--card);
+      border-radius: 28px;
+      padding: 58px 54px 46px;
+      box-shadow: var(--shadow);
+      position:relative;
+      text-align:center;
+    }
 
-.logo-wrap img{
-  width:95px;
-  height:auto;
-  display:block;
-}
+    .logo-wrap{
+      width:132px;
+      height:132px;
+      border-radius:50%;
+      background:#fff;                 /* fond blanc derrière le carré */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:-108px auto 18px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.22);
+      overflow:hidden;                 /* masque le carré */
+    }
+    .logo{
+      width:100%;
+      height:100%;
+      object-fit:cover;                /* remplit le cercle */
+      border-radius:50%;
+      display:block;
+    }
 
-/* texte */
-h1{
-  margin-top:10px;
-  color:#1f2a37;
-  font-size:36px;
-}
+    h1{
+      margin:0;
+      font-size: clamp(28px, 3.2vw, 44px);
+      letter-spacing:.2px;
+    }
 
-.subtitle{
-  color:#6b7280;
-  margin:15px 0 32px;
-}
+    .divider{
+      width:120px;
+      height:3px;
+      background: var(--accent);
+      border-radius:999px;
+      margin:14px auto 18px;
+      opacity:.95;
+    }
 
-/* bouton */
-.btn{
-  display:inline-block;
-  background:#2f435b;
-  color:white;
-  padding:17px 30px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 12px 28px rgba(0,0,0,0.25);
-}
+    .subtitle{
+      margin:0;
+      color:var(--muted);
+      font-size: 14px;
+    }
 
-/* réseaux */
-.social{
-  margin-top:32px;
-}
+    .contact{
+      margin:10px 0 0;
+      font-size: 13px;
+      color:var(--muted);
+    }
+    .contact a{
+      color:var(--muted);
+      text-decoration:none;
+      border-bottom:1px solid rgba(107,114,128,.35);
+      padding-bottom:1px;
+    }
+    .contact a:hover{
+      color:var(--ink);
+      border-bottom-color: rgba(31,42,55,.35);
+    }
 
-.social a{
-  display:inline-block;
-  margin:0 8px;
-  padding:10px 18px;
-  background:#ffffff;
-  border-radius:12px;
-  text-decoration:none;
-  color:#222;
-  font-size:14px;
-  border:1px solid rgba(0,0,0,0.08);
-}
+    .cta{
+      margin:26px auto 18px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background: var(--btn);
+      color:#fff;
+      text-decoration:none;
+      padding: 14px 20px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      font-weight:600;
+      transition: transform .08s ease, background .15s ease;
+    }
+    .cta:hover{ background: var(--btnHover); transform: translateY(-1px); }
+    .cta svg{ width:18px; height:18px; opacity:.95; }
 
-/* ⭐ email discret */
-.contact{
-  margin-top:18px;
-  font-size:13px;
-  color:#666;
-}
+    .social{
+      margin-top:18px;
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .pill{
+      background: var(--pill);
+      border:1px solid rgba(31,42,55,.08);
+      border-radius: 14px;
+      padding: 10px 18px;
+      color: var(--ink);
+      text-decoration:none;
+      font-weight:600;
+      min-width:120px;
+      display:inline-flex;
+      justify-content:center;
+      transition: transform .08s ease, background .15s ease;
+    }
+    .pill:hover{ transform: translateY(-1px); background:#fff; }
 
-.contact a{
-  color:#666;
-  text-decoration:none;
-}
+    .footer{
+      margin-top:16px;
+      font-size:12px;
+      color: rgba(31,42,55,.45);
+    }
 
-.contact a:hover{
-  text-decoration:underline;
-}
-</style>
+    /* Mobile */
+    @media (max-width:520px){
+      .card{ padding: 54px 18px 38px; }
+      .pill{ min-width: 96px; padding: 10px 14px; }
+      .logo-wrap{ width:118px; height:118px; margin:-96px auto 16px; }
+    }
+  </style>
 </head>
 
 <body>
+  <main class="card">
+    <!-- Logo -->
+    <div class="logo-wrap" aria-label="Logo du Festival">
+      <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano" />
+    </div>
 
-<div class="card">
+    <h1>Festival Franco-Mexicano</h1>
+    <div class="divider"></div>
 
-  <!-- LOGO -->
-  <div class="logo-wrap">
-    <img src="LOGO.jpg?v=4" alt="Festival Franco Mexicano">
-  </div>
+    <p class="subtitle">Presentación e información oficial</p>
 
-  <h1>Festival Franco-Mexicano</h1>
+    <!-- contact discret -->
+    <p class="contact">
+      <a href="mailto:festival.frances@gmail.com">festival.frances@gmail.com</a>
+    </p>
 
-  <div class="subtitle">
-    Presentación e información oficial
-  </div>
+    <!-- bouton PDF -->
+    <a class="cta" href="P1%20FEST.pdf" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z" stroke="currentColor" stroke-width="1.8" />
+        <path d="M14 2v6h6" stroke="currentColor" stroke-width="1.8" />
+        <path d="M8 13h8M8 17h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+      </svg>
+      Abrir la presentación (PDF)
+    </a>
 
-  <a class="btn" href="P1 FEST.pdf" target="_blank">
-    Abrir la presentación (PDF)
-  </a>
+    <!-- réseaux : X au centre -->
+    <div class="social">
+      <a class="pill" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a class="pill" href="https://x.com/" target="_blank" rel="noopener">X</a>
+      <a class="pill" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+    </div>
 
-  <div class="social">
-    <a href="https://www.instagram.com/festivalfrancomexicano/" target="_blank">Instagram</a>
-    <a href="https://x.com/festivalfrances" target="_blank">X</a>
-    <a href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank">Facebook</a>
-  </div>
-
-  <!-- ⭐ EMAIL DISCRET -->
-  <div class="contact">
-    Contacto: <a href="mailto:festival.frances@gmail.com">festival.frances@gmail.com</a>
-  </div>
-
-</div>
-
+    <div class="footer">© Festival Franco-Mexicano</div>
+  </main>
 </body>
 </html>
