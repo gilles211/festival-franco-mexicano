@@ -16,7 +16,7 @@ body{
   justify-content:center;
 }
 
-/* carte centrale */
+/* carte */
 .card{
   background:#d6cbb7;
   width:90%;
@@ -28,7 +28,7 @@ body{
   position:relative;
 }
 
-/* ⭐ CERCLE BLANC PROPRE */
+/* cercle logo */
 .logo-wrap{
   position:absolute;
   top:-70px;
@@ -42,29 +42,28 @@ body{
   align-items:center;
   justify-content:center;
   box-shadow:0 22px 50px rgba(0,0,0,0.28);
+  overflow:hidden;
 }
 
-/* ⭐ LOGO PLUS PETIT POUR MASQUER LE CARRÉ */
 .logo-wrap img{
-  width:90px;
+  width:95px;
   height:auto;
   display:block;
 }
 
-/* titre */
+/* texte */
 h1{
   margin-top:10px;
   color:#1f2a37;
   font-size:36px;
 }
 
-/* sous-titre */
 .subtitle{
   color:#6b7280;
   margin:15px 0 32px;
 }
 
-/* bouton PDF */
+/* bouton */
 .btn{
   display:inline-block;
   background:#2f435b;
@@ -74,11 +73,6 @@ h1{
   text-decoration:none;
   font-weight:bold;
   box-shadow:0 12px 28px rgba(0,0,0,0.25);
-  transition:.2s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
 }
 
 /* réseaux */
@@ -104,9 +98,9 @@ h1{
 
 <div class="card">
 
-  <!-- LOGO -->
+  <!-- ⭐ LOGO (cache forcé) -->
   <div class="logo-wrap">
-    <img src="LOGO.jpg" alt="Festival Franco Mexicano">
+    <img src="LOGO.jpg?v=3" alt="Festival Franco Mexicano">
   </div>
 
   <h1>Festival Franco-Mexicano</h1>
@@ -120,9 +114,9 @@ h1{
   </a>
 
   <div class="social">
-    <a href="#">Instagram</a>
-    <a href="#">X</a>
-    <a href="#">Facebook</a>
+    <a href="https://www.instagram.com/festivalfrancomexicano/" target="_blank">Instagram</a>
+    <a href="https://x.com/festivalfrances" target="_blank">X</a>
+    <a href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank">Facebook</a>
   </div>
 
 </div>
