@@ -45,7 +45,7 @@
       position:relative;
     }
 
-    /* CERCLE QUI MASQUE LE CARRE DU LOGO */
+    /* CERCLE LOGO */
     .logo-wrap{
       width:132px;
       height:132px;
@@ -56,7 +56,7 @@
       justify-content:center;
       margin:-108px auto 18px;
       box-shadow: 0 18px 45px rgba(0,0,0,.22);
-      overflow:hidden; /* ligne clé */
+      overflow:hidden;
     }
 
     .logo{
@@ -102,7 +102,6 @@
       transition: transform .08s ease, background .15s ease;
     }
     .cta:hover{ background: var(--btnHover); transform: translateY(-1px); }
-    .cta svg{ width:18px; height:18px; opacity:.95; }
 
     .social{
       margin-top:18px;
@@ -123,13 +122,11 @@
       min-width:120px;
       display:inline-flex;
       justify-content:center;
-      transition: transform .08s ease, background .15s ease;
     }
-    .pill:hover{ transform: translateY(-1px); background:#fff; }
 
-    /* EMAIL DISCRET EN BAS */
+    /* EMAIL — MAINTENANT BIEN SOUS LES RÉSEAUX */
     .contact{
-      margin:18px 0 0;
+      margin-top:14px;
       font-size:12px;
       color: rgba(31,42,55,.55);
       text-align:center;
@@ -137,12 +134,7 @@
     .contact a{
       color: inherit;
       text-decoration:none;
-      border-bottom:1px solid rgba(31,42,55,.22);
-      padding-bottom:1px;
-    }
-    .contact a:hover{
-      color: rgba(31,42,55,.75);
-      border-bottom-color: rgba(31,42,55,.35);
+      border-bottom:1px solid rgba(31,42,55,.25);
     }
 
     .footer{
@@ -150,18 +142,13 @@
       font-size:12px;
       color: rgba(31,42,55,.45);
     }
-
-    @media (max-width:520px){
-      .card{ padding: 54px 18px 38px; }
-      .pill{ min-width: 96px; padding: 10px 14px; }
-      .logo-wrap{ width:118px; height:118px; margin:-96px auto 16px; }
-    }
   </style>
 </head>
 
 <body>
   <main class="card">
-    <div class="logo-wrap" aria-label="Logo del Festival">
+
+    <div class="logo-wrap">
       <img id="logo" class="logo" src="LOGO.png?v=1" alt="Festival Franco-Mexicano" />
     </div>
 
@@ -170,45 +157,35 @@
 
     <p class="subtitle">Presentación e información oficial</p>
 
-    <a id="pdfLink" class="cta" href="P1%20FEST.pdf" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z" stroke="currentColor" stroke-width="1.8" />
-        <path d="M14 2v6h6" stroke="currentColor" stroke-width="1.8" />
-        <path d="M8 13h8M8 17h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-      </svg>
+    <a id="pdfLink" class="cta" href="P1%20FEST.pdf" target="_blank">
       Abrir la presentación (PDF)
     </a>
 
     <div class="social">
-      <a class="pill" href="https://www.instagram.com/festivalfrancomexicano/" target="_blank" rel="noopener">Instagram</a>
-      <a class="pill" href="https://x.com/festivalfrances" target="_blank" rel="noopener">X</a>
-      <a class="pill" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank" rel="noopener">Facebook</a>
+      <a class="pill" href="https://www.instagram.com/festivalfrancomexicano/" target="_blank">Instagram</a>
+      <a class="pill" href="https://x.com/festivalfrances" target="_blank">X</a>
+      <a class="pill" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank">Facebook</a>
     </div>
 
+    <!-- ✅ EMAIL AU BON ENDROIT -->
     <p class="contact">
       <a href="mailto:festival.frances@gmail.com">festival.frances@gmail.com</a>
     </p>
 
     <div class="footer">© Festival Franco-Mexicano</div>
+
   </main>
 
   <script>
     (function(){
-      // Anti-cache fort
       const v = Date.now();
-
-      // LOGO: essaie PNG puis JPG
       const logo = document.getElementById("logo");
       logo.src = "LOGO.png?v=" + v;
       logo.onerror = function(){
         this.onerror = null;
         this.src = "LOGO.jpg?v=" + v;
       };
-
-      // PDF: on pointe vers "P1 FEST.pdf" (espace encodé)
-      // Si un jour tu renommes en P1_FEST.pdf, remplace juste href ci-dessus.
-      const link = document.getElementById("pdfLink");
-      link.href = "P1%20FEST.pdf?v=" + v;
+      document.getElementById("pdfLink").href = "P1%20FEST.pdf?v=" + v;
     })();
   </script>
 </body>
