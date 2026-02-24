@@ -20,50 +20,48 @@ body{
 .card{
   background:#d6cbb7;
   width:90%;
-  max-width:720px;
-  padding:80px 40px 50px;
-  border-radius:24px;
+  max-width:760px;
+  padding:90px 40px 55px;
+  border-radius:26px;
   text-align:center;
   box-shadow:0 30px 80px rgba(0,0,0,0.25);
   position:relative;
 }
 
-/* 🔥 CONTENEUR LOGO — MASQUE CIRCULAIRE PROPRE */
+/* ⭐ CERCLE BLANC PROPRE */
 .logo-wrap{
   position:absolute;
-  top:-65px;
+  top:-70px;
   left:50%;
   transform:translateX(-50%);
-  width:130px;
-  height:130px;
+  width:150px;
+  height:150px;
   border-radius:50%;
   background:#ffffff;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 18px 40px rgba(0,0,0,0.25);
-  overflow:hidden; /* ⭐ TRÈS IMPORTANT : cache le carré */
+  box-shadow:0 22px 50px rgba(0,0,0,0.28);
 }
 
-/* 🔥 LOGO FORCÉ EN CERCLE */
+/* ⭐ LOGO PLUS PETIT POUR MASQUER LE CARRÉ */
 .logo-wrap img{
-  width:120px;
-  height:120px;
-  object-fit:cover;
-  border-radius:50%; /* ⭐ coupe le carré */
+  width:90px;
+  height:auto;
+  display:block;
 }
 
 /* titre */
 h1{
   margin-top:10px;
   color:#1f2a37;
-  font-size:34px;
+  font-size:36px;
 }
 
 /* sous-titre */
 .subtitle{
   color:#6b7280;
-  margin:15px 0 30px;
+  margin:15px 0 32px;
 }
 
 /* bouton PDF */
@@ -71,11 +69,11 @@ h1{
   display:inline-block;
   background:#2f435b;
   color:white;
-  padding:16px 28px;
+  padding:17px 30px;
   border-radius:14px;
   text-decoration:none;
   font-weight:bold;
-  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+  box-shadow:0 12px 28px rgba(0,0,0,0.25);
   transition:.2s;
 }
 
@@ -85,18 +83,19 @@ h1{
 
 /* réseaux */
 .social{
-  margin-top:30px;
+  margin-top:32px;
 }
 
 .social a{
   display:inline-block;
   margin:0 8px;
   padding:10px 18px;
-  background:#eeeeee;
+  background:#ffffff;
   border-radius:12px;
   text-decoration:none;
-  color:#333;
+  color:#222;
   font-size:14px;
+  border:1px solid rgba(0,0,0,0.08);
 }
 </style>
 </head>
@@ -105,7 +104,7 @@ h1{
 
 <div class="card">
 
-  <!-- ✅ LOGO -->
+  <!-- LOGO -->
   <div class="logo-wrap">
     <img src="LOGO.jpg" alt="Festival Franco Mexicano">
   </div>
@@ -116,12 +115,10 @@ h1{
     Presentación e información oficial
   </div>
 
-  <!-- ✅ PDF -->
   <a class="btn" href="P1 FEST.pdf" target="_blank">
     Abrir la presentación (PDF)
   </a>
 
-  <!-- réseaux -->
   <div class="social">
     <a href="#">Instagram</a>
     <a href="#">X</a>
