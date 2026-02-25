@@ -3,188 +3,189 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#d8c9ac" />
   <title>Festival Franco-Mexicano</title>
+
+  <!-- Preview X / OpenGraph -->
+  <meta property="og:title" content="Festival Franco-Mexicano" />
+  <meta property="og:description" content="Presentación e información oficial" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.festival-franco-mexicano.com/" />
+  <meta property="og:image" content="https://www.festival-franco-mexicano.com/galerie-01.jpg" />
+  <meta property="og:image:alt" content="Festival Franco-Mexicano" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Festival Franco-Mexicano" />
+  <meta name="twitter:description" content="Presentación e información oficial" />
+  <meta name="twitter:image" content="https://www.festival-franco-mexicano.com/galerie-01.jpg" />
 
   <style>
     :root{
-      --bg1:#d7c5a6;
-      --bg2:#bfae8c;
-      --card:#efe4cf;
-      --text:#23313a;
-      --muted:rgba(35,49,58,.55);
-      --btn:#2f3b46;
-      --btnText:#fff;
-      --chip:#e9ddc7;
-      --shadow:0 18px 40px rgba(0,0,0,.18);
-      --radius:22px;
+      --bg1:#cdbb9c;
+      --bg2:#bfae93;
+      --card:#e9dfcf;
+      --text:#1e2a32;
+      --muted:#6b6b6b;
+      --btn:#27333c;
+      --btnText:#ffffff;
+      --chip:#efe7db;
+      --shadow: 0 18px 40px rgba(0,0,0,.25);
+      --radius: 22px;
     }
-
-    *{box-sizing:border-box}
+    *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
-      background: radial-gradient(1200px 600px at 50% 0%, rgba(255,255,255,.35), transparent 55%),
-                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      background: radial-gradient(1200px 700px at 50% 0%, var(--bg1), var(--bg2));
       min-height:100vh;
-      padding:38px 14px 60px;
+      display:flex;
+      justify-content:center;
+      padding: 48px 16px;
     }
-
     .wrap{
-      max-width:1050px;
-      margin:0 auto;
-      position:relative;
+      width:min(1020px, 96vw);
+      padding-top: 34px;
     }
-
     .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 54px 26px 26px;
       position:relative;
-      background: rgba(239,228,207,.92);
-      border-radius: 26px;
-      padding: 78px 22px 28px;
-      box-shadow: 0 28px 80px rgba(0,0,0,.18);
-      backdrop-filter: blur(6px);
     }
 
-    /* LOGO ROND PREMIUM */
     .logo-wrap{
       position:absolute;
-      left:50%;
-      top:-64px;                 /* ajuste la hauteur du badge */
-      transform:translateX(-50%);
-      width:132px;
-      height:132px;
-      border-radius:50%;
+      top: -52px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 124px;
+      height: 124px;
+      border-radius: 50%;
       background:#fff;
       display:flex;
       align-items:center;
       justify-content:center;
       box-shadow: var(--shadow);
-      overflow:hidden;           /* garantit le rond */
-      border: 6px solid rgba(255,255,255,.9);
+      overflow:hidden;
+      z-index: 5;
     }
     .logo{
-      width:112px;
-      height:112px;
-      object-fit:contain;
+      width: 92px;
+      height: 92px;
+      object-fit: contain;
       display:block;
-      border-radius:50%;         /* au cas où l’image a un fond */
     }
 
     h1{
-      margin:0;
+      margin: 0;
       text-align:center;
-      font-size:44px;
-      letter-spacing:.2px;
+      font-size: clamp(28px, 3.4vw, 44px);
+      letter-spacing: .2px;
+    }
+    .divider{
+      width:64px;
+      height:3px;
+      background:#b89b62;
+      border-radius: 999px;
+      margin: 12px auto 0;
+      opacity:.9;
     }
     .subtitle{
-      margin:10px 0 0;
+      margin-top: 8px;
       text-align:center;
-      color:var(--muted);
-      font-size:14px;
-    }
-    .edition{
-      margin:10px 0 0;
-      text-align:center;
-      color:var(--muted);
-      font-size:16px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .cta{
-      margin:22px auto 0;
       display:flex;
       justify-content:center;
+      margin: 18px 0 10px;
     }
     .btn{
-      background:var(--btn);
-      color:var(--btnText);
-      border:none;
-      padding:14px 22px;
-      border-radius:12px;
-      font-weight:700;
-      cursor:pointer;
+      display:inline-block;
+      background: var(--btn);
+      color: var(--btnText);
       text-decoration:none;
-      box-shadow: 0 14px 30px rgba(0,0,0,.22);
-      transition: transform .12s ease, box-shadow .12s ease;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 650;
+      box-shadow: 0 10px 20px rgba(0,0,0,.18);
     }
-    .btn:active{ transform: translateY(1px); }
 
-    .chips{
-      margin:18px auto 0;
+    .social{
       display:flex;
-      gap:12px;
+      gap: 10px;
       justify-content:center;
-      flex-wrap:wrap;
+      flex-wrap: wrap;
+      margin: 10px 0 8px;
     }
     .chip{
-      background:rgba(233,221,199,.9);
-      border:1px solid rgba(0,0,0,.06);
-      color:rgba(35,49,58,.8);
-      padding:10px 18px;
-      border-radius:999px;
+      background: var(--chip);
+      padding: 9px 14px;
+      border-radius: 14px;
       text-decoration:none;
-      font-weight:600;
-      min-width:120px;
+      color: var(--text);
+      font-weight: 600;
+      box-shadow: 0 6px 14px rgba(0,0,0,.10);
+      min-width: 110px;
       text-align:center;
-      box-shadow: 0 10px 20px rgba(0,0,0,.10);
     }
 
     .email{
-      margin:12px 0 0;
       text-align:center;
-      color:rgba(35,49,58,.50);
-      font-size:13px;
+      margin: 6px 0 16px;
+      font-size: 13px;
+      color:#5b5b5b;
+    }
+    .email a{ color:#5b5b5b; text-decoration:underline; }
+
+    .section-title{
+      text-align:center;
+      color:#777;
+      font-size: 13px;
+      margin: 10px 0 14px;
+      letter-spacing: .3px;
     }
 
-    .gallery-title{
-      margin:18px 0 12px;
-      text-align:center;
-      color:rgba(35,49,58,.45);
-      font-size:13px;
-      letter-spacing:.2px;
-    }
-
-    .grid{
+    .gallery{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-      padding: 0 10px 10px;
-      margin:0 auto;
-      max-width:980px;
+      gap: 14px;
+      padding: 0 8px 8px;
     }
-
-    .tile{
-      border-radius:18px;
-      background:rgba(255,255,255,.15);
-      overflow:hidden;
-      box-shadow: 0 14px 36px rgba(0,0,0,.14);
+    .ph{
+      width:100%;
       aspect-ratio: 16 / 9;
+      border-radius: 14px;
+      overflow:hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+      background:#fff;
     }
-    .tile img{
+    .ph img{
       width:100%;
       height:100%;
-      object-fit:cover;
+      object-fit: cover;
       display:block;
     }
 
     footer{
-      margin-top:18px;
       text-align:center;
-      color:rgba(35,49,58,.45);
-      font-size:12px;
+      color:#6e6e6e;
+      font-size: 12px;
+      margin-top: 14px;
+      padding-bottom: 6px;
     }
 
-    /* responsive */
-    @media (max-width: 860px){
-      h1{font-size:38px}
-      .grid{ grid-template-columns: repeat(2, 1fr); }
-      .card{ padding-top:76px; }
-      .logo-wrap{ top:-62px; }
+    @media (max-width: 880px){
+      body{ padding: 28px 12px; }
+      .card{ padding: 52px 18px 20px; }
+      .gallery{ grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 520px){
-      h1{font-size:32px}
-      .grid{ grid-template-columns: 1fr; }
-      .chip{ min-width: 44%; }
+      .gallery{ grid-template-columns: 1fr; }
+      .chip{ min-width: 100px; }
     }
   </style>
 </head>
@@ -192,104 +193,44 @@
 <body>
   <div class="wrap">
     <div class="card">
-
-      <!-- Logo : on essaie plusieurs noms possibles -->
       <div class="logo-wrap">
-        <img id="logoImg" class="logo" alt="Festival Franco-Mexicano" />
+        <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano" />
       </div>
 
       <h1>Festival Franco-Mexicano</h1>
-      <div class="edition">20ª edición</div>
+      <div class="divider"></div>
       <div class="subtitle">Presentación e información oficial</div>
 
       <div class="cta">
-        <!-- Mets ici ton PDF exact -->
-        <a class="btn" href="./P1_FEST.pdf" target="_blank" rel="noopener">Abrir la presentación (PDF)</a>
+        <a class="btn" href="P1%20FEST.pdf" target="_blank" rel="noopener">Abrir la presentación (PDF)</a>
       </div>
 
-      <div class="chips">
-        <a class="chip" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-        <a class="chip" href="https://x.com/" target="_blank" rel="noopener">X</a>
-        <a class="chip" href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
+      <div class="social">
+        <a class="chip" href="https://www.instagram.com/festivalfrancomexicano/" target="_blank" rel="noopener">Instagram</a>
+        <a class="chip" href="https://x.com/festivalfrances" target="_blank" rel="noopener">X</a>
+        <a class="chip" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank" rel="noopener">Facebook</a>
       </div>
 
-      <div class="email">festival.frances@gmail.com</div>
+      <div class="email">
+        <a href="mailto:festival.frances@gmail.com">festival.frances@gmail.com</a>
+      </div>
 
-      <div class="gallery-title">Galería de fotos</div>
+      <div class="section-title">Galería de fotos</div>
 
-      <div id="grid" class="grid"></div>
+      <div class="gallery">
+        <div class="ph"><img src="galerie-01.jpg" alt="Galería 1" loading="lazy"></div>
+        <div class="ph"><img src="galerie-02.jpg" alt="Galería 2" loading="lazy"></div>
+        <div class="ph"><img src="galerie-03.jpg" alt="Galería 3" loading="lazy"></div>
+        <div class="ph"><img src="galerie-04.jpg" alt="Galería 4" loading="lazy"></div>
+        <div class="ph"><img src="galerie-05.jpg" alt="Galería 5" loading="lazy"></div>
+        <div class="ph"><img src="galerie-06.jpg" alt="Galería 6" loading="lazy"></div>
+        <div class="ph"><img src="galerie-07.jpg" alt="Galería 7" loading="lazy"></div>
+        <div class="ph"><img src="galerie-08.jpg" alt="Galería 8" loading="lazy"></div>
+        <div class="ph"><img src="galerie-09.jpg" alt="Galería 9" loading="lazy"></div>
+      </div>
 
       <footer>© Festival Franco-Mexicano</footer>
     </div>
   </div>
-
-  <script>
-    // 1) LOGO : on tente plusieurs fichiers possibles (sans casser si ça change)
-    const logoCandidates = [
-      "./logo.png","./logo.jpg","./Logo.jpg","./LOGO.jpg",
-      "./logo20.png","./logo20.jpg"
-    ];
-
-    async function firstExisting(urls){
-      for (const u of urls){
-        const ok = await new Promise(res=>{
-          const img = new Image();
-          img.onload = ()=>res(true);
-          img.onerror = ()=>res(false);
-          img.src = u + "?v=" + Date.now(); // bypass cache
-        });
-        if(ok) return u;
-      }
-      return null;
-    }
-
-    (async ()=>{
-      const logoUrl = await firstExisting(logoCandidates);
-      const logoImg = document.getElementById("logoImg");
-      if(logoUrl){
-        logoImg.src = logoUrl;
-      } else {
-        // si aucun logo trouvé : on cache le badge
-        document.querySelector(".logo-wrap").style.display = "none";
-      }
-
-      // 2) GALERIE : on essaie automatiquement plusieurs conventions de noms
-      const grid = document.getElementById("grid");
-
-      const candidatesForIndex = (i)=>{
-        const n1 = String(i);
-        const n2 = String(i).padStart(2,"0");
-        return [
-          ./${n1}.jpg, ./${n1}.png, ./${n1}.jpeg,
-          ./${n2}.jpg, ./${n2}.png, ./${n2}.jpeg,
-          ./galerie-${n1}.jpg, ./galerie-${n2}.jpg,
-          ./Galerie-${n2}.jpg,
-          ./photo-${n1}.jpg, ./photo-${n2}.jpg,
-          ./img/${n1}.jpg, ./img/${n2}.jpg,
-          ./img/galerie-${n2}.jpg, ./img/photo-${n2}.jpg
-        ];
-      };
-
-      for(let i=1;i<=9;i++){
-        const url = await firstExisting(candidatesForIndex(i));
-        if(!url) continue; // si pas trouvé, on n'affiche pas le cadre
-
-        const tile = document.createElement("div");
-        tile.className = "tile";
-        const img = document.createElement("img");
-        img.loading = "lazy";
-        img.alt = Foto ${i};
-        img.src = url + "?v=" + Date.now();
-        tile.appendChild(img);
-        grid.appendChild(tile);
-      }
-
-      // Si aucune photo trouvée, on masque le bloc galerie (propre)
-      if(grid.children.length === 0){
-        document.querySelector(".gallery-title").style.display = "none";
-        grid.style.display = "none";
-      }
-    })();
-  </script>
 </body>
 </html>
