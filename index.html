@@ -5,17 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Festival Franco-Mexicano</title>
 
-  <!-- Open Graph / X (Twitter) preview -->
+  <!-- Preview X / OpenGraph -->
   <meta property="og:title" content="Festival Franco-Mexicano" />
   <meta property="og:description" content="Presentación e información oficial" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://festival-franco-mexicano.com/" />
-  <meta property="og:image" content="https://festival-franco-mexicano.com/galeria-01.jpg" />
+  <meta property="og:url" content="https://www.festival-franco-mexicano.com/" />
+  <meta property="og:image" content="https://www.festival-franco-mexicano.com/galerie-01.jpg" />
+  <meta property="og:image:alt" content="Festival Franco-Mexicano" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Festival Franco-Mexicano" />
   <meta name="twitter:description" content="Presentación e información oficial" />
-  <meta name="twitter:image" content="https://festival-franco-mexicano.com/galeria-01.jpg" />
+  <meta name="twitter:image" content="https://www.festival-franco-mexicano.com/galerie-01.jpg" />
 
   <style>
     :root{
@@ -38,14 +39,12 @@
       background: radial-gradient(1200px 700px at 50% 0%, var(--bg1), var(--bg2));
       min-height:100vh;
       display:flex;
-      align-items:flex-start;
       justify-content:center;
       padding: 48px 16px;
     }
     .wrap{
       width:min(1020px, 96vw);
-      position:relative;
-      padding-top: 34px; /* espace pour le logo rond */
+      padding-top: 34px;
     }
     .card{
       background: var(--card);
@@ -53,13 +52,11 @@
       box-shadow: var(--shadow);
       padding: 54px 26px 26px;
       position:relative;
-      overflow: visible;
     }
 
-    /* Logo rond AU-DESSUS du titre, sans couper */
     .logo-wrap{
       position:absolute;
-      top: -52px;      /* ajuste ici si tu veux encore + bas/haut */
+      top: -52px;
       left: 50%;
       transform: translateX(-50%);
       width: 124px;
@@ -86,12 +83,6 @@
       font-size: clamp(28px, 3.4vw, 44px);
       letter-spacing: .2px;
     }
-    .subtitle{
-      margin-top: 8px;
-      text-align:center;
-      color: var(--muted);
-      font-size: 14px;
-    }
     .divider{
       width:64px;
       height:3px;
@@ -100,10 +91,15 @@
       margin: 12px auto 0;
       opacity:.9;
     }
+    .subtitle{
+      margin-top: 8px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
     .cta{
       display:flex;
-      align-items:center;
       justify-content:center;
       margin: 18px 0 10px;
     }
@@ -116,9 +112,7 @@
       border-radius: 14px;
       font-weight: 650;
       box-shadow: 0 10px 20px rgba(0,0,0,.18);
-      transition: transform .06s ease;
     }
-    .btn:active{ transform: translateY(1px); }
 
     .social{
       display:flex;
@@ -135,10 +129,8 @@
       color: var(--text);
       font-weight: 600;
       box-shadow: 0 6px 14px rgba(0,0,0,.10);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
       min-width: 110px;
+      text-align:center;
     }
 
     .email{
@@ -157,7 +149,6 @@
       letter-spacing: .3px;
     }
 
-    /* Galerie */
     .gallery{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
@@ -187,7 +178,6 @@
       padding-bottom: 6px;
     }
 
-    /* Responsive tablette / mobile */
     @media (max-width: 880px){
       body{ padding: 28px 12px; }
       .card{ padding: 52px 18px 20px; }
@@ -203,7 +193,6 @@
 <body>
   <div class="wrap">
     <div class="card">
-      <!-- Logo -->
       <div class="logo-wrap">
         <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano" />
       </div>
@@ -213,15 +202,13 @@
       <div class="subtitle">Presentación e información oficial</div>
 
       <div class="cta">
-        <!-- Si ton PDF a un autre nom, change-le ici -->
         <a class="btn" href="P1%20FEST.pdf" target="_blank" rel="noopener">Abrir la presentación (PDF)</a>
       </div>
 
       <div class="social">
-        <!-- Mets tes vrais liens ici si tu veux -->
-        <a class="chip" href="#" onclick="return false;">Instagram</a>
-        <a class="chip" href="#" onclick="return false;">X</a>
-        <a class="chip" href="#" onclick="return false;">Facebook</a>
+        <a class="chip" href="https://www.instagram.com/festivalfrancomexicano/" target="_blank" rel="noopener">Instagram</a>
+        <a class="chip" href="https://x.com/festivalfrances" target="_blank" rel="noopener">X</a>
+        <a class="chip" href="https://www.facebook.com/share/1T8RqWa9Av/" target="_blank" rel="noopener">Facebook</a>
       </div>
 
       <div class="email">
@@ -231,15 +218,15 @@
       <div class="section-title">Galería de fotos</div>
 
       <div class="gallery">
-        <div class="ph"><img src="galeria-01.jpg" alt="Galería 1"></div>
-        <div class="ph"><img src="galeria-02.jpg" alt="Galería 2"></div>
-        <div class="ph"><img src="galeria-03.jpg" alt="Galería 3"></div>
-        <div class="ph"><img src="galeria-04.jpg" alt="Galería 4"></div>
-        <div class="ph"><img src="galeria-05.jpg" alt="Galería 5"></div>
-        <div class="ph"><img src="galeria-06.jpg" alt="Galería 6"></div>
-        <div class="ph"><img src="galeria-07.jpg" alt="Galería 7"></div>
-        <div class="ph"><img src="galeria-08.jpg" alt="Galería 8"></div>
-        <div class="ph"><img src="galeria-09.jpg" alt="Galería 9"></div>
+        <div class="ph"><img src="galerie-01.jpg" alt="Galería 1" loading="lazy"></div>
+        <div class="ph"><img src="galerie-02.jpg" alt="Galería 2" loading="lazy"></div>
+        <div class="ph"><img src="galerie-03.jpg" alt="Galería 3" loading="lazy"></div>
+        <div class="ph"><img src="galerie-04.jpg" alt="Galería 4" loading="lazy"></div>
+        <div class="ph"><img src="galerie-05.jpg" alt="Galería 5" loading="lazy"></div>
+        <div class="ph"><img src="galerie-06.jpg" alt="Galería 6" loading="lazy"></div>
+        <div class="ph"><img src="galerie-07.jpg" alt="Galería 7" loading="lazy"></div>
+        <div class="ph"><img src="galerie-08.jpg" alt="Galería 8" loading="lazy"></div>
+        <div class="ph"><img src="galerie-09.jpg" alt="Galería 9" loading="lazy"></div>
       </div>
 
       <footer>© Festival Franco-Mexicano</footer>
