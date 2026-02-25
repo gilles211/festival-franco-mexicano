@@ -1,179 +1,295 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Festival Franco-Mexicano</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#d8c9ac" />
+  <title>Festival Franco-Mexicano</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  <style>
+    :root{
+      --bg1:#d7c5a6;
+      --bg2:#bfae8c;
+      --card:#efe4cf;
+      --text:#23313a;
+      --muted:rgba(35,49,58,.55);
+      --btn:#2f3b46;
+      --btnText:#fff;
+      --chip:#e9ddc7;
+      --shadow:0 18px 40px rgba(0,0,0,.18);
+      --radius:22px;
+    }
 
-body{
-  background: linear-gradient(135deg,#bfa77a,#d8c7a3);
-  min-height:100vh;
-  padding:40px 20px;
-}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 50% 0%, rgba(255,255,255,.35), transparent 55%),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      min-height:100vh;
+      padding:38px 14px 60px;
+    }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  background:#efe6d3;
-  border-radius:22px;
-  padding:90px 30px 40px;
-  position:relative;
-  box-shadow:0 25px 60px rgba(0,0,0,.25);
-}
+    .wrap{
+      max-width:1050px;
+      margin:0 auto;
+      position:relative;
+    }
 
-/* ===== LOGO PREMIUM ===== */
+    .card{
+      position:relative;
+      background: rgba(239,228,207,.92);
+      border-radius: 26px;
+      padding: 78px 22px 28px;
+      box-shadow: 0 28px 80px rgba(0,0,0,.18);
+      backdrop-filter: blur(6px);
+    }
 
-.logo-wrap{
-  position:absolute;
-  top:-55px;
-  left:50%;
-  transform:translateX(-50%);
-  width:130px;
-  height:130px;
-  border-radius:50%;
-  background:#ffffff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 18px 40px rgba(0,0,0,.25);
-  overflow:hidden;
-}
+    /* LOGO ROND PREMIUM */
+    .logo-wrap{
+      position:absolute;
+      left:50%;
+      top:-64px;                 /* ajuste la hauteur du badge */
+      transform:translateX(-50%);
+      width:132px;
+      height:132px;
+      border-radius:50%;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: var(--shadow);
+      overflow:hidden;           /* garantit le rond */
+      border: 6px solid rgba(255,255,255,.9);
+    }
+    .logo{
+      width:112px;
+      height:112px;
+      object-fit:contain;
+      display:block;
+      border-radius:50%;         /* au cas où l’image a un fond */
+    }
 
-.logo{
-  width:105px;
-  height:105px;
-  object-fit:contain;
-  border-radius:50%;
-  display:block;
-}
+    h1{
+      margin:0;
+      text-align:center;
+      font-size:44px;
+      letter-spacing:.2px;
+    }
+    .subtitle{
+      margin:10px 0 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .edition{
+      margin:10px 0 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:16px;
+    }
 
-/* ===== TITRES ===== */
+    .cta{
+      margin:22px auto 0;
+      display:flex;
+      justify-content:center;
+    }
+    .btn{
+      background:var(--btn);
+      color:var(--btnText);
+      border:none;
+      padding:14px 22px;
+      border-radius:12px;
+      font-weight:700;
+      cursor:pointer;
+      text-decoration:none;
+      box-shadow: 0 14px 30px rgba(0,0,0,.22);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .btn:active{ transform: translateY(1px); }
 
-h1{
-  text-align:center;
-  color:#243746;
-  font-size:38px;
-  margin-bottom:6px;
-}
+    .chips{
+      margin:18px auto 0;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .chip{
+      background:rgba(233,221,199,.9);
+      border:1px solid rgba(0,0,0,.06);
+      color:rgba(35,49,58,.8);
+      padding:10px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      min-width:120px;
+      text-align:center;
+      box-shadow: 0 10px 20px rgba(0,0,0,.10);
+    }
 
-.subtitle{
-  text-align:center;
-  color:#7a7a7a;
-  margin-bottom:25px;
-}
+    .email{
+      margin:12px 0 0;
+      text-align:center;
+      color:rgba(35,49,58,.50);
+      font-size:13px;
+    }
 
-/* ===== BOUTON ===== */
+    .gallery-title{
+      margin:18px 0 12px;
+      text-align:center;
+      color:rgba(35,49,58,.45);
+      font-size:13px;
+      letter-spacing:.2px;
+    }
 
-.btn{
-  display:block;
-  width:max-content;
-  margin:0 auto 20px;
-  background:#243746;
-  color:white;
-  padding:14px 26px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+      padding: 0 10px 10px;
+      margin:0 auto;
+      max-width:980px;
+    }
 
-/* ===== RESEAUX ===== */
+    .tile{
+      border-radius:18px;
+      background:rgba(255,255,255,.15);
+      overflow:hidden;
+      box-shadow: 0 14px 36px rgba(0,0,0,.14);
+      aspect-ratio: 16 / 9;
+    }
+    .tile img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
 
-.social{
-  text-align:center;
-  margin-bottom:10px;
-}
+    footer{
+      margin-top:18px;
+      text-align:center;
+      color:rgba(35,49,58,.45);
+      font-size:12px;
+    }
 
-.social a{
-  display:inline-block;
-  background:#e5dcc8;
-  padding:10px 18px;
-  margin:5px;
-  border-radius:20px;
-  text-decoration:none;
-  color:#333;
-  font-size:14px;
-}
-
-.email{
-  text-align:center;
-  font-size:14px;
-  color:#6b6b6b;
-  margin-bottom:30px;
-}
-
-/* ===== GALERIE ===== */
-
-.gallery-title{
-  text-align:center;
-  color:#7a7a7a;
-  margin-bottom:15px;
-  font-size:14px;
-}
-
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:18px;
-}
-
-.gallery img{
-  width:100%;
-  height:170px;
-  object-fit:cover;
-  border-radius:14px;
-  box-shadow:0 10px 25px rgba(0,0,0,.25);
-}
-</style>
+    /* responsive */
+    @media (max-width: 860px){
+      h1{font-size:38px}
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .card{ padding-top:76px; }
+      .logo-wrap{ top:-62px; }
+    }
+    @media (max-width: 520px){
+      h1{font-size:32px}
+      .grid{ grid-template-columns: 1fr; }
+      .chip{ min-width: 44%; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="wrap">
+    <div class="card">
 
-<div class="container">
+      <!-- Logo : on essaie plusieurs noms possibles -->
+      <div class="logo-wrap">
+        <img id="logoImg" class="logo" alt="Festival Franco-Mexicano" />
+      </div>
 
-  <!-- LOGO -->
-  <div class="logo-wrap">
-    <img src="logo.png" alt="Festival Franco-Mexicano" class="logo">
+      <h1>Festival Franco-Mexicano</h1>
+      <div class="edition">20ª edición</div>
+      <div class="subtitle">Presentación e información oficial</div>
+
+      <div class="cta">
+        <!-- Mets ici ton PDF exact -->
+        <a class="btn" href="./P1_FEST.pdf" target="_blank" rel="noopener">Abrir la presentación (PDF)</a>
+      </div>
+
+      <div class="chips">
+        <a class="chip" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a class="chip" href="https://x.com/" target="_blank" rel="noopener">X</a>
+        <a class="chip" href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+
+      <div class="email">festival.frances@gmail.com</div>
+
+      <div class="gallery-title">Galería de fotos</div>
+
+      <div id="grid" class="grid"></div>
+
+      <footer>© Festival Franco-Mexicano</footer>
+    </div>
   </div>
 
-  <h1>Festival Franco-Mexicano</h1>
-  <div class="subtitle">20ª edición</div>
+  <script>
+    // 1) LOGO : on tente plusieurs fichiers possibles (sans casser si ça change)
+    const logoCandidates = [
+      "./logo.png","./logo.jpg","./Logo.jpg","./LOGO.jpg",
+      "./logo20.png","./logo20.jpg"
+    ];
 
-  <a class="btn" href="presentacion.pdf" target="_blank">
-    Abrir la presentación (PDF)
-  </a>
+    async function firstExisting(urls){
+      for (const u of urls){
+        const ok = await new Promise(res=>{
+          const img = new Image();
+          img.onload = ()=>res(true);
+          img.onerror = ()=>res(false);
+          img.src = u + "?v=" + Date.now(); // bypass cache
+        });
+        if(ok) return u;
+      }
+      return null;
+    }
 
-  <div class="social">
-    <a href="#">Instagram</a>
-    <a href="#">X</a>
-    <a href="#">Facebook</a>
-  </div>
+    (async ()=>{
+      const logoUrl = await firstExisting(logoCandidates);
+      const logoImg = document.getElementById("logoImg");
+      if(logoUrl){
+        logoImg.src = logoUrl;
+      } else {
+        // si aucun logo trouvé : on cache le badge
+        document.querySelector(".logo-wrap").style.display = "none";
+      }
 
-  <div class="email">festival.frances@gmail.com</div>
+      // 2) GALERIE : on essaie automatiquement plusieurs conventions de noms
+      const grid = document.getElementById("grid");
 
-  <div class="gallery-title">Galería de fotos</div>
+      const candidatesForIndex = (i)=>{
+        const n1 = String(i);
+        const n2 = String(i).padStart(2,"0");
+        return [
+          ./${n1}.jpg, ./${n1}.png, ./${n1}.jpeg,
+          ./${n2}.jpg, ./${n2}.png, ./${n2}.jpeg,
+          ./galerie-${n1}.jpg, ./galerie-${n2}.jpg,
+          ./Galerie-${n2}.jpg,
+          ./photo-${n1}.jpg, ./photo-${n2}.jpg,
+          ./img/${n1}.jpg, ./img/${n2}.jpg,
+          ./img/galerie-${n2}.jpg, ./img/photo-${n2}.jpg
+        ];
+      };
 
-  <div class="gallery">
-    <img src="foto1.jpg">
-    <img src="foto2.jpg">
-    <img src="foto3.jpg">
-    <img src="foto4.jpg">
-    <img src="foto5.jpg">
-    <img src="foto6.jpg">
-    <img src="foto7.jpg">
-    <img src="foto8.jpg">
-    <img src="foto9.jpg">
-  </div>
+      for(let i=1;i<=9;i++){
+        const url = await firstExisting(candidatesForIndex(i));
+        if(!url) continue; // si pas trouvé, on n'affiche pas le cadre
 
-</div>
+        const tile = document.createElement("div");
+        tile.className = "tile";
+        const img = document.createElement("img");
+        img.loading = "lazy";
+        img.alt = Foto ${i};
+        img.src = url + "?v=" + Date.now();
+        tile.appendChild(img);
+        grid.appendChild(tile);
+      }
 
+      // Si aucune photo trouvée, on masque le bloc galerie (propre)
+      if(grid.children.length === 0){
+        document.querySelector(".gallery-title").style.display = "none";
+        grid.style.display = "none";
+      }
+    })();
+  </script>
 </body>
 </html>
