@@ -1,5 +1,178 @@
-<div class="social">
-  <a href="https://www.instagram.com/festivalfrancomexicano" target="_blank" rel="noopener noreferrer">Instagram</a>
-  <a href="https://x.com/festivalfrances" target="_blank" rel="noopener noreferrer">X</a>
-  <a href="https://www.facebook.com/share/17njmKGrgN/" target="_blank" rel="noopener noreferrer">Facebook</a>
-</div>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Festival Franco-Mexicano</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(#cdb892,#e6d6b8);
+    }
+
+    .card{
+      max-width:980px;
+      margin:60px auto;
+      background:#efe4cd;
+      border-radius:22px;
+      padding:86px 20px 30px;
+      position:relative;
+      box-shadow:0 20px 40px rgba(0,0,0,.2);
+    }
+
+    /* LOGO ROND */
+    .logo-wrap{
+      position:absolute;
+      top:-64px;                 /* remonte/descend le logo ici */
+      left:50%;
+      transform:translateX(-50%);
+      width:132px;
+      height:132px;
+      border-radius:50%;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 18px 40px rgba(0,0,0,.25);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .logo{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    h1{
+      text-align:center;
+      margin:10px 0 0;
+      color:#24313c;
+      font-size:42px;
+      letter-spacing:.2px;
+    }
+
+    .edition{
+      text-align:center;
+      color:#666;
+      margin:10px 0 18px;
+      font-size:14px;
+    }
+
+    .btn{
+      display:block;
+      width:260px;
+      margin:18px auto;
+      text-align:center;
+      background:#2f4050;
+      color:#fff;
+      padding:12px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .social{
+      text-align:center;
+      margin:10px 0 6px;
+    }
+
+    .social a{
+      display:inline-block;
+      background:#f3eadb;
+      padding:8px 16px;
+      margin:4px;
+      border-radius:20px;
+      text-decoration:none;
+      color:#333;
+    }
+
+    .email{
+      text-align:center;
+      font-size:13px;
+      margin:10px 0 18px;
+      color:#666;
+    }
+
+    .section-title{
+      text-align:center;
+      color:#666;
+      margin:0 0 14px;
+      font-size:14px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .ph{
+      border-radius:14px;
+      overflow:hidden;
+      background:#ddd;
+      aspect-ratio:16/9;
+      box-shadow:0 10px 20px rgba(0,0,0,.12);
+    }
+
+    .ph img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    @media(max-width:800px){
+      .grid{grid-template-columns:repeat(2,1fr);}
+      h1{font-size:34px;}
+    }
+
+    @media(max-width:500px){
+      .grid{grid-template-columns:1fr;}
+      .card{margin:30px 12px; padding-top:92px;}
+      .logo-wrap{top:-70px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+
+    <div class="logo-wrap">
+      <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano">
+    </div>
+
+    <h1>Festival Franco-Mexicano</h1>
+    <div class="edition">20ª edición</div>
+
+    <a class="btn" href="P1 FEST.pdf" target="_blank" rel="noopener">
+      Abrir la presentación (PDF)
+    </a>
+
+    <div class="social">
+      <a href="https://www.instagram.com/festivalfrancomexicano" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/festivalfrances" target="_blank" rel="noopener">X</a>
+      <a href="https://www.facebook.com/share/17njmKGrgN/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+
+    <div class="email">festival.frances@gmail.com</div>
+
+    <div class="section-title">Galería de fotos</div>
+
+    <div class="grid">
+      <div class="ph"><img src="galerie-01.jpg" alt=""></div>
+      <div class="ph"><img src="galerie-02.jpg" alt=""></div>
+      <div class="ph"><img src="galerie-03.jpg" alt=""></div>
+      <div class="ph"><img src="galerie-04.jpg" alt=""></div>
+      <div class="ph"><img src="galerie-05.jpg" alt=""></div>
+      <div class="ph"><img src="galerie-06.jpg" alt=""></div>
+      <div class="ph"><img src="galerie-07.jpg" alt=""></div>
+      <div class="ph"><img src="galerie-08.jpg" alt=""></div>
+      <div class="ph"><img src="galerie-09.jpg" alt=""></div>
+    </div>
+
+  </div>
+</body>
+</html>
