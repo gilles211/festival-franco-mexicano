@@ -45,7 +45,7 @@ body{
 /* TITRES */
 h1{
   text-align:center;
-  margin:10px 0 0;
+  margin-top:10px;
 }
 
 .edition{
@@ -68,7 +68,7 @@ h1{
   font-weight:bold;
 }
 
-/* SOCIAL */
+/* RÉSEAUX */
 .social{
   text-align:center;
   margin-bottom:10px;
@@ -94,16 +94,15 @@ h1{
 
 /* VIDEO */
 .video{
-  margin:30px auto;
-  max-width:900px;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  margin:20px auto;
+  max-width:320px;
 }
 
-video{
+.video iframe{
   width:100%;
-  display:block;
+  height:560px;
+  border:none;
+  border-radius:14px;
 }
 
 /* GALERIE */
@@ -140,17 +139,20 @@ video{
 
 <div class="card">
 
+  <!-- LOGO -->
   <div class="logo-wrap">
-    <img class="logo" src="LOGO.jpg">
+    <img class="logo" src="LOGO.jpg" alt="Festival Franco-Mexicano">
   </div>
 
   <h1>Festival Franco-Mexicano</h1>
   <div class="edition">20ª edición</div>
 
+  <!-- PDF -->
   <a class="btn" href="P1 FEST.pdf" target="_blank">
     Abrir la presentación (PDF)
   </a>
 
+  <!-- RÉSEAUX -->
   <div class="social">
     <a href="https://www.instagram.com/festivalfrancomexicano" target="_blank">Instagram</a>
     <a href="https://x.com/festivalfrances" target="_blank">X</a>
@@ -159,17 +161,18 @@ video{
 
   <div class="email">festival.frances@gmail.com</div>
 
-  <!-- 🎬 VIDEO -->
+  <!-- 🎥 VIDEO YOUTUBE -->
   <div class="video">
-    <video controls autoplay muted loop>
-      <source src="20FFM_CLIP_202604_145416_0000.MP4" type="video/mp4">
-    </video>
+    <iframe src="https://www.youtube.com/embed/bL5lLWIeA1Y"
+      allowfullscreen>
+    </iframe>
   </div>
 
   <div style="text-align:center;color:#666;margin-bottom:14px;">
     Galería de fotos
   </div>
 
+  <!-- GALERIE -->
   <div class="grid">
     <div class="ph"><img src="galerie-01.jpg"></div>
     <div class="ph"><img src="galerie-02.jpg"></div>
