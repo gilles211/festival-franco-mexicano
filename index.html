@@ -22,7 +22,7 @@ body{
   box-shadow:0 20px 40px rgba(0,0,0,.2);
 }
 
-/* LOGO ROND FIXÉ */
+/* LOGO */
 .logo-wrap{
   position:absolute;
   top:-65px;
@@ -43,10 +43,10 @@ body{
 }
 
 /* TITRES */
+
 h1{
   text-align:center;
-  margin-top:10px;
-  color:#2f4050;
+  margin:10px 0;
 }
 
 .edition{
@@ -55,11 +55,12 @@ h1{
   margin-bottom:20px;
 }
 
-/* BOUTONS */
+/* BOUTON */
+
 .btn{
   display:block;
   width:260px;
-  margin:15px auto;
+  margin:20px auto;
   text-align:center;
   background:#2f4050;
   color:#fff;
@@ -69,7 +70,8 @@ h1{
   font-weight:bold;
 }
 
-/* RESEAUX */
+/* SOCIAL */
+
 .social{
   text-align:center;
   margin-bottom:10px;
@@ -86,6 +88,7 @@ h1{
 }
 
 /* EMAIL */
+
 .email{
   text-align:center;
   font-size:13px;
@@ -93,7 +96,24 @@ h1{
   color:#666;
 }
 
+/* YOUTUBE */
+
+.video{
+  margin:20px auto;
+  max-width:700px;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.video iframe{
+  width:100%;
+  height:400px;
+  border:none;
+}
+
 /* GALERIE */
+
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -119,6 +139,7 @@ h1{
 
 @media(max-width:500px){
   .grid{grid-template-columns:1fr;}
+  .video iframe{height:220px;}
 }
 </style>
 </head>
@@ -140,12 +161,7 @@ h1{
     Abrir la presentación (PDF)
   </a>
 
-  <!-- VIDEO -->
-  <a class="btn" href="20FFM_CLIP_202604_145416_0000.MP4" target="_blank">
-    VIDEO
-  </a>
-
-  <!-- RESEAUX -->
+  <!-- SOCIAL -->
   <div class="social">
     <a href="https://www.instagram.com/festivalfrancomexicano" target="_blank">Instagram</a>
     <a href="https://x.com/festivalfrances" target="_blank">X</a>
@@ -153,6 +169,11 @@ h1{
   </div>
 
   <div class="email">festival.frances@gmail.com</div>
+
+  <!-- 🎬 YOUTUBE -->
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+  </div>
 
   <div style="text-align:center;color:#666;margin-bottom:14px;">
     Galería de fotos
