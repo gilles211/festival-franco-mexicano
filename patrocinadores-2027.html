@@ -1,0 +1,560 @@
+patrocinadores-2027.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patrocinadores 2027 — Festival Franco-Mexicano de Gastronomía</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:  #1C3F6E;
+      --gold:  #B8963E;
+      --gold-light: #D4AE5A;
+      --cream: #FAF7F2;
+      --dark:  #111111;
+      --mid:   #555555;
+      --rule:  #D9C99A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      color: var(--dark);
+      background: var(--cream);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      color: #fff;
+      padding: 72px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 0%, rgba(184,150,62,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      max-width: 700px;
+      margin: 0 auto 18px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      max-width: 480px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(184,150,62,0.3);
+      padding-top: 32px;
+      margin-top: 8px;
+    }
+    .hero-stat strong {
+      display: block;
+      font-family: 'EB Garamond', serif;
+      font-size: 2.4rem;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .hero-stat span {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 72px 24px; }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    p {
+      color: var(--mid);
+      font-size: 15px;
+      margin-bottom: 16px;
+      max-width: 620px;
+    }
+
+    /* ── RULE DIVIDER ── */
+    .rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0;
+    }
+
+    /* ── PHOTO PLACEHOLDER ── */
+    .photo-band {
+      background: var(--navy);
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 3px;
+    }
+    .photo-band img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.88) saturate(0.9);
+      transition: filter 0.3s;
+    }
+    .photo-band img:hover {
+      filter: brightness(1) saturate(1.1);
+    }
+    @media (max-width: 700px) {
+      .photo-band { grid-template-columns: repeat(3, 1fr); }
+      .photo-band img { height: 110px; }
+    }
+
+    /* ── BENEFICIOS GRID ── */
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin-top: 36px;
+    }
+    .beneficio {
+      background: var(--cream);
+      padding: 28px 24px;
+    }
+    .beneficio-icon {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .beneficio h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .beneficio p {
+      font-size: 13px;
+      margin: 0;
+      color: var(--mid);
+      max-width: none;
+    }
+
+    /* ── TIEMPOS FUERTES ── */
+    .tiempos {
+      background: var(--navy);
+      color: #fff;
+    }
+    .tiempos .container {}
+    .tiempos .section-label { color: var(--gold-light); }
+    .tiempos h2 { color: #fff; }
+    .tiempos p { color: rgba(255,255,255,0.6); }
+    .tiempos-list {
+      margin-top: 32px;
+      display: grid;
+      gap: 1px;
+      background: rgba(184,150,62,0.2);
+    }
+    .tiempo-item {
+      background: rgba(255,255,255,0.04);
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .tiempo-num {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      line-height: 1;
+      min-width: 28px;
+    }
+    .tiempo-text h4 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+    .tiempo-text p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+    }
+
+    /* ── ALIADOS ── */
+    .aliados-logos {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .aliado-tag {
+      background: #fff;
+      border: 1px solid var(--rule);
+      padding: 10px 18px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--navy);
+    }
+
+    /* ── FORMULARIO ── */
+    .formulario-section {
+      background: #fff;
+      border-top: 3px solid var(--gold);
+    }
+    .formulario-section h2 { margin-bottom: 8px; }
+    .formulario-section > .container > p { margin-bottom: 32px; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 520px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+    .form-full { grid-column: 1 / -1; }
+
+    label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #D5CAB8;
+      background: var(--cream);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+      border-radius: 0;
+      appearance: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold);
+    }
+    textarea { resize: vertical; min-height: 90px; }
+
+    .btn-submit {
+      margin-top: 24px;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      padding: 16px 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+    .btn-submit:hover { background: var(--gold); }
+
+    .form-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+    }
+
+    /* ── SUCCESS ── */
+    #success-msg {
+      display: none;
+      background: #EEF5E8;
+      border: 1px solid #8BB870;
+      padding: 20px 24px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: #3A6B24;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+    footer strong { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 600px) {
+      .hero-stats { gap: 24px; }
+      section { padding: 52px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-eyebrow">XXI Edición · Ciudad de México · 2027</p>
+  <h1>Un puente entre dos <em>culturas gastronómicas</em></h1>
+  <p class="hero-sub">Únase a los patrocinadores del Festival Franco-Mexicano de Gastronomía y posicione su marca en el corazón de la cooperación culinaria bilateral.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>21</strong><span>años de historia</span></div>
+    <div class="hero-stat"><strong>2004</strong><span>fundado en Acapulco</span></div>
+    <div class="hero-stat"><strong>2</strong><span>países, una visión</span></div>
+  </div>
+</header>
+
+<!-- FOTOS -->
+<div class="photo-band">
+  <img src="https://festival-franco-mexicano.com/galerie-01.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-02.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-03.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-04.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-05.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-06.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-07.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-08.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-09.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-10.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-11.jpg" alt="Festival Franco-Mexicano" />
+  <img src="https://festival-franco-mexicano.com/galerie-12.jpg" alt="Festival Franco-Mexicano" />
+</div>
+
+<hr class="rule" />
+
+<!-- EL FESTIVAL -->
+<section>
+  <div class="container">
+    <p class="section-label">El Festival</p>
+    <h2>Gastronomía, formación y cooperación desde 2004</h2>
+    <p>El Festival Franco-Mexicano de Gastronomía es el único evento binacional de su tipo en América Latina. Durante más de dos décadas ha reunido a chefs, instituciones culinarias, diplomáticos y empresas comprometidas con el diálogo entre la cocina francesa y la mexicana.</p>
+    <p>La XXI edición se celebrará en <strong>Ciudad de México en 2027</strong>, con el respaldo de la Académie Culinaire de France, el Colegio Superior de Gastronomía y redes de cooperación franco-mexicanas activas desde 1826.</p>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- BENEFICIOS -->
+<section>
+  <div class="container">
+    <p class="section-label">¿Por qué patrocinar?</p>
+    <h2>Su marca, en el centro de la excelencia culinaria bilateral</h2>
+    <p>El festival reúne a un público calificado: chefs, directores de instituciones, diplomáticos, periodistas gastronómicos y empresas del sector alimentario y cultural. Un entorno privilegiado para la visibilidad y la construcción de relaciones.</p>
+    <div class="beneficios-grid">
+      <div class="beneficio">
+        <div class="beneficio-icon">🏅</div>
+        <h3>Visibilidad institucional</h3>
+        <p>Presencia en todos los materiales oficiales, comunicados de prensa y publicaciones digitales del festival.</p>
+      </div>
+      <div class="beneficio">
+        <div class="beneficio-icon">🤝</div>
+        <h3>Red franco-mexicana</h3>
+        <p>Acceso directo a una red diplomática, culinaria y empresarial construida durante más de veinte años.</p>
+      </div>
+      <div class="beneficio">
+        <div class="beneficio-icon">✨</div>
+        <h3>Posicionamiento premium</h3>
+        <p>Asociación con un evento respaldado por la Académie Culinaire de France y la Embajada de Francia en México.</p>
+      </div>
+      <div class="beneficio">
+        <div class="beneficio-icon">📸</div>
+        <h3>Cobertura mediática</h3>
+        <p>Retombées de presse en medios especializados de gastronomía, cultura y cooperación internacional.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIEMPOS FUERTES -->
+<section class="tiempos">
+  <div class="container">
+    <p class="section-label">Programa</p>
+    <h2>Los momentos del festival</h2>
+    <p>Cuatro eventos estructuran la edición, cada uno con su identidad y su público.</p>
+    <div class="tiempos-list">
+      <div class="tiempo-item">
+        <span class="tiempo-num">I</span>
+        <div class="tiempo-text">
+          <h4>XIII Concurso del Joven Chef Mexicano</h4>
+          <p>Competencia de alto nivel para los mejores estudiantes de gastronomía del país, con jurado internacional.</p>
+        </div>
+      </div>
+      <div class="tiempo-item">
+        <span class="tiempo-num">II</span>
+        <div class="tiempo-text">
+          <h4>Noche de Sabores</h4>
+          <p>Gala gastronómica que celebra el encuentro de las cocinas francesa y mexicana ante un público selecto.</p>
+        </div>
+      </div>
+      <div class="tiempo-item">
+        <span class="tiempo-num">III</span>
+        <div class="tiempo-text">
+          <h4>Masterclasses</h4>
+          <p>Talleres de formación impartidos por chefs invitados de Francia y México para profesionales del sector.</p>
+        </div>
+      </div>
+      <div class="tiempo-item">
+        <span class="tiempo-num">IV</span>
+        <div class="tiempo-text">
+          <h4>Foro Franco-Mexicano</h4>
+          <p>Mesa de reflexión sobre cooperación culinaria, patrimonio gastronómico y formación profesional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ALIADOS -->
+<section>
+  <div class="container">
+    <p class="section-label">Aliados institucionales</p>
+    <h2>Un respaldo reconocido a ambos lados del Atlántico</h2>
+    <p>El festival cuenta con el apoyo de instituciones culinarias, diplomáticas y educativas de primer nivel.</p>
+    <div class="aliados-logos">
+      <span class="aliado-tag">Académie Culinaire de France</span>
+      <span class="aliado-tag">Embajada de Francia en México</span>
+      <span class="aliado-tag">Colegio Superior de Gastronomía</span>
+      <span class="aliado-tag">Guardianas de la Gastronomía de Guerrero</span>
+      <span class="aliado-tag">Rougié Gastronomie</span>
+      <span class="aliado-tag">[ Su empresa aquí ]</span>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- FORMULARIO -->
+<section class="formulario-section">
+  <div class="container">
+    <p class="section-label">Contacto</p>
+    <h2>Hablemos de su participación</h2>
+    <p>Deje sus datos y le contactaremos en un plazo de 48 horas para presentarle las opciones de patrocinio disponibles.</p>
+
+    <div class="form-grid" id="contact-form">
+      <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Su nombre completo" />
+      </div>
+      <div>
+        <label for="empresa">Empresa / Organización</label>
+        <input type="text" id="empresa" placeholder="Nombre de su empresa" />
+      </div>
+      <div>
+        <label for="cargo">Cargo</label>
+        <input type="text" id="cargo" placeholder="Su función" />
+      </div>
+      <div>
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="correo@empresa.com" />
+      </div>
+      <div>
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" placeholder="+52 55 0000 0000" />
+      </div>
+      <div>
+        <label for="interes">Tipo de interés</label>
+        <select id="interes">
+          <option value="">Seleccione una opción</option>
+          <option>Patrocinio principal</option>
+          <option>Patrocinio de evento</option>
+          <option>Proveedor oficial</option>
+          <option>Alianza institucional</option>
+          <option>Otro / Por definir</option>
+        </select>
+      </div>
+      <div class="form-full">
+        <label for="mensaje">Mensaje (opcional)</label>
+        <textarea id="mensaje" placeholder="Cuéntenos brevemente su interés o sus preguntas…"></textarea>
+      </div>
+      <div class="form-full">
+        <button class="btn-submit" onclick="handleSubmit()">Solicitar información de patrocinio</button>
+        <p class="form-note">Sus datos son confidenciales y serán utilizados únicamente para contactarle sobre el festival.</p>
+      </div>
+    </div>
+
+    <div id="success-msg">
+      ✓ &nbsp; Gracias por su interés. Le contactaremos a la brevedad.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Festival Franco-Mexicano de Gastronomía</strong></p>
+  <p style="margin-top:6px;">XXI Edición · Ciudad de México · 2027 &nbsp;·&nbsp; festival-franco-mexicano.com</p>
+</footer>  
+
+<script>
+  function handleSubmit() {
+    const email = document.getElementById('email').value.trim();
+    const nombre = document.getElementById('nombre').value.trim();
+    if (!nombre || !email) {
+      alert('Por favor ingrese su nombre y correo electrónico.');
+      return;
+    }
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
+    // → Aquí se puede conectar a un servicio de formularios (Formspree, Netlify Forms, etc.)
+  }
+</script>
+
+</bodY>
+</html>
