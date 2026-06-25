@@ -473,9 +473,89 @@ patrocinadores-2027.html
     gap:24px !important;
 }
 }
+ /* CORRECTION MOBILE — centrage général */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Photos centrées */
+.photo-band {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background: var(--cream);
+}
+
+.photo-band img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}
+
+/* Bloc vert centré */
+.tiempos {
+  width: 100%;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.tiempos .container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto !important;
+}
+
+.tiempos-list {
+  width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Correction du débordement des chiffres 21 / 2004 / 2 */
+@media (max-width: 768px) {
+  .hero-stats {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 18px !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .hero-stat {
+    min-width: 0 !important;
+    width: 33.33% !important;
+    text-align: center !important;
+  }
+
+  .hero-stat strong {
+    font-size: 2rem !important;
+  }
+
+  .hero-stat span {
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero h1 {
+    font-size: 38px !important;
+  }
+}
   </style>
 </head>
-<body>
+<bodY>
 
 <!-- HERO -->
 <header class="hero">
