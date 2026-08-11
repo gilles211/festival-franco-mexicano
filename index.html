@@ -6,24 +6,16 @@
 
 <title>Festival Franco-Mexicano — Ciudad de México</title>
 
-<meta name="description"
-content="Festival Franco-Mexicano. Gastronomía, encuentros y cooperación entre Francia y México desde 2004. XXI edición en Ciudad de México, abril de 2027.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-  --navy:#17385f;
-  --wine:#681d2e;
-  --gold:#c19a45;
-  --cream:#f5f0e5;
-  --paper:#fffaf2;
-  --dark:#191715;
-  --muted:#686159;
-  --rule:#d8ccb5;
+  --cream:#f3ede2;
+  --dark:#171717;
+  --gold:#d3ad63;
 }
 
 *{
@@ -32,674 +24,288 @@ content="Festival Franco-Mexicano. Gastronomía, encuentros y cooperación entre
   padding:0;
 }
 
-html{
-  scroll-behavior:smooth;
+html,body{
+  min-height:100%;
 }
 
 body{
-  font-family:'Inter',sans-serif;
-  color:var(--dark);
+  font-family:'Manrope',Arial,sans-serif;
   background:var(--cream);
-  line-height:1.6;
+  color:var(--dark);
 }
 
-img{
-  display:block;
-  max-width:100%;
-}
+/* =========================
+   PAGE D'ACCUEIL
+========================= */
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-/* NAVIGATION */
-
-nav{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:1000;
-  background:rgba(18,25,35,.92);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(255,255,255,.12);
-}
-
-.nav-inner{
-  max-width:1150px;
-  margin:auto;
-  padding:13px 22px;
+.home{
+  min-height:100vh;
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+  flex-direction:column;
 }
 
-.nav-name{
-  color:#fff;
-  font-family:'EB Garamond',serif;
-  font-size:19px;
-}
+/* =========================
+   EN-TÊTE
+========================= */
 
-.nav-links{
-  display:flex;
-  gap:22px;
-  font-size:12px;
-  font-weight:500;
-  letter-spacing:.07em;
-  text-transform:uppercase;
-  color:#eee8dc;
-}
-
-.nav-links a:hover{
-  color:var(--gold);
-}
-
-/* HERO */
-
-.hero{
-  min-height:96vh;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.header{
   text-align:center;
-  color:white;
-  padding:110px 24px 70px;
-  background:
-    linear-gradient(rgba(10,18,29,.47),rgba(10,18,29,.72)),
-    url("galerie-01.jpg") center/cover no-repeat;
-}
-
-.hero-content{
-  position:relative;
-  max-width:900px;
+  padding:28px 20px 22px;
 }
 
 .logo{
-  width:125px;
-  height:125px;
-  object-fit:cover;
+  width:82px;
+  height:82px;
   border-radius:50%;
-  margin:0 auto 28px;
-  border:5px solid rgba(255,255,255,.92);
-  box-shadow:0 18px 45px rgba(0,0,0,.35);
-}
-
-.eyebrow{
-  color:#e2bf70;
-  font-size:12px;
-  font-weight:600;
-  text-transform:uppercase;
-  letter-spacing:.20em;
-  margin-bottom:14px;
-}
-
-.hero h1{
-  font-family:'EB Garamond',serif;
-  font-size:clamp(3.1rem,8vw,6.2rem);
-  font-weight:500;
-  line-height:.88;
-}
-
-.hero-city{
+  object-fit:cover;
   display:block;
-  color:#e2bf70;
-  font-style:italic;
-  margin-top:12px;
+  margin:0 auto 14px;
 }
 
-.hero-text{
-  max-width:650px;
-  margin:26px auto 0;
-  font-size:clamp(17px,2vw,21px);
-  color:rgba(255,255,255,.88);
+.header h1{
+  font-size:clamp(22px,3vw,34px);
+  line-height:1;
+  font-weight:600;
+  letter-spacing:-0.04em;
 }
 
-.hero-date{
-  margin-top:24px;
-  font-size:14px;
-  letter-spacing:.15em;
+.header p{
+  margin-top:8px;
+  font-size:12px;
   text-transform:uppercase;
-  color:#fff;
+  letter-spacing:.18em;
+  color:#777067;
 }
 
-.hero-actions{
-  margin-top:32px;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
+/* =========================
+   TROIS PORTES
+========================= */
+
+.portals{
+  flex:1;
+  width:min(1400px,100%);
+  margin:auto;
+  padding:12px 28px 38px;
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
   gap:12px;
 }
 
-.btn{
-  display:inline-block;
-  padding:13px 23px;
-  border-radius:100px;
-  font-size:13px;
-  font-weight:600;
-  transition:.2s;
+.portal{
+  min-height:560px;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+
+  text-decoration:none;
+  color:white;
+
+  background-position:center;
+  background-size:cover;
+
+  border-radius:4px;
+
+  isolation:isolate;
 }
 
-.btn-gold{
-  background:var(--gold);
-  color:#18130b;
+/* Photos */
+
+.portal-festival{
+  background-image:url("galerie-03.jpg");
 }
 
-.btn-outline{
-  border:1px solid rgba(255,255,255,.8);
-  color:#fff;
+.portal-2026{
+  background-image:url("galerie-01.jpg");
 }
 
-.btn:hover{
-  transform:translateY(-2px);
+.portal-2027{
+  background-image:url("galerie-08.jpg");
 }
 
-/* GLOBAL SECTIONS */
+/* voile */
 
-section{
-  padding:85px 24px;
+.portal::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.78) 0%,
+      rgba(0,0,0,.28) 52%,
+      rgba(0,0,0,.08) 100%
+    );
+
+  transition:.4s ease;
 }
 
-.container{
-  max-width:1080px;
-  margin:auto;
+/* léger mouvement */
+
+.portal::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+
+  background:inherit;
+  background-position:center;
+  background-size:cover;
+
+  transition:transform .6s cubic-bezier(.2,.7,.2,1);
 }
 
-.small-container{
-  max-width:820px;
-  margin:auto;
+.portal:hover::after{
+  transform:scale(1.045);
 }
 
-.label{
+.portal:hover::before{
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.85),
+      rgba(0,0,0,.18)
+    );
+}
+
+/* =========================
+   TEXTE DES CARTES
+========================= */
+
+.portal-content{
+  width:100%;
+  padding:34px 30px;
+}
+
+.number{
+  display:block;
+  margin-bottom:12px;
+
   color:var(--gold);
   font-size:11px;
-  letter-spacing:.20em;
-  text-transform:uppercase;
-  font-weight:600;
-  margin-bottom:10px;
+  font-weight:700;
+  letter-spacing:.18em;
 }
 
-h2{
-  font-family:'EB Garamond',serif;
-  font-size:clamp(2.2rem,5vw,3.8rem);
-  font-weight:500;
-  line-height:1.02;
-  color:var(--navy);
-  margin-bottom:22px;
-}
-
-.lead{
-  max-width:760px;
-  font-size:18px;
-  color:var(--muted);
-}
-
-/* FESTIVAL */
-
-.about{
-  background:var(--paper);
-}
-
-.facts{
-  margin-top:42px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
-  background:var(--rule);
-  border:1px solid var(--rule);
-}
-
-.fact{
-  background:var(--cream);
-  padding:30px;
-}
-
-.fact strong{
-  display:block;
-  font-family:'EB Garamond',serif;
-  font-size:2.7rem;
+.portal h2{
+  font-size:clamp(28px,3vw,42px);
   line-height:1;
-  color:var(--wine);
-  margin-bottom:8px;
+  letter-spacing:-.045em;
+  font-weight:600;
 }
 
-.fact span{
+.portal-subtitle{
+  margin-top:10px;
+  font-size:14px;
+  color:rgba(255,255,255,.78);
+}
+
+.portal-description{
+  margin-top:20px;
+  padding-top:17px;
+  border-top:1px solid rgba(255,255,255,.25);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+
   font-size:12px;
   text-transform:uppercase;
   letter-spacing:.08em;
-  color:var(--muted);
+  color:rgba(255,255,255,.82);
 }
 
-/* HISTOIRE */
-
-.history{
-  background:var(--cream);
-}
-
-.timeline{
-  margin-top:38px;
-  display:grid;
-  gap:13px;
-}
-
-.timeline-item{
-  display:grid;
-  grid-template-columns:145px 1fr;
-  padding:20px 0;
-  border-top:1px solid var(--rule);
-}
-
-.timeline-year{
-  font-family:'EB Garamond',serif;
-  font-size:25px;
-  color:var(--wine);
-}
-
-.timeline-text{
-  color:var(--muted);
-}
-
-/* HISTORICAL PARTNERS */
-
-.trusted{
-  margin-top:55px;
-  border-top:1px solid var(--rule);
-  padding-top:35px;
-}
-
-.trusted h3{
-  font-family:'EB Garamond',serif;
-  color:var(--navy);
-  font-size:25px;
-  font-weight:500;
-  margin-bottom:22px;
-}
-
-.marquee{
-  overflow:hidden;
-  background:var(--navy);
-  color:#fff;
-  padding:17px 0;
-}
-
-.marquee-track{
-  display:flex;
-  width:max-content;
-  animation:scrollNames 30s linear infinite;
-}
-
-.marquee span{
-  white-space:nowrap;
-  padding:0 25px;
-  text-transform:uppercase;
-  letter-spacing:.10em;
-  font-size:12px;
-  color:#eee7d8;
-}
-
-.marquee span::after{
-  content:" ·";
-  color:var(--gold);
-  margin-left:28px;
-}
-
-@keyframes scrollNames{
-  from{transform:translateX(0);}
-  to{transform:translateX(-50%);}
-}
-
-/* 2026 */
-
-.edition2026{
-  background:#fff;
-}
-
-.edition-head{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:center;
-  margin-bottom:45px;
-}
-
-.edition-photo{
-  width:100%;
-  height:390px;
-  object-fit:cover;
-}
-
-.media-buttons{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:25px;
-}
-
-.media-buttons .btn{
-  background:var(--navy);
-  color:#fff;
-}
-
-/* GALLERY */
-
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-}
-
-.gallery img{
-  width:100%;
-  height:190px;
-  object-fit:cover;
-  cursor:pointer;
-  transition:.25s;
-}
-
-.gallery img:hover{
-  filter:brightness(1.08);
-}
-
-/* VIDEO */
-
-.video-box{
-  max-width:880px;
-  margin:45px auto 0;
-  background:#000;
-  box-shadow:0 20px 55px rgba(0,0,0,.22);
-}
-
-.video-box video{
-  width:100%;
-  display:block;
-}
-
-/* 2027 */
-
-.edition2027{
-  background:var(--navy);
-  color:#fff;
-}
-
-.edition2027 h2{
-  color:#fff;
-}
-
-.edition2027 .lead{
-  color:rgba(255,255,255,.7);
-}
-
-.big-date{
-  font-family:'EB Garamond',serif;
-  font-size:clamp(2.5rem,6vw,5rem);
-  color:var(--gold);
-  line-height:1;
-  margin:30px 0 15px;
-}
-
-.axes{
-  margin-top:50px;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:2px;
-  background:rgba(255,255,255,.15);
-}
-
-.axis{
-  background:#1c426e;
-  padding:33px;
-  min-height:190px;
-}
-
-.axis-number{
-  color:var(--gold);
-  font-size:12px;
-  letter-spacing:.15em;
-}
-
-.axis h3{
-  font-family:'EB Garamond',serif;
-  font-size:25px;
-  font-weight:500;
-  margin:9px 0;
-}
-
-.axis p{
-  color:rgba(255,255,255,.65);
-  font-size:14px;
-}
-
-/* INVITED TERRITORIES */
-
-.territories{
-  margin-top:55px;
-  padding-top:40px;
-  border-top:1px solid rgba(255,255,255,.2);
-}
-
-.territory-grid{
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  gap:30px;
-  align-items:center;
-  margin-top:30px;
-}
-
-.territory{
-  text-align:center;
-  padding:30px;
-  border:1px solid rgba(255,255,255,.25);
-}
-
-.flag{
-  font-size:42px;
-  margin-bottom:13px;
-}
-
-.territory h3{
-  font-family:'EB Garamond',serif;
+.arrow{
   font-size:24px;
-  color:#fff;
+  line-height:1;
+  transition:transform .25s ease;
 }
 
-.territory p{
-  color:var(--gold);
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  margin-top:7px;
+.portal:hover .arrow{
+  transform:translateX(6px);
 }
 
-.exchange{
-  font-size:30px;
-  color:var(--gold);
+/* =========================
+   2027 : PETIT SIGNE VISUEL
+========================= */
+
+.portal-2027 .number{
+  color:#f0cc7c;
 }
 
-/* SPONSOR */
-
-.sponsor{
-  background:var(--paper);
+.portal-2027::before{
+  background:
+    linear-gradient(
+      to top,
+      rgba(32,54,43,.92) 0%,
+      rgba(32,54,43,.38) 58%,
+      rgba(0,0,0,.08) 100%
+    );
 }
 
-.sponsor-grid{
-  margin-top:40px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  border:1px solid var(--rule);
-}
+/* =========================
+   BAS DE PAGE
+========================= */
 
-.sponsor-card{
-  padding:30px;
-  border-right:1px solid var(--rule);
-}
-
-.sponsor-card:last-child{
-  border-right:none;
-}
-
-.sponsor-card h3{
-  font-family:'EB Garamond',serif;
-  color:var(--wine);
-  font-size:23px;
-  margin-bottom:10px;
-}
-
-.sponsor-card p{
-  color:var(--muted);
-  font-size:14px;
-}
-
-.sponsor-cta{
-  margin-top:35px;
-}
-
-.sponsor-cta .btn{
-  background:var(--wine);
-  color:#fff;
-}
-
-/* CONTACT */
-
-.contact{
-  background:var(--wine);
-  color:white;
+.footer{
+  padding:0 20px 25px;
   text-align:center;
+  font-size:11px;
+  letter-spacing:.08em;
+  color:#8b8378;
 }
 
-.contact h2{
-  color:white;
-}
+/* =========================
+   TABLETTE
+========================= */
 
-.contact p{
-  color:#eadfd3;
-}
+@media(max-width:900px){
 
-.socials{
-  margin-top:30px;
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.socials a{
-  background:#fff;
-  color:var(--wine);
-  padding:11px 19px;
-  border-radius:100px;
-  font-weight:600;
-  font-size:13px;
-}
-
-.email{
-  margin-top:27px;
-  font-size:16px;
-}
-
-/* FOOTER */
-
-footer{
-  background:#101820;
-  color:#928c83;
-  text-align:center;
-  padding:28px 20px;
-  font-size:12px;
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:2000;
-  background:rgba(0,0,0,.92);
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.lightbox.show{
-  display:flex;
-}
-
-.lightbox img{
-  max-width:95vw;
-  max-height:92vh;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:800px){
-
-  .nav-name{
-    display:none;
-  }
-
-  .nav-inner{
-    justify-content:center;
-  }
-
-  .nav-links{
-    gap:14px;
-    font-size:10px;
-  }
-
-  .facts{
+  .portals{
     grid-template-columns:1fr;
+    max-width:700px;
   }
 
-  .timeline-item{
-    grid-template-columns:1fr;
-    gap:6px;
-  }
-
-  .edition-head{
-    grid-template-columns:1fr;
-  }
-
-  .gallery{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .axes{
-    grid-template-columns:1fr;
-  }
-
-  .territory-grid{
-    grid-template-columns:1fr;
-  }
-
-  .exchange{
-    transform:rotate(90deg);
-  }
-
-  .sponsor-grid{
-    grid-template-columns:1fr;
-  }
-
-  .sponsor-card{
-    border-right:none;
-    border-bottom:1px solid var(--rule);
+  .portal{
+    min-height:360px;
   }
 
 }
 
-@media(max-width:480px){
+/* =========================
+   MOBILE
+========================= */
 
-  section{
-    padding:65px 18px;
+@media(max-width:520px){
+
+  .header{
+    padding:22px 15px 14px;
   }
 
-  .hero{
-    padding-left:18px;
-    padding-right:18px;
+  .logo{
+    width:68px;
+    height:68px;
   }
 
-  .gallery img{
-    height:150px;
+  .portals{
+    padding:10px 12px 24px;
+    gap:8px;
+  }
+
+  .portal{
+    min-height:265px;
+  }
+
+  .portal-content{
+    padding:24px 22px;
+  }
+
+  .portal h2{
+    font-size:30px;
   }
 
 }
@@ -709,618 +315,146 @@ footer{
 
 <body>
 
-<!-- NAVIGATION -->
+<main class="home">
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-name" href="#inicio">Festival Franco-Mexicano</a>
+  <!-- EN-TÊTE -->
 
-    <div class="nav-links">
-      <a href="#festival">Festival</a>
-      <a href="#2026">2026</a>
-      <a href="#2027">2027</a>
-      <a href="#patrocinios">Patrocinios</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </div>
-</nav>
+  <header class="header">
 
-<!-- ACCUEIL -->
+    <img
+      src="LOGO.jpg"
+      class="logo"
+      alt="Festival Franco-Mexicano"
+    >
 
-<header class="hero" id="inicio">
+    <h1>Festival Franco-Mexicano</h1>
 
-  <div class="hero-content">
+    <p>Ciudad de México</p>
 
-    <img src="LOGO.jpg"
-         class="logo"
-         alt="Festival Franco-Mexicano">
+  </header>
 
-    <div class="eyebrow">
-      Desde 2004 · Francia × México
-    </div>
 
-    <h1>
-      Festival<br>
-      Franco-Mexicano
+  <!-- 3 PORTES -->
 
-      <span class="hero-city">
-        Ciudad de México
-      </span>
-    </h1>
+  <section class="portals">
 
-    <p class="hero-text">
-      Gastronomía, encuentros y cooperación entre Francia y México.
-    </p>
 
-    <div class="hero-date">
-      XXI edición · Abril 2027
-    </div>
+    <!-- FESTIVAL -->
 
-    <div class="hero-actions">
+    <a class="portal portal-festival"
+       href="festival.html">
 
-      <a class="btn btn-gold" href="#2027">
-        Descubrir 2027
-      </a>
+      <div class="portal-content">
 
-      <a class="btn btn-outline" href="#2026">
-        Ver la edición 2026
-      </a>
-
-    </div>
-
-  </div>
-
-</header>
-
-<!-- LE FESTIVAL -->
-
-<section class="about" id="festival">
-
-  <div class="small-container">
-
-    <div class="label">
-      El Festival
-    </div>
-
-    <h2>
-      Más de veinte años de encuentros entre Francia y México.
-    </h2>
-
-    <p class="lead">
-      Desde 2004, el Festival Franco-Mexicano crea encuentros
-      entre Francia y México a través de la gastronomía,
-      la formación, la transmisión y la cooperación cultural.
-      En 2026 abrió una nueva etapa en Ciudad de México.
-    </p>
-
-    <div class="facts">
-
-      <div class="fact">
-        <strong>2004</strong>
-        <span>Creación</span>
-      </div>
-
-      <div class="fact">
-        <strong>XXI</strong>
-        <span>Edición 2027</span>
-      </div>
-
-      <div class="fact">
-        <strong>CDMX</strong>
-        <span>Nueva etapa</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- HISTOIRE -->
-
-<section class="history">
-
-  <div class="small-container">
-
-    <div class="label">
-      Trayectoria
-    </div>
-
-    <h2>
-      Una historia que continúa.
-    </h2>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-
-        <div class="timeline-year">
-          2004
-        </div>
-
-        <div class="timeline-text">
-          Creación del Festival.
-        </div>
-
-      </div>
-
-      <div class="timeline-item">
-
-        <div class="timeline-year">
-          2015
-        </div>
-
-        <div class="timeline-text">
-          Nace el Festival Franco-Mexicano.
-        </div>
-
-      </div>
-
-      <div class="timeline-item">
-
-        <div class="timeline-year">
-          2020–2026
-        </div>
-
-        <div class="timeline-text">
-          <strong>Resiliencia.</strong>
-          Frente a la pandemia, los fenómenos climáticos
-          y una profunda reestructuración, el Festival se reinventó.
-          Su instalación en Ciudad de México en 2026 abrió una nueva etapa.
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="trusted">
-
-      <h3>
-        Instituciones y aliados que han acompañado el Festival
-      </h3>
-
-    </div>
-
-  </div>
-
-  <div class="marquee">
-
-    <div class="marquee-track">
-
-      <span>Air France</span>
-      <span>Ambassade de France au Mexique</span>
-      <span>Gobierno del Estado de Guerrero</span>
-      <span>Académie Culinaire de France</span>
-      <span>Fundación Carlos Slim</span>
-
-      <!-- répétition pour animation continue -->
-
-      <span>Air France</span>
-      <span>Ambassade de France au Mexique</span>
-      <span>Gobierno del Estado de Guerrero</span>
-      <span>Académie Culinaire de France</span>
-      <span>Fundación Carlos Slim</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- EDITION 2026 -->
-
-<section class="edition2026" id="2026">
-
-  <div class="container">
-
-    <div class="edition-head">
-
-      <div>
-
-        <div class="label">
-          XX Edición
-        </div>
+        <span class="number">
+          01 · DESDE 2004
+        </span>
 
         <h2>
-          Ciudad de México · 2026
+          El Festival
         </h2>
 
-        <p class="lead">
-          En 2026, el Festival Franco-Mexicano inició
-          una nueva etapa en Ciudad de México.
-        </p>
+        <div class="portal-subtitle">
+          Francia × México
+        </div>
 
-        <div class="media-buttons">
+        <div class="portal-description">
 
-          <a class="btn"
-             href="P1 FEST.pdf"
-             target="_blank">
-            Boletín de prensa
-          </a>
+          <span>
+            Historia · Identidad · Trayectoria
+          </span>
 
-          <a class="btn"
-             href="#video2026">
-            Ver vídeo
-          </a>
+          <span class="arrow">
+            →
+          </span>
 
         </div>
 
       </div>
 
-      <img src="galerie-02.jpg"
-           class="edition-photo"
-           alt="Festival Franco-Mexicano 2026">
+    </a>
 
-    </div>
 
-    <div class="gallery" id="gallery"></div>
+    <!-- 2026 -->
 
-    <div class="video-box" id="video2026">
+    <a class="portal portal-2026"
+       href="2026.html">
 
-      <video controls poster="galerie-01.jpg">
+      <div class="portal-content">
 
-        <source
-          src="festival_ffm_final_v3-1(1).mp4"
-          type="video/mp4">
+        <span class="number">
+          02 · XX EDICIÓN
+        </span>
 
-        Su navegador no permite reproducir este vídeo.
+        <h2>
+          2026
+        </h2>
 
-      </video>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- 2027 -->
-
-<section class="edition2027" id="2027">
-
-  <div class="container">
-
-    <div class="label">
-      XXI Edición
-    </div>
-
-    <h2>
-      El Festival mira hacia 2027.
-    </h2>
-
-    <div class="big-date">
-      Ciudad de México<br>
-      Abril 2027
-    </div>
-
-    <p class="lead">
-      Una nueva edición, nuevos encuentros
-      y nuevas oportunidades entre Francia y México.
-    </p>
-
-    <div class="axes">
-
-      <div class="axis">
-
-        <div class="axis-number">
-          01
+        <div class="portal-subtitle">
+          Ciudad de México
         </div>
 
-        <h3>
-          Concurso del Joven Chef Mexicano
-        </h3>
+        <div class="portal-description">
 
-        <p>
-          El concurso histórico del Festival,
-          dedicado a la nueva generación de cocineros mexicanos.
-        </p>
+          <span>
+            Fotos · Video · Prensa
+          </span>
 
-      </div>
-
-      <div class="axis">
-
-        <div class="axis-number">
-          02
-        </div>
-
-        <h3>
-          Noche de Sabores
-        </h3>
-
-        <p>
-          Una gran experiencia gastronómica
-          de encuentro y celebración.
-        </p>
-
-      </div>
-
-      <div class="axis">
-
-        <div class="axis-number">
-          03
-        </div>
-
-        <h3>
-          Foro temático
-        </h3>
-
-        <p>
-          Tema por anunciar.
-        </p>
-
-      </div>
-
-      <div class="axis">
-
-        <div class="axis-number">
-          04
-        </div>
-
-        <h3>
-          Residencias en Francia
-        </h3>
-
-        <p>
-          Para chefs y cocineras tradicionales.
-          Programa en preparación.
-        </p>
-
-      </div>
-
-    </div>
-
-    <!-- TERRITOIRES INVITÉS -->
-
-    <div class="territories">
-
-      <div class="label">
-        2027 · Territorios invitados
-      </div>
-
-      <div class="territory-grid">
-
-        <div class="territory">
-
-          <div class="flag">
-            🇫🇷
-          </div>
-
-          <h3>
-            Una región o ciudad de Francia
-          </h3>
-
-          <p>
-            Próximamente
-          </p>
-
-        </div>
-
-        <div class="exchange">
-          ↔
-        </div>
-
-        <div class="territory">
-
-          <div class="flag">
-            🇲🇽
-          </div>
-
-          <h3>
-            Un Estado de México
-          </h3>
-
-          <p>
-            Próximamente
-          </p>
+          <span class="arrow">
+            →
+          </span>
 
         </div>
 
       </div>
 
-    </div>
+    </a>
 
-  </div>
 
-</section>
+    <!-- 2027 -->
 
-<!-- SPONSORING -->
+    <a class="portal portal-2027"
+       href="2027.html">
 
-<section class="sponsor" id="patrocinios">
+      <div class="portal-content">
 
-  <div class="small-container">
+        <span class="number">
+          03 · XXI EDICIÓN
+        </span>
 
-    <div class="label">
-      Patrocinios 2027
-    </div>
+        <h2>
+          2027
+        </h2>
 
-    <h2>
-      Asocie su marca a la XXI edición.
-    </h2>
+        <div class="portal-subtitle">
+          Ciudad de México · Abril
+        </div>
 
-    <p class="lead">
-      El Festival ofrece a empresas e instituciones
-      una plataforma de visibilidad, encuentro
-      y cooperación en el corazón de Ciudad de México.
-    </p>
+        <div class="portal-description">
 
-    <div class="sponsor-grid">
+          <span>
+            Visión · Programa · Patrocinios
+          </span>
 
-      <div class="sponsor-card">
+          <span class="arrow">
+            →
+          </span>
 
-        <h3>
-          Visibilidad
-        </h3>
-
-        <p>
-          Presencia de marca dentro del ecosistema
-          y la comunicación del Festival.
-        </p>
+        </div>
 
       </div>
 
-      <div class="sponsor-card">
-
-        <h3>
-          Experiencia
-        </h3>
-
-        <p>
-          Asociación con experiencias gastronómicas,
-          culturales y de transmisión.
-        </p>
-
-      </div>
-
-      <div class="sponsor-card">
-
-        <h3>
-          Conexiones
-        </h3>
-
-        <p>
-          Encuentros dentro del ecosistema
-          franco-mexicano del Festival.
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="sponsor-cta">
-
-      <a class="btn"
-         href="mailto:festival.frances@gmail.com?subject=Patrocinio%202027%20Festival%20Franco-Mexicano">
-
-        Solicitar información
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact" id="contacto">
-
-  <div class="small-container">
-
-    <div class="label">
-      Contacto
-    </div>
-
-    <h2>
-      Festival Franco-Mexicano
-    </h2>
-
-    <p>
-      Información · Prensa · Alianzas · Patrocinios
-    </p>
-
-    <div class="socials">
-
-      <a href="https://www.instagram.com/festivalfrancomexicano"
-         target="_blank"
-         rel="noopener">
-        Instagram
-      </a>
-
-      <a href="https://x.com/festivalfrances"
-         target="_blank"
-         rel="noopener">
-        X
-      </a>
-
-      <a href="https://www.facebook.com/share/17njmKGrgN/"
-         target="_blank"
-         rel="noopener">
-        Facebook
-      </a>
-
-    </div>
-
-    <div class="email">
-
-      <a href="mailto:festival.frances@gmail.com">
-        festival.frances@gmail.com
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<footer>
-  Festival Franco-Mexicano · Ciudad de México · Desde 2004
-</footer>
-
-<!-- LIGHTBOX -->
-
-<div class="lightbox" id="lightbox">
-
-  <img id="lightbox-image" src="" alt="">
-
-</div>
-
-<script>
-
-/* Galerie automatique :
-   il teste galerie-01.jpg à galerie-30.jpg.
-   Si l'image n'existe pas, elle n'est simplement pas affichée.
-*/
-
-const gallery =
-  document.getElementById("gallery");
-
-for(let i=1;i<=30;i++){
-
-  const number =
-    String(i).padStart(2,"0");
-
-  const img =
-    document.createElement("img");
-
-  img.src =
-    "galerie-" + number + ".jpg";
-
-  img.alt =
-    "Festival Franco-Mexicano — 2026";
-
-  img.loading =
-    "lazy";
-
-  img.onerror =
-    function(){
-      this.remove();
-    };
-
-  img.onclick =
-    function(){
-
-      document.getElementById("lightbox-image").src =
-        this.src;
-
-      document.getElementById("lightbox").classList.add("show");
-
-    };
-
-  gallery.appendChild(img);
-
-}
+    </a>
 
 
-/* Fermer photo agrandie */
+  </section>
 
-document.getElementById("lightbox").onclick =
-function(){
 
-  this.classList.remove("show");
+  <footer class="footer">
+    FESTIVAL FRANCO-MEXICANO · CIUDAD DE MÉXICO
+  </footer>
 
-};
-
-</script>
+</main>
 
 </body>
 </html>
