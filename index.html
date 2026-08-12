@@ -7,7 +7,7 @@
 <title>Festival Franco-Mexicano — Gastronomía · CDMX</title>
 
 <meta name="description"
-content="Festival Franco-Mexicano · Gastronomía · CDMX · Desde 2004 · XXI Edición 2027">
+content="Festival Franco-Mexicano de Gastronomía · CDMX · Desde 2004 · XXI Edición 2027">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,9 +19,14 @@ content="Festival Franco-Mexicano · Gastronomía · CDMX · Desde 2004 · XXI E
 :root{
   --white:#ffffff;
   --black:#101010;
+
+  /* France */
   --blue:#183F74;
   --red:#E1000F;
+
+  /* Mexique */
   --green:#1F5A3F;
+
   --grey:#747474;
 }
 
@@ -42,27 +47,36 @@ body{
 }
 
 
-/* ============================
+/* ========================================
    OUVERTURE
-============================ */
+======================================== */
 
 .hero{
   position:relative;
   overflow:hidden;
   text-align:center;
-  padding:clamp(48px,6vw,78px) 20px clamp(32px,4vw,48px);
+
+  padding:
+    clamp(48px,6vw,78px)
+    20px
+    clamp(32px,4vw,48px);
 }
 
 .hero::before{
   content:"FR × MX";
+
   position:absolute;
   left:50%;
   top:50%;
+
   transform:translate(-50%,-50%);
+
   font-size:clamp(120px,23vw,330px);
   font-weight:700;
   letter-spacing:-.08em;
+
   color:rgba(0,0,0,.025);
+
   white-space:nowrap;
   pointer-events:none;
 }
@@ -74,7 +88,9 @@ body{
 
 .hero-small{
   margin-bottom:20px;
+
   color:var(--grey);
+
   font-size:11px;
   font-weight:600;
   letter-spacing:.24em;
@@ -84,6 +100,7 @@ body{
 .hero h1{
   font-size:clamp(52px,9.3vw,136px);
   font-weight:700;
+
   line-height:.80;
   letter-spacing:-.072em;
 }
@@ -94,7 +111,9 @@ body{
 
 .gastronomia{
   margin-top:22px;
+
   color:var(--red);
+
   font-family:'Playfair Display',serif;
   font-size:clamp(31px,4.5vw,59px);
   font-style:italic;
@@ -102,8 +121,10 @@ body{
 
 .city{
   margin-top:20px;
+
   font-size:clamp(17px,2vw,23px);
   font-weight:700;
+
   letter-spacing:.25em;
   text-transform:uppercase;
 }
@@ -111,43 +132,52 @@ body{
 .hero-line{
   width:62px;
   height:3px;
+
   margin:21px auto 0;
+
   background:var(--red);
 }
 
 
-/* ============================
-   PHOTO PANORAMIQUE
-============================ */
+/* ========================================
+   GRANDE PHOTO D'ACCUEIL
+======================================== */
 
 .visual{
   width:min(1400px,calc(100% - 44px));
-  margin:0 auto;
+  margin:0 auto 10px;
+
   overflow:hidden;
 }
 
 .visual img{
   display:block;
+
   width:100%;
   height:clamp(220px,28vw,390px);
+
   object-fit:cover;
   object-position:center;
 }
 
 
-/* ============================
-   3 BLOCS PRINCIPAUX
-============================ */
+/* ========================================
+   TROIS GRANDS BLOCS
+======================================== */
 
 .blocks{
   width:min(1400px,calc(100% - 44px));
-  margin:10px auto 0;
+
+  margin:0 auto;
 }
 
 .main-block{
   position:relative;
+
   min-height:390px;
+
   padding:clamp(45px,7vw,90px);
+
   color:#fff;
   text-decoration:none;
 
@@ -156,11 +186,15 @@ body{
 
   border-bottom:7px solid #fff;
 
-  transition:filter .25s ease;
+  overflow:hidden;
+
+  transition:
+    filter .25s ease,
+    transform .25s ease;
 }
 
 .main-block:hover{
-  filter:brightness(1.06);
+  filter:brightness(1.05);
 }
 
 .blue{
@@ -182,31 +216,40 @@ body{
 
 .block-number{
   margin-bottom:17px;
+
   font-size:12px;
   font-weight:700;
+
   letter-spacing:.22em;
   text-transform:uppercase;
-  opacity:.75;
+
+  opacity:.76;
 }
 
 .block-title{
   font-size:clamp(55px,9vw,120px);
   font-weight:700;
+
   line-height:.83;
   letter-spacing:-.065em;
 }
 
 .block-subtitle{
   margin-top:28px;
+
   max-width:620px;
+
   font-size:clamp(17px,2vw,22px);
   font-weight:500;
 }
 
 .block-info{
   margin-top:10px;
+
   max-width:650px;
-  color:rgba(255,255,255,.74);
+
+  color:rgba(255,255,255,.76);
+
   font-size:14px;
   line-height:1.6;
 }
@@ -214,6 +257,7 @@ body{
 .block-link{
   margin-top:35px;
   padding-top:17px;
+
   border-top:1px solid rgba(255,255,255,.32);
 
   display:flex;
@@ -222,12 +266,15 @@ body{
 
   font-size:11px;
   font-weight:700;
+
   letter-spacing:.15em;
   text-transform:uppercase;
 }
 
 .arrow{
   font-size:30px;
+  font-weight:400;
+
   transition:transform .25s ease;
 }
 
@@ -236,28 +283,35 @@ body{
 }
 
 
-/* ============================
+/* ========================================
    FOOTER
-============================ */
+======================================== */
 
 footer{
   background:#fff;
-  padding:32px 20px 38px;
+
+  padding:34px 20px 40px;
+
   text-align:center;
 }
 
 .socials{
   display:flex;
   justify-content:center;
+  align-items:center;
   flex-wrap:wrap;
+
   gap:12px 25px;
 }
 
 .socials a{
   color:#222;
+
   text-decoration:none;
+
   font-size:11px;
   font-weight:700;
+
   letter-spacing:.12em;
   text-transform:uppercase;
 }
@@ -268,25 +322,31 @@ footer{
 
 .footer-logo{
   display:block;
+
   width:55px;
   height:55px;
+
   margin:25px auto 12px;
+
   border-radius:50%;
+
   object-fit:cover;
 }
 
 .footer-name{
   color:#777;
+
   font-size:10px;
   font-weight:600;
+
   letter-spacing:.14em;
   text-transform:uppercase;
 }
 
 
-/* ============================
-   MOBILE
-============================ */
+/* ========================================
+   TABLETTE / MOBILE
+======================================== */
 
 @media(max-width:700px){
 
@@ -309,6 +369,7 @@ footer{
 
   .main-block{
     min-height:330px;
+
     padding:48px 25px;
   }
 
@@ -318,10 +379,12 @@ footer{
 
   .block-subtitle{
     margin-top:22px;
+
     font-size:17px;
   }
 
 }
+
 
 @media(max-width:420px){
 
@@ -343,10 +406,16 @@ footer{
 
   .main-block{
     min-height:300px;
+
+    padding:42px 22px;
   }
 
   .block-title{
     font-size:51px;
+  }
+
+  .block-info{
+    font-size:13px;
   }
 
 }
@@ -358,7 +427,9 @@ footer{
 <body>
 
 
-<!-- OUVERTURE -->
+<!-- ========================================
+     OUVERTURE
+======================================== -->
 
 <header class="hero">
 
@@ -388,31 +459,35 @@ footer{
 </header>
 
 
-<!-- PHOTO UNIQUE -->
+<!-- ========================================
+     GRANDE PHOTO
+======================================== -->
 
 <div class="visual">
 
   <img
-    src="fichier_00000000049081fda31d32a6c3b94272.png"
-    alt="Festival Franco-Mexicano"
+    src="galerie-19.png"
+    alt="Festival Franco-Mexicano de Gastronomía"
   >
 
 </div>
 
 
-<!-- 3 BLOCS UNIQUEMENT -->
+<!-- ========================================
+     TROIS BLOCS PRINCIPAUX
+======================================== -->
 
 <main class="blocks">
 
 
-  <!-- EL FESTIVAL -->
+  <!-- 01 · EL FESTIVAL -->
 
   <a class="main-block blue" href="festival.html">
 
     <div class="block-content">
 
       <div class="block-number">
-        01 · Desde 2004
+        01 · DESDE 2004
       </div>
 
       <div class="block-title">
@@ -428,8 +503,15 @@ footer{
       </div>
 
       <div class="block-link">
-        <span>Descubrir el Festival</span>
-        <span class="arrow">→</span>
+
+        <span>
+          Descubrir el Festival
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
       </div>
 
     </div>
@@ -437,14 +519,14 @@ footer{
   </a>
 
 
-  <!-- 2026 -->
+  <!-- 02 · 2026 -->
 
   <a class="main-block red" href="2026.html">
 
     <div class="block-content">
 
       <div class="block-number">
-        02 · XX Edición
+        02 · XX EDICIÓN
       </div>
 
       <div class="block-title">
@@ -460,8 +542,15 @@ footer{
       </div>
 
       <div class="block-link">
-        <span>Descubrir la edición 2026</span>
-        <span class="arrow">→</span>
+
+        <span>
+          Descubrir la edición 2026
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
       </div>
 
     </div>
@@ -469,14 +558,14 @@ footer{
   </a>
 
 
-  <!-- 2027 -->
+  <!-- 03 · 2027 -->
 
   <a class="main-block green" href="2027.html">
 
     <div class="block-content">
 
       <div class="block-number">
-        03 · XXI Edición
+        03 · XXI EDICIÓN
       </div>
 
       <div class="block-title">
@@ -493,8 +582,15 @@ footer{
       </div>
 
       <div class="block-link">
-        <span>Descubrir 2027</span>
-        <span class="arrow">→</span>
+
+        <span>
+          Descubrir 2027
+        </span>
+
+        <span class="arrow">
+          →
+        </span>
+
       </div>
 
     </div>
@@ -505,7 +601,9 @@ footer{
 </main>
 
 
-<!-- RÉSEAUX / CONTACT -->
+<!-- ========================================
+     RÉSEAUX / CONTACT
+======================================== -->
 
 <footer>
 
@@ -547,7 +645,7 @@ footer{
 
 
   <div class="footer-name">
-    Festival Franco-Mexicano · CDMX
+    Festival Franco-Mexicano · Gastronomía · CDMX
   </div>
 
 </footer>
