@@ -19,14 +19,9 @@ content="Festival Franco-Mexicano de Gastronomía · CDMX · Desde 2004 · XXI E
 :root{
   --white:#ffffff;
   --black:#101010;
-
-  /* France */
   --blue:#183F74;
   --red:#E1000F;
-
-  /* Mexique */
   --green:#1F5A3F;
-
   --grey:#747474;
 }
 
@@ -36,49 +31,33 @@ content="Festival Franco-Mexicano de Gastronomía · CDMX · Desde 2004 · XXI E
   padding:0;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
-  background:var(--white);
+  background:#fff;
   color:var(--black);
   font-family:'DM Sans',Arial,sans-serif;
 }
 
 
-/* ========================================
-   OUVERTURE
-======================================== */
+/* OUVERTURE */
 
 .hero{
   position:relative;
   overflow:hidden;
   text-align:center;
-
-  padding:
-    clamp(48px,6vw,78px)
-    20px
-    clamp(32px,4vw,48px);
+  padding:55px 20px 42px;
 }
 
 .hero::before{
   content:"FR × MX";
-
   position:absolute;
   left:50%;
   top:50%;
-
   transform:translate(-50%,-50%);
-
   font-size:clamp(120px,23vw,330px);
   font-weight:700;
   letter-spacing:-.08em;
-
   color:rgba(0,0,0,.025);
-
   white-space:nowrap;
-  pointer-events:none;
 }
 
 .hero-content{
@@ -88,9 +67,7 @@ body{
 
 .hero-small{
   margin-bottom:20px;
-
   color:var(--grey);
-
   font-size:11px;
   font-weight:600;
   letter-spacing:.24em;
@@ -100,7 +77,6 @@ body{
 .hero h1{
   font-size:clamp(52px,9.3vw,136px);
   font-weight:700;
-
   line-height:.80;
   letter-spacing:-.072em;
 }
@@ -111,9 +87,7 @@ body{
 
 .gastronomia{
   margin-top:22px;
-
   color:var(--red);
-
   font-family:'Playfair Display',serif;
   font-size:clamp(31px,4.5vw,59px);
   font-style:italic;
@@ -121,135 +95,86 @@ body{
 
 .city{
   margin-top:20px;
-
   font-size:clamp(17px,2vw,23px);
   font-weight:700;
-
   letter-spacing:.25em;
-  text-transform:uppercase;
 }
 
 .hero-line{
   width:62px;
   height:3px;
-
   margin:21px auto 0;
-
   background:var(--red);
 }
 
 
-/* ========================================
-   GRANDE PHOTO D'ACCUEIL
-======================================== */
+/* GRANDE PHOTO */
 
 .visual{
   width:min(1400px,calc(100% - 44px));
   margin:0 auto 10px;
-
   overflow:hidden;
 }
 
 .visual img{
   display:block;
-
   width:100%;
   height:clamp(220px,28vw,390px);
-
   object-fit:cover;
   object-position:center;
 }
 
 
-/* ========================================
-   TROIS GRANDS BLOCS
-======================================== */
+/* TROIS BLOCS */
 
 .blocks{
   width:min(1400px,calc(100% - 44px));
-
   margin:0 auto;
 }
 
 .main-block{
-  position:relative;
-
   min-height:390px;
-
   padding:clamp(45px,7vw,90px);
-
   color:#fff;
   text-decoration:none;
-
   display:flex;
   align-items:center;
-
   border-bottom:7px solid #fff;
-
-  overflow:hidden;
-
-  transition:
-    filter .25s ease,
-    transform .25s ease;
 }
 
-.main-block:hover{
-  filter:brightness(1.05);
-}
-
-.blue{
-  background:var(--blue);
-}
-
-.red{
-  background:var(--red);
-}
-
-.green{
-  background:var(--green);
-}
+.blue{background:var(--blue);}
+.red{background:var(--red);}
+.green{background:var(--green);}
 
 .block-content{
   width:100%;
-  position:relative;
 }
 
 .block-number{
   margin-bottom:17px;
-
   font-size:12px;
   font-weight:700;
-
   letter-spacing:.22em;
   text-transform:uppercase;
-
   opacity:.76;
 }
 
 .block-title{
   font-size:clamp(55px,9vw,120px);
   font-weight:700;
-
   line-height:.83;
   letter-spacing:-.065em;
 }
 
 .block-subtitle{
   margin-top:28px;
-
-  max-width:620px;
-
   font-size:clamp(17px,2vw,22px);
   font-weight:500;
 }
 
 .block-info{
   margin-top:10px;
-
-  max-width:650px;
-
   color:rgba(255,255,255,.76);
-
   font-size:14px;
   line-height:1.6;
 }
@@ -257,105 +182,68 @@ body{
 .block-link{
   margin-top:35px;
   padding-top:17px;
-
   border-top:1px solid rgba(255,255,255,.32);
-
   display:flex;
   justify-content:space-between;
   align-items:center;
-
   font-size:11px;
   font-weight:700;
-
   letter-spacing:.15em;
   text-transform:uppercase;
 }
 
 .arrow{
   font-size:30px;
-  font-weight:400;
-
-  transition:transform .25s ease;
-}
-
-.main-block:hover .arrow{
-  transform:translateX(8px);
 }
 
 
-/* ========================================
-   FOOTER
-======================================== */
+/* FOOTER */
 
 footer{
-  background:#fff;
-
   padding:34px 20px 40px;
-
   text-align:center;
 }
 
 .socials{
   display:flex;
   justify-content:center;
-  align-items:center;
   flex-wrap:wrap;
-
   gap:12px 25px;
 }
 
 .socials a{
   color:#222;
-
   text-decoration:none;
-
   font-size:11px;
   font-weight:700;
-
   letter-spacing:.12em;
   text-transform:uppercase;
 }
 
-.socials a:hover{
-  text-decoration:underline;
-}
-
 .footer-logo{
   display:block;
-
   width:55px;
   height:55px;
-
   margin:25px auto 12px;
-
   border-radius:50%;
-
   object-fit:cover;
 }
 
 .footer-name{
   color:#777;
-
   font-size:10px;
   font-weight:600;
-
   letter-spacing:.14em;
   text-transform:uppercase;
 }
 
 
-/* ========================================
-   TABLETTE / MOBILE
-======================================== */
+/* MOBILE */
 
 @media(max-width:700px){
 
   .hero{
     padding:45px 14px 30px;
-  }
-
-  .hero h1{
-    line-height:.84;
   }
 
   .visual,
@@ -369,67 +257,19 @@ footer{
 
   .main-block{
     min-height:330px;
-
     padding:48px 25px;
   }
 
   .block-title{
     font-size:58px;
   }
-
-  .block-subtitle{
-    margin-top:22px;
-
-    font-size:17px;
-  }
-
-}
-
-
-@media(max-width:420px){
-
-  .hero h1{
-    font-size:47px;
-  }
-
-  .gastronomia{
-    font-size:31px;
-  }
-
-  .city{
-    font-size:17px;
-  }
-
-  .visual img{
-    height:185px;
-  }
-
-  .main-block{
-    min-height:300px;
-
-    padding:42px 22px;
-  }
-
-  .block-title{
-    font-size:51px;
-  }
-
-  .block-info{
-    font-size:13px;
-  }
-
 }
 
 </style>
 </head>
 
-
 <body>
 
-
-<!-- ========================================
-     OUVERTURE
-======================================== -->
 
 <header class="hero">
 
@@ -459,28 +299,22 @@ footer{
 </header>
 
 
-<!-- ========================================
-     GRANDE PHOTO
-======================================== -->
+<!-- NOUVELLE PHOTO -->
 
 <div class="visual">
 
   <img
-    src="galerie-19.png"
+    src="fichier_00000000049081fda31d32a6c3b94272.png"
     alt="Festival Franco-Mexicano de Gastronomía"
   >
 
 </div>
 
 
-<!-- ========================================
-     TROIS BLOCS PRINCIPAUX
-======================================== -->
+<!-- TROIS BLOCS -->
 
 <main class="blocks">
 
-
-  <!-- 01 · EL FESTIVAL -->
 
   <a class="main-block blue" href="festival.html">
 
@@ -503,23 +337,14 @@ footer{
       </div>
 
       <div class="block-link">
-
-        <span>
-          Descubrir el Festival
-        </span>
-
-        <span class="arrow">
-          →
-        </span>
-
+        <span>Descubrir el Festival</span>
+        <span class="arrow">→</span>
       </div>
 
     </div>
 
   </a>
 
-
-  <!-- 02 · 2026 -->
 
   <a class="main-block red" href="2026.html">
 
@@ -542,23 +367,14 @@ footer{
       </div>
 
       <div class="block-link">
-
-        <span>
-          Descubrir la edición 2026
-        </span>
-
-        <span class="arrow">
-          →
-        </span>
-
+        <span>Descubrir la edición 2026</span>
+        <span class="arrow">→</span>
       </div>
 
     </div>
 
   </a>
 
-
-  <!-- 03 · 2027 -->
 
   <a class="main-block green" href="2027.html">
 
@@ -582,51 +398,33 @@ footer{
       </div>
 
       <div class="block-link">
-
-        <span>
-          Descubrir 2027
-        </span>
-
-        <span class="arrow">
-          →
-        </span>
-
+        <span>Descubrir 2027</span>
+        <span class="arrow">→</span>
       </div>
 
     </div>
 
   </a>
 
-
 </main>
 
-
-<!-- ========================================
-     RÉSEAUX / CONTACT
-======================================== -->
 
 <footer>
 
   <div class="socials">
 
-    <a
-      href="https://www.instagram.com/festivalfrancomexicano"
-      target="_blank"
-      rel="noopener">
+    <a href="https://www.instagram.com/festivalfrancomexicano"
+       target="_blank" rel="noopener">
       Instagram
     </a>
 
-    <a
-      href="https://www.facebook.com/share/17njmKGrgN/"
-      target="_blank"
-      rel="noopener">
+    <a href="https://www.facebook.com/share/17njmKGrgN/"
+       target="_blank" rel="noopener">
       Facebook
     </a>
 
-    <a
-      href="https://x.com/festivalfrances"
-      target="_blank"
-      rel="noopener">
+    <a href="https://x.com/festivalfrances"
+       target="_blank" rel="noopener">
       X
     </a>
 
@@ -636,20 +434,17 @@ footer{
 
   </div>
 
-
   <img
     src="LOGO.jpg"
     class="footer-logo"
     alt="Festival Franco-Mexicano"
   >
 
-
   <div class="footer-name">
     Festival Franco-Mexicano · Gastronomía · CDMX
   </div>
 
 </footer>
-
 
 </body>
 </html>
