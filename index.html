@@ -4,18 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Festival Franco-Mexicano — Ciudad de México</title>
+<title>Festival Franco-Mexicano de Gastronomía — Ciudad de México</title>
+
+<meta name="description"
+content="Festival Franco-Mexicano de Gastronomía · Ciudad de México · Desde 2004">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-  --cream:#f3ede2;
-  --dark:#171717;
-  --gold:#d3ad63;
+  --black:#111111;
+  --cream:#f3eee4;
+  --white:#ffffff;
+  --wine:#761f35;
+  --green:#264c3b;
+  --blue:#1e446f;
+  --gold:#d6aa53;
 }
 
 *{
@@ -24,104 +32,129 @@
   padding:0;
 }
 
-html,body{
-  min-height:100%;
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-  font-family:'Manrope',Arial,sans-serif;
+  font-family:'DM Sans',Arial,sans-serif;
   background:var(--cream);
-  color:var(--dark);
+  color:var(--black);
 }
 
 /* =========================
-   PAGE D'ACCUEIL
+   HERO
 ========================= */
 
-.home{
-  min-height:100vh;
+.hero{
+  min-height:48vh;
   display:flex;
-  flex-direction:column;
-}
-
-/* =========================
-   EN-TÊTE
-========================= */
-
-.header{
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  padding:70px 25px 45px;
   text-align:center;
-  padding:28px 20px 22px;
 }
 
-.logo{
-  width:82px;
-  height:82px;
-  border-radius:50%;
-  object-fit:cover;
-  display:block;
-  margin:0 auto 14px;
+/* gros élément graphique de fond */
+
+.hero::before{
+  content:"FR × MX";
+  position:absolute;
+  font-size:clamp(110px,23vw,330px);
+  font-weight:700;
+  letter-spacing:-.08em;
+  color:rgba(0,0,0,.035);
+  white-space:nowrap;
+  pointer-events:none;
 }
 
-.header h1{
-  font-size:clamp(22px,3vw,34px);
-  line-height:1;
-  font-weight:600;
-  letter-spacing:-0.04em;
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
 }
 
-.header p{
-  margin-top:8px;
+.hero-small{
   font-size:12px;
+  font-weight:600;
+  letter-spacing:.24em;
   text-transform:uppercase;
-  letter-spacing:.18em;
-  color:#777067;
+  margin-bottom:19px;
+  color:#70695f;
 }
+
+.hero h1{
+  font-size:clamp(52px,9.5vw,138px);
+  line-height:.78;
+  letter-spacing:-.075em;
+  font-weight:700;
+}
+
+.hero h1 span{
+  display:block;
+}
+
+.hero-gastro{
+  margin-top:20px;
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:clamp(28px,4.5vw,57px);
+  color:var(--wine);
+}
+
+.hero-city{
+  margin-top:23px;
+  font-size:clamp(16px,2vw,22px);
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.hero-line{
+  width:65px;
+  height:3px;
+  background:var(--wine);
+  margin:25px auto 0;
+}
+
 
 /* =========================
-   TROIS PORTES
+   3 GRANDES PORTES
 ========================= */
 
 .portals{
-  flex:1;
-  width:min(1400px,100%);
-  margin:auto;
-  padding:12px 28px 38px;
-
+  width:min(1500px,100%);
+  margin:0 auto;
+  padding:0 22px 55px;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:12px;
 }
 
 .portal{
-  min-height:560px;
   position:relative;
+  min-height:535px;
   overflow:hidden;
+  color:white;
+  cursor:pointer;
+  text-decoration:none;
   display:flex;
   align-items:flex-end;
-
-  text-decoration:none;
-  color:white;
-
-  background-position:center;
-  background-size:cover;
-
-  border-radius:4px;
-
   isolation:isolate;
 }
 
-/* Photos */
+/* image de fond */
 
-.portal-festival{
-  background-image:url("galerie-03.jpg");
-}
-
-.portal-2026{
-  background-image:url("galerie-01.jpg");
-}
-
-.portal-2027{
-  background-image:url("galerie-08.jpg");
+.portal::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-position:center;
+  background-size:cover;
+  transition:transform .7s cubic-bezier(.2,.7,.2,1);
 }
 
 /* voile */
@@ -131,150 +164,229 @@ body{
   position:absolute;
   inset:0;
   z-index:-1;
-
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,.78) 0%,
-      rgba(0,0,0,.28) 52%,
-      rgba(0,0,0,.08) 100%
-    );
-
-  transition:.4s ease;
-}
-
-/* léger mouvement */
-
-.portal::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-2;
-
-  background:inherit;
-  background-position:center;
-  background-size:cover;
-
-  transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  transition:background .3s ease;
 }
 
 .portal:hover::after{
-  transform:scale(1.045);
+  transform:scale(1.055);
 }
 
-.portal:hover::before{
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,.85),
-      rgba(0,0,0,.18)
-    );
+/* images provisoires : on pourra les changer après */
+
+.festival-card::after{
+  background-image:url("galerie-03.jpg");
 }
 
-/* =========================
-   TEXTE DES CARTES
-========================= */
+.edition26-card::after{
+  background-image:url("galerie-01.jpg");
+}
+
+.edition27-card::after{
+  background-image:url("galerie-08.jpg");
+}
+
+
+/* traitements très différents pour qu'on lise immédiatement 3 univers */
+
+.festival-card::before{
+  background:linear-gradient(
+    to top,
+    rgba(15,15,15,.94) 0%,
+    rgba(15,15,15,.60) 45%,
+    rgba(15,15,15,.12) 100%
+  );
+}
+
+.edition26-card::before{
+  background:linear-gradient(
+    to top,
+    rgba(105,25,46,.96) 0%,
+    rgba(105,25,46,.55) 45%,
+    rgba(0,0,0,.10) 100%
+  );
+}
+
+.edition27-card::before{
+  background:linear-gradient(
+    to top,
+    rgba(25,67,50,.97) 0%,
+    rgba(25,67,50,.55) 45%,
+    rgba(0,0,0,.10) 100%
+  );
+}
+
+
+/* contenu */
 
 .portal-content{
   width:100%;
-  padding:34px 30px;
+  padding:34px 32px 31px;
 }
 
-.number{
-  display:block;
-  margin-bottom:12px;
-
-  color:var(--gold);
+.portal-number{
   font-size:11px;
+  letter-spacing:.20em;
   font-weight:700;
-  letter-spacing:.18em;
+  color:#e6bb68;
 }
 
-.portal h2{
-  font-size:clamp(28px,3vw,42px);
-  line-height:1;
-  letter-spacing:-.045em;
+.portal-big{
+  margin-top:10px;
+  font-size:clamp(44px,5vw,76px);
+  line-height:.85;
+  letter-spacing:-.06em;
+  font-weight:700;
+}
+
+.portal-title{
+  margin-top:14px;
+  font-size:19px;
   font-weight:600;
 }
 
-.portal-subtitle{
+.portal-copy{
   margin-top:10px;
+  max-width:330px;
   font-size:14px;
-  color:rgba(255,255,255,.78);
+  line-height:1.5;
+  color:rgba(255,255,255,.76);
 }
 
-.portal-description{
-  margin-top:20px;
+.portal-bottom{
+  border-top:1px solid rgba(255,255,255,.28);
+  margin-top:25px;
   padding-top:17px;
-  border-top:1px solid rgba(255,255,255,.25);
-
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:15px;
-
-  font-size:12px;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.12em;
   text-transform:uppercase;
-  letter-spacing:.08em;
-  color:rgba(255,255,255,.82);
 }
 
 .arrow{
-  font-size:24px;
-  line-height:1;
+  font-size:26px;
   transition:transform .25s ease;
 }
 
 .portal:hover .arrow{
-  transform:translateX(6px);
+  transform:translateX(7px);
 }
+
 
 /* =========================
-   2027 : PETIT SIGNE VISUEL
+   3 SECTIONS PROVISOIRES
 ========================= */
 
-.portal-2027 .number{
-  color:#f0cc7c;
+.placeholder{
+  min-height:65vh;
+  padding:90px 24px;
+  display:flex;
+  align-items:center;
 }
 
-.portal-2027::before{
-  background:
-    linear-gradient(
-      to top,
-      rgba(32,54,43,.92) 0%,
-      rgba(32,54,43,.38) 58%,
-      rgba(0,0,0,.08) 100%
-    );
+.placeholder-inner{
+  width:min(1000px,100%);
+  margin:auto;
 }
 
-/* =========================
-   BAS DE PAGE
-========================= */
-
-.footer{
-  padding:0 20px 25px;
-  text-align:center;
+.placeholder-label{
   font-size:11px;
-  letter-spacing:.08em;
-  color:#8b8378;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+  font-weight:700;
+  margin-bottom:13px;
 }
+
+.placeholder h2{
+  font-size:clamp(45px,8vw,95px);
+  letter-spacing:-.065em;
+  line-height:.85;
+}
+
+.placeholder p{
+  max-width:650px;
+  margin-top:25px;
+  font-size:18px;
+  line-height:1.6;
+}
+
+#festival{
+  background:#151515;
+  color:white;
+}
+
+#edition2026{
+  background:var(--wine);
+  color:white;
+}
+
+#edition2027{
+  background:var(--green);
+  color:white;
+}
+
+.placeholder .back{
+  display:inline-block;
+  margin-top:38px;
+  border-bottom:1px solid currentColor;
+  padding-bottom:4px;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+
+/* =========================
+   FOOTER / LOGO EN SIGNATURE
+========================= */
+
+footer{
+  background:#0d0d0d;
+  color:#aaa;
+  padding:35px 20px;
+  text-align:center;
+}
+
+.footer-logo{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  object-fit:cover;
+  margin:0 auto 14px;
+  opacity:.9;
+}
+
+footer p{
+  font-size:11px;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
 
 /* =========================
    TABLETTE
 ========================= */
 
-@media(max-width:900px){
+@media(max-width:950px){
+
+  .hero{
+    min-height:42vh;
+  }
 
   .portals{
     grid-template-columns:1fr;
-    max-width:700px;
+    max-width:760px;
   }
 
   .portal{
-    min-height:360px;
+    min-height:370px;
   }
 
 }
+
 
 /* =========================
    MOBILE
@@ -282,30 +394,35 @@ body{
 
 @media(max-width:520px){
 
-  .header{
-    padding:22px 15px 14px;
+  .hero{
+    min-height:auto;
+    padding:55px 18px 38px;
   }
 
-  .logo{
-    width:68px;
-    height:68px;
+  .hero h1{
+    line-height:.83;
   }
 
   .portals{
-    padding:10px 12px 24px;
-    gap:8px;
+    padding:0 10px 30px;
+    gap:9px;
   }
 
   .portal{
-    min-height:265px;
+    min-height:315px;
   }
 
   .portal-content{
-    padding:24px 22px;
+    padding:25px 22px;
   }
 
-  .portal h2{
-    font-size:30px;
+  .portal-big{
+    font-size:48px;
+  }
+
+  .placeholder{
+    min-height:70vh;
+    padding:70px 20px;
   }
 
 }
@@ -313,148 +430,278 @@ body{
 </style>
 </head>
 
+
 <body>
 
-<main class="home">
 
-  <!-- EN-TÊTE -->
+<!-- =========================
+     INTRO
+========================= -->
 
-  <header class="header">
+<header class="hero" id="top">
 
-    <img
-      src="LOGO.jpg"
-      class="logo"
-      alt="Festival Franco-Mexicano"
-    >
+  <div class="hero-content">
 
-    <h1>Festival Franco-Mexicano</h1>
+    <div class="hero-small">
+      Desde 2004 · Francia × México
+    </div>
 
-    <p>Ciudad de México</p>
+    <h1>
+      <span>FESTIVAL</span>
+      <span>FRANCO-MEXICANO</span>
+    </h1>
 
-  </header>
+    <div class="hero-gastro">
+      de Gastronomía
+    </div>
+
+    <div class="hero-city">
+      Ciudad de México
+    </div>
+
+    <div class="hero-line"></div>
+
+  </div>
+
+</header>
 
 
-  <!-- 3 PORTES -->
+<!-- =========================
+     3 PORTES
+========================= -->
 
-  <section class="portals">
+<section class="portals">
 
 
-    <!-- FESTIVAL -->
+  <!-- 01 FESTIVAL -->
 
-    <a class="portal portal-festival"
-       href="festival.html">
+  <a class="portal festival-card"
+     href="#festival">
 
-      <div class="portal-content">
+    <div class="portal-content">
 
-        <span class="number">
-          01 · DESDE 2004
+      <div class="portal-number">
+        01 · DESDE 2004
+      </div>
+
+      <div class="portal-big">
+        EL<br>FESTIVAL
+      </div>
+
+      <div class="portal-title">
+        Más de veinte años de historia
+      </div>
+
+      <div class="portal-copy">
+        Descubrir la identidad, la trayectoria
+        y quienes han acompañado al Festival.
+      </div>
+
+      <div class="portal-bottom">
+
+        <span>
+          Descubrir
         </span>
 
-        <h2>
-          El Festival
-        </h2>
-
-        <div class="portal-subtitle">
-          Francia × México
-        </div>
-
-        <div class="portal-description">
-
-          <span>
-            Historia · Identidad · Trayectoria
-          </span>
-
-          <span class="arrow">
-            →
-          </span>
-
-        </div>
+        <span class="arrow">
+          →
+        </span>
 
       </div>
 
-    </a>
+    </div>
+
+  </a>
 
 
-    <!-- 2026 -->
+  <!-- 02 2026 -->
 
-    <a class="portal portal-2026"
-       href="2026.html">
+  <a class="portal edition26-card"
+     href="#edition2026">
 
-      <div class="portal-content">
+    <div class="portal-content">
 
-        <span class="number">
-          02 · XX EDICIÓN
+      <div class="portal-number">
+        02 · XX EDICIÓN
+      </div>
+
+      <div class="portal-big">
+        2026
+      </div>
+
+      <div class="portal-title">
+        La nueva etapa en Ciudad de México
+      </div>
+
+      <div class="portal-copy">
+        Fotos, vídeo y prensa de la XX edición
+        del Festival Franco-Mexicano.
+      </div>
+
+      <div class="portal-bottom">
+
+        <span>
+          Revivir 2026
         </span>
 
-        <h2>
-          2026
-        </h2>
-
-        <div class="portal-subtitle">
-          Ciudad de México
-        </div>
-
-        <div class="portal-description">
-
-          <span>
-            Fotos · Video · Prensa
-          </span>
-
-          <span class="arrow">
-            →
-          </span>
-
-        </div>
+        <span class="arrow">
+          →
+        </span>
 
       </div>
 
-    </a>
+    </div>
+
+  </a>
 
 
-    <!-- 2027 -->
+  <!-- 03 2027 -->
 
-    <a class="portal portal-2027"
-       href="2027.html">
+  <a class="portal edition27-card"
+     href="#edition2027">
 
-      <div class="portal-content">
+    <div class="portal-content">
 
-        <span class="number">
-          03 · XXI EDICIÓN
+      <div class="portal-number">
+        03 · XXI EDICIÓN
+      </div>
+
+      <div class="portal-big">
+        2027
+      </div>
+
+      <div class="portal-title">
+        Lo que viene
+      </div>
+
+      <div class="portal-copy">
+        Ciudad de México · Abril 2027
+        <br>
+        Visión · Programa · Patrocinios
+      </div>
+
+      <div class="portal-bottom">
+
+        <span>
+          Descubrir 2027
         </span>
 
-        <h2>
-          2027
-        </h2>
-
-        <div class="portal-subtitle">
-          Ciudad de México · Abril
-        </div>
-
-        <div class="portal-description">
-
-          <span>
-            Visión · Programa · Patrocinios
-          </span>
-
-          <span class="arrow">
-            →
-          </span>
-
-        </div>
+        <span class="arrow">
+          →
+        </span>
 
       </div>
 
+    </div>
+
+  </a>
+
+
+</section>
+
+
+<!-- =========================
+     CONTENU À CONSTRUIRE
+========================= -->
+
+<section class="placeholder" id="festival">
+
+  <div class="placeholder-inner">
+
+    <div class="placeholder-label">
+      01 · El Festival
+    </div>
+
+    <h2>
+      Nuestra<br>historia.
+    </h2>
+
+    <p>
+      Aquí construiremos la presentación del Festival:
+      identidad, trayectoria, carteles históricos
+      y las instituciones y marcas que nos han acompañado.
+    </p>
+
+    <a class="back" href="#top">
+      Volver arriba ↑
     </a>
 
+  </div>
 
-  </section>
+</section>
 
 
-  <footer class="footer">
-    FESTIVAL FRANCO-MEXICANO · CIUDAD DE MÉXICO
-  </footer>
+<section class="placeholder" id="edition2026">
 
-</main>
+  <div class="placeholder-inner">
+
+    <div class="placeholder-label">
+      02 · XX Edición
+    </div>
+
+    <h2>
+      Ciudad de México<br>2026.
+    </h2>
+
+    <p>
+      Aquí integraremos el contenido 2026 ya existente:
+      fotografías, vídeo y boletín de prensa.
+    </p>
+
+    <a class="back" href="#top">
+      Volver arriba ↑
+    </a>
+
+  </div>
+
+</section>
+
+
+<section class="placeholder" id="edition2027">
+
+  <div class="placeholder-inner">
+
+    <div class="placeholder-label">
+      03 · XXI Edición
+    </div>
+
+    <h2>
+      Ciudad de México<br>2027.
+    </h2>
+
+    <p>
+      Aquí construiremos progresivamente la próxima edición:
+      visión, grandes ejes, territorios invitados
+      y oportunidades de patrocinio.
+    </p>
+
+    <a class="back" href="#top">
+      Volver arriba ↑
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     LOGO COMME SIGNATURE
+========================= -->
+
+<footer>
+
+  <img
+    src="LOGO.jpg"
+    class="footer-logo"
+    alt="Festival Franco-Mexicano"
+  >
+
+  <p>
+    Festival Franco-Mexicano · Ciudad de México
+  </p>
+
+</footer>
+
 
 </body>
 </html>
