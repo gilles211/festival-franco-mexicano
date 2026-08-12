@@ -23,6 +23,7 @@ content="Festival Franco-Mexicano · Gastronomía · CDMX · Desde 2004 · XXI E
   --red:#E1000F;
   --green:#1F5A3F;
   --grey:#747474;
+  --border:#e2e2e2;
 }
 
 *{
@@ -44,7 +45,7 @@ body{
   position:relative;
   overflow:hidden;
   text-align:center;
-  padding:55px 20px 42px;
+  padding:45px 20px 34px;
 }
 
 .hero::before{
@@ -53,7 +54,7 @@ body{
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);
-  font-size:clamp(120px,23vw,330px);
+  font-size:clamp(110px,20vw,280px);
   font-weight:700;
   letter-spacing:-.08em;
   color:rgba(0,0,0,.025);
@@ -66,19 +67,19 @@ body{
 }
 
 .hero-small{
-  margin-bottom:20px;
+  margin-bottom:17px;
   color:var(--grey);
-  font-size:11px;
+  font-size:10px;
   font-weight:600;
   letter-spacing:.24em;
   text-transform:uppercase;
 }
 
 .hero h1{
-  font-size:clamp(52px,9.3vw,136px);
+  font-size:clamp(48px,8vw,112px);
   font-weight:700;
-  line-height:.80;
-  letter-spacing:-.072em;
+  line-height:.82;
+  letter-spacing:-.068em;
 }
 
 .hero h1 span{
@@ -86,33 +87,45 @@ body{
 }
 
 .gastronomia{
-  margin-top:22px;
+  margin-top:18px;
   color:var(--red);
   font-family:'Playfair Display',serif;
-  font-size:clamp(31px,4.5vw,59px);
+  font-size:clamp(29px,4vw,50px);
   font-style:italic;
 }
 
 .city{
-  margin-top:20px;
-  font-size:clamp(17px,2vw,23px);
+  margin-top:16px;
+  font-size:clamp(15px,1.7vw,20px);
   font-weight:700;
   letter-spacing:.25em;
 }
 
 .hero-line{
-  width:62px;
-  height:3px;
-  margin:21px auto 0;
+  width:56px;
+  height:2px;
+  margin:17px auto 0;
   background:var(--red);
 }
 
 
-/* GRANDE PHOTO */
+/* ENSEMBLE CENTRAL */
+
+.site-frame{
+  width:min(1260px,calc(100% - 70px));
+  margin:0 auto 35px;
+
+  border:1px solid var(--border);
+  padding:7px;
+
+  background:#fff;
+}
+
+
+/* PHOTO */
 
 .visual{
-  width:min(1400px,calc(100% - 44px));
-  margin:0 auto 10px;
+  width:100%;
   overflow:hidden;
 }
 
@@ -126,18 +139,22 @@ body{
 /* TROIS BLOCS */
 
 .blocks{
-  width:min(1400px,calc(100% - 44px));
-  margin:0 auto;
+  width:100%;
+  margin-top:7px;
 }
 
 .main-block{
-  min-height:390px;
-  padding:clamp(45px,7vw,90px);
+  min-height:320px;
+  padding:clamp(38px,5.5vw,70px);
   color:#fff;
   text-decoration:none;
   display:flex;
   align-items:center;
   border-bottom:7px solid #fff;
+}
+
+.main-block:last-child{
+  border-bottom:0;
 }
 
 .blue{background:var(--blue);}
@@ -149,8 +166,8 @@ body{
 }
 
 .block-number{
-  margin-bottom:17px;
-  font-size:12px;
+  margin-bottom:14px;
+  font-size:11px;
   font-weight:700;
   letter-spacing:.22em;
   text-transform:uppercase;
@@ -158,47 +175,47 @@ body{
 }
 
 .block-title{
-  font-size:clamp(55px,9vw,120px);
+  font-size:clamp(50px,7.5vw,96px);
   font-weight:700;
-  line-height:.83;
-  letter-spacing:-.065em;
+  line-height:.85;
+  letter-spacing:-.06em;
 }
 
 .block-subtitle{
-  margin-top:28px;
-  font-size:clamp(17px,2vw,22px);
+  margin-top:22px;
+  font-size:clamp(16px,1.7vw,20px);
   font-weight:500;
 }
 
 .block-info{
-  margin-top:10px;
+  margin-top:8px;
   color:rgba(255,255,255,.76);
-  font-size:14px;
-  line-height:1.6;
+  font-size:13px;
+  line-height:1.55;
 }
 
 .block-link{
-  margin-top:35px;
-  padding-top:17px;
+  margin-top:27px;
+  padding-top:14px;
   border-top:1px solid rgba(255,255,255,.32);
   display:flex;
   justify-content:space-between;
   align-items:center;
-  font-size:11px;
+  font-size:10px;
   font-weight:700;
   letter-spacing:.15em;
   text-transform:uppercase;
 }
 
 .arrow{
-  font-size:30px;
+  font-size:27px;
 }
 
 
 /* FOOTER */
 
 footer{
-  padding:34px 20px 40px;
+  padding:10px 20px 35px;
   text-align:center;
 }
 
@@ -220,9 +237,9 @@ footer{
 
 .footer-logo{
   display:block;
-  width:55px;
-  height:55px;
-  margin:25px auto 12px;
+  width:50px;
+  height:50px;
+  margin:22px auto 10px;
   border-radius:50%;
   object-fit:cover;
 }
@@ -236,27 +253,76 @@ footer{
 }
 
 
+/* TABLETTE */
+
+@media(max-width:900px){
+
+  .site-frame{
+    width:calc(100% - 40px);
+  }
+
+  .main-block{
+    min-height:290px;
+    padding:42px;
+  }
+
+}
+
+
 /* MOBILE */
 
 @media(max-width:700px){
 
   .hero{
-    padding:45px 14px 30px;
+    padding:38px 14px 27px;
   }
 
-  .visual,
+  .hero h1{
+    font-size:clamp(43px,12vw,62px);
+  }
+
+  .gastronomia{
+    font-size:29px;
+    margin-top:16px;
+  }
+
+  .city{
+    margin-top:14px;
+    font-size:15px;
+  }
+
+  .site-frame{
+    width:calc(100% - 24px);
+    padding:4px;
+  }
+
   .blocks{
-    width:calc(100% - 20px);
+    margin-top:4px;
   }
 
   .main-block{
-    min-height:330px;
-    padding:48px 25px;
+    min-height:255px;
+    padding:36px 24px;
+    border-bottom:4px solid #fff;
   }
 
   .block-title{
-    font-size:58px;
+    font-size:50px;
   }
+
+  .block-subtitle{
+    margin-top:18px;
+    font-size:16px;
+  }
+
+  .block-info{
+    font-size:12px;
+  }
+
+  .block-link{
+    margin-top:23px;
+  }
+
 }
 
 </style>
@@ -293,114 +359,123 @@ footer{
 </header>
 
 
-<!-- PHOTO -->
+<!-- PHOTO + TROIS BLOCS DANS UN CADRE UNIQUE -->
 
-<div class="visual">
+<div class="site-frame">
 
-  <img
-    src="file_000000006d8081fba5413ce628024f5f.png"
-    alt="Festival Franco-Mexicano"
-  >
+  <div class="visual">
+
+    <img
+      src="file_000000006d8081fba5413ce628024f5f.png"
+      alt="Festival Franco-Mexicano"
+    >
+
+  </div>
+
+
+  <main class="blocks">
+
+
+    <!-- EL FESTIVAL -->
+
+    <a class="main-block blue" href="festival.html">
+
+      <div class="block-content">
+
+        <div class="block-number">
+          01 · DESDE 2004
+        </div>
+
+        <div class="block-title">
+          EL FESTIVAL
+        </div>
+
+        <div class="block-subtitle">
+          Más de veinte años de historia
+        </div>
+
+        <div class="block-info">
+          Identidad · Trayectoria · Encuentros
+        </div>
+
+        <div class="block-link">
+          <span>Descubrir el Festival</span>
+          <span class="arrow">→</span>
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- 2026 -->
+
+    <a class="main-block red" href="2026.html">
+
+      <div class="block-content">
+
+        <div class="block-number">
+          02 · XX EDICIÓN
+        </div>
+
+        <div class="block-title">
+          2026
+        </div>
+
+        <div class="block-subtitle">
+          La nueva etapa en CDMX
+        </div>
+
+        <div class="block-info">
+          Fotos · Video · Prensa
+        </div>
+
+        <div class="block-link">
+          <span>Descubrir la edición 2026</span>
+          <span class="arrow">→</span>
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- 2027 -->
+
+    <a class="main-block green" href="2027.html">
+
+      <div class="block-content">
+
+        <div class="block-number">
+          03 · XXI EDICIÓN
+        </div>
+
+        <div class="block-title">
+          2027
+        </div>
+
+        <div class="block-subtitle">
+          La próxima edición
+        </div>
+
+        <div class="block-info">
+          CDMX · Abril 2027<br>
+          Visión · Programa · Patrocinios
+        </div>
+
+        <div class="block-link">
+          <span>Descubrir 2027</span>
+          <span class="arrow">→</span>
+        </div>
+
+      </div>
+
+    </a>
+
+
+  </main>
 
 </div>
-
-
-<!-- TROIS BLOCS -->
-
-<main class="blocks">
-
-
-  <a class="main-block blue" href="festival.html">
-
-    <div class="block-content">
-
-      <div class="block-number">
-        01 · DESDE 2004
-      </div>
-
-      <div class="block-title">
-        EL FESTIVAL
-      </div>
-
-      <div class="block-subtitle">
-        Más de veinte años de historia
-      </div>
-
-      <div class="block-info">
-        Identidad · Trayectoria · Encuentros
-      </div>
-
-      <div class="block-link">
-        <span>Descubrir el Festival</span>
-        <span class="arrow">→</span>
-      </div>
-
-    </div>
-
-  </a>
-
-
-  <a class="main-block red" href="2026.html">
-
-    <div class="block-content">
-
-      <div class="block-number">
-        02 · XX EDICIÓN
-      </div>
-
-      <div class="block-title">
-        2026
-      </div>
-
-      <div class="block-subtitle">
-        La nueva etapa en CDMX
-      </div>
-
-      <div class="block-info">
-        Fotos · Video · Prensa
-      </div>
-
-      <div class="block-link">
-        <span>Descubrir la edición 2026</span>
-        <span class="arrow">→</span>
-      </div>
-
-    </div>
-
-  </a>
-
-
-  <a class="main-block green" href="2027.html">
-
-    <div class="block-content">
-
-      <div class="block-number">
-        03 · XXI EDICIÓN
-      </div>
-
-      <div class="block-title">
-        2027
-      </div>
-
-      <div class="block-subtitle">
-        La próxima edición
-      </div>
-
-      <div class="block-info">
-        CDMX · Abril 2027<br>
-        Visión · Programa · Patrocinios
-      </div>
-
-      <div class="block-link">
-        <span>Descubrir 2027</span>
-        <span class="arrow">→</span>
-      </div>
-
-    </div>
-
-  </a>
-
-</main>
 
 
 <footer>
