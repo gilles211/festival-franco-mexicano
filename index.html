@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Festival Franco-Mexicano de Gastronomía — Ciudad de México</title>
+<title>Festival Franco-Mexicano — Gastronomía · Ciudad de México</title>
 
 <meta name="description"
-content="Festival Franco-Mexicano de Gastronomía · Ciudad de México · Desde 2004">
+content="Festival Franco-Mexicano · Gastronomía · Ciudad de México · Desde 2004">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,13 +17,17 @@ content="Festival Franco-Mexicano de Gastronomía · Ciudad de México · Desde 
 <style>
 
 :root{
-  --black:#111111;
-  --cream:#f3eee4;
   --white:#ffffff;
-  --wine:#761f35;
-  --green:#264c3b;
-  --blue:#1e446f;
-  --gold:#d6aa53;
+  --black:#111111;
+
+  /* France */
+  --blue:#173f73;
+
+  /* France + Mexique */
+  --red:#9b263d;
+
+  /* Mexique */
+  --green:#1f563d;
 }
 
 *{
@@ -38,26 +42,26 @@ html{
 
 body{
   font-family:'DM Sans',Arial,sans-serif;
-  background:var(--cream);
+  background:var(--white);
   color:var(--black);
 }
 
-/* =========================
-   HERO
-========================= */
+
+/* ========================================
+   OUVERTURE
+======================================== */
 
 .hero{
-  min-height:48vh;
+  min-height:47vh;
   display:flex;
   align-items:center;
   justify-content:center;
   position:relative;
   overflow:hidden;
-  padding:70px 25px 45px;
+  padding:65px 25px 48px;
   text-align:center;
+  background:#fff;
 }
-
-/* gros élément graphique de fond */
 
 .hero::before{
   content:"FR × MX";
@@ -65,7 +69,7 @@ body{
   font-size:clamp(110px,23vw,330px);
   font-weight:700;
   letter-spacing:-.08em;
-  color:rgba(0,0,0,.035);
+  color:rgba(0,0,0,.028);
   white-space:nowrap;
   pointer-events:none;
 }
@@ -73,16 +77,16 @@ body{
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:1200px;
+  max-width:1250px;
 }
 
 .hero-small{
-  font-size:12px;
+  font-size:11px;
   font-weight:600;
-  letter-spacing:.24em;
+  letter-spacing:.25em;
   text-transform:uppercase;
-  margin-bottom:19px;
-  color:#70695f;
+  margin-bottom:20px;
+  color:#777;
 }
 
 .hero h1{
@@ -100,168 +104,172 @@ body{
   margin-top:20px;
   font-family:'Playfair Display',serif;
   font-style:italic;
-  font-size:clamp(28px,4.5vw,57px);
-  color:var(--wine);
+  font-size:clamp(29px,4.5vw,58px);
+  color:var(--red);
 }
 
 .hero-city{
   margin-top:23px;
-  font-size:clamp(16px,2vw,22px);
+  font-size:clamp(15px,2vw,21px);
   font-weight:600;
-  letter-spacing:.16em;
+  letter-spacing:.18em;
   text-transform:uppercase;
 }
 
 .hero-line{
   width:65px;
   height:3px;
-  background:var(--wine);
-  margin:25px auto 0;
+  background:var(--red);
+  margin:24px auto 0;
 }
 
 
-/* =========================
-   3 GRANDES PORTES
-========================= */
+/* ========================================
+   LES TROIS PORTES
+======================================== */
 
 .portals{
   width:min(1500px,100%);
   margin:0 auto;
-  padding:0 22px 55px;
+  padding:0 22px 60px;
+
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:12px;
 }
 
 .portal{
+  min-height:410px;
   position:relative;
-  min-height:535px;
   overflow:hidden;
-  color:white;
-  cursor:pointer;
+
+  color:#fff;
   text-decoration:none;
+
+  padding:36px 32px 30px;
+
   display:flex;
-  align-items:flex-end;
-  isolation:isolate;
+  flex-direction:column;
+  justify-content:flex-end;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
 }
 
-/* image de fond */
+.portal:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,.14);
+}
 
-.portal::after{
-  content:"";
+
+/* COULEURS */
+
+.portal-festival{
+  background:var(--blue);
+}
+
+.portal-2026{
+  background:var(--red);
+}
+
+.portal-2027{
+  background:var(--green);
+}
+
+
+/* ========================================
+   PHOTOS RONDES
+======================================== */
+
+.portal-photo{
   position:absolute;
-  inset:0;
-  z-index:-2;
-  background-position:center;
-  background-size:cover;
-  transition:transform .7s cubic-bezier(.2,.7,.2,1);
+  top:27px;
+  right:27px;
+
+  width:145px;
+  height:145px;
+
+  border-radius:50%;
+  overflow:hidden;
+
+  border:4px solid rgba(255,255,255,.9);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.18);
+
+  transition:transform .4s ease;
 }
 
-/* voile */
-
-.portal::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  transition:background .3s ease;
+.portal:hover .portal-photo{
+  transform:scale(1.045);
 }
 
-.portal:hover::after{
-  transform:scale(1.055);
-}
-
-/* images provisoires : on pourra les changer après */
-
-.festival-card::after{
-  background-image:url("galerie-03.jpg");
-}
-
-.edition26-card::after{
-  background-image:url("galerie-01.jpg");
-}
-
-.edition27-card::after{
-  background-image:url("galerie-08.jpg");
-}
-
-
-/* traitements très différents pour qu'on lise immédiatement 3 univers */
-
-.festival-card::before{
-  background:linear-gradient(
-    to top,
-    rgba(15,15,15,.94) 0%,
-    rgba(15,15,15,.60) 45%,
-    rgba(15,15,15,.12) 100%
-  );
-}
-
-.edition26-card::before{
-  background:linear-gradient(
-    to top,
-    rgba(105,25,46,.96) 0%,
-    rgba(105,25,46,.55) 45%,
-    rgba(0,0,0,.10) 100%
-  );
-}
-
-.edition27-card::before{
-  background:linear-gradient(
-    to top,
-    rgba(25,67,50,.97) 0%,
-    rgba(25,67,50,.55) 45%,
-    rgba(0,0,0,.10) 100%
-  );
-}
-
-
-/* contenu */
-
-.portal-content{
+.portal-photo img{
   width:100%;
-  padding:34px 32px 31px;
+  height:100%;
+  object-fit:cover;
 }
+
+
+/* ========================================
+   TEXTE DES BLOCS
+======================================== */
 
 .portal-number{
-  font-size:11px;
-  letter-spacing:.20em;
-  font-weight:700;
-  color:#e6bb68;
-}
+  position:absolute;
+  top:34px;
+  left:32px;
 
-.portal-big{
-  margin-top:10px;
-  font-size:clamp(44px,5vw,76px);
-  line-height:.85;
-  letter-spacing:-.06em;
+  font-size:11px;
   font-weight:700;
+  letter-spacing:.20em;
+
+  opacity:.72;
 }
 
 .portal-title{
-  margin-top:14px;
-  font-size:19px;
-  font-weight:600;
+  position:relative;
+
+  font-size:clamp(44px,5vw,72px);
+  line-height:.84;
+  letter-spacing:-.065em;
+  font-weight:700;
+
+  max-width:75%;
 }
 
-.portal-copy{
-  margin-top:10px;
-  max-width:330px;
-  font-size:14px;
-  line-height:1.5;
-  color:rgba(255,255,255,.76);
+.portal-subtitle{
+  margin-top:17px;
+
+  font-size:16px;
+  font-weight:500;
+
+  max-width:320px;
+}
+
+.portal-info{
+  margin-top:9px;
+
+  font-size:13px;
+  line-height:1.45;
+
+  color:rgba(255,255,255,.72);
 }
 
 .portal-bottom{
-  border-top:1px solid rgba(255,255,255,.28);
   margin-top:25px;
   padding-top:17px;
+
+  border-top:1px solid rgba(255,255,255,.28);
+
   display:flex;
   justify-content:space-between;
   align-items:center;
+
   font-size:11px;
   font-weight:600;
-  letter-spacing:.12em;
+  letter-spacing:.13em;
   text-transform:uppercase;
 }
 
@@ -275,106 +283,115 @@ body{
 }
 
 
-/* =========================
-   3 SECTIONS PROVISOIRES
-========================= */
+/* ========================================
+   CONTENU DES 3 UNIVERS
+   PROVISOIRE
+======================================== */
 
-.placeholder{
+.content-section{
   min-height:65vh;
-  padding:90px 24px;
+  padding:90px 25px;
   display:flex;
   align-items:center;
 }
 
-.placeholder-inner{
-  width:min(1000px,100%);
+.content-inner{
+  width:min(1050px,100%);
   margin:auto;
 }
 
-.placeholder-label{
+.content-label{
   font-size:11px;
+  font-weight:700;
   letter-spacing:.20em;
   text-transform:uppercase;
-  font-weight:700;
-  margin-bottom:13px;
+  margin-bottom:15px;
 }
 
-.placeholder h2{
-  font-size:clamp(45px,8vw,95px);
+.content-section h2{
+  font-size:clamp(48px,8vw,100px);
+  line-height:.84;
   letter-spacing:-.065em;
-  line-height:.85;
 }
 
-.placeholder p{
+.content-section p{
   max-width:650px;
-  margin-top:25px;
+  margin-top:27px;
   font-size:18px;
   line-height:1.6;
 }
 
-#festival{
-  background:#151515;
-  color:white;
-}
-
-#edition2026{
-  background:var(--wine);
-  color:white;
-}
-
-#edition2027{
-  background:var(--green);
-  color:white;
-}
-
-.placeholder .back{
+.content-section .back{
   display:inline-block;
   margin-top:38px;
-  border-bottom:1px solid currentColor;
   padding-bottom:4px;
-  font-size:12px;
-  font-weight:600;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
 
+  color:inherit;
+  text-decoration:none;
 
-/* =========================
-   FOOTER / LOGO EN SIGNATURE
-========================= */
+  border-bottom:1px solid currentColor;
 
-footer{
-  background:#0d0d0d;
-  color:#aaa;
-  padding:35px 20px;
-  text-align:center;
-}
-
-.footer-logo{
-  width:64px;
-  height:64px;
-  border-radius:50%;
-  object-fit:cover;
-  margin:0 auto 14px;
-  opacity:.9;
-}
-
-footer p{
   font-size:11px;
+  font-weight:600;
   letter-spacing:.13em;
   text-transform:uppercase;
 }
 
 
-/* =========================
+/* LES 3 COULEURS CONTINUENT */
+
+#festival{
+  background:var(--blue);
+  color:#fff;
+}
+
+#edition2026{
+  background:var(--red);
+  color:#fff;
+}
+
+#edition2027{
+  background:var(--green);
+  color:#fff;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer{
+  background:#fff;
+  color:#777;
+
+  padding:40px 20px;
+
+  text-align:center;
+}
+
+.footer-logo{
+  width:62px;
+  height:62px;
+
+  border-radius:50%;
+  object-fit:cover;
+
+  margin:0 auto 14px;
+}
+
+footer p{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+
+/* ========================================
    TABLETTE
-========================= */
+======================================== */
 
 @media(max-width:950px){
-
-  .hero{
-    min-height:42vh;
-  }
 
   .portals{
     grid-template-columns:1fr;
@@ -382,21 +399,25 @@ footer p{
   }
 
   .portal{
-    min-height:370px;
+    min-height:350px;
+  }
+
+  .portal-title{
+    max-width:65%;
   }
 
 }
 
 
-/* =========================
+/* ========================================
    MOBILE
-========================= */
+======================================== */
 
 @media(max-width:520px){
 
   .hero{
     min-height:auto;
-    padding:55px 18px 38px;
+    padding:52px 16px 38px;
   }
 
   .hero h1{
@@ -404,23 +425,38 @@ footer p{
   }
 
   .portals{
-    padding:0 10px 30px;
-    gap:9px;
+    padding:0 10px 35px;
+    gap:10px;
   }
 
   .portal{
-    min-height:315px;
-  }
-
-  .portal-content{
+    min-height:300px;
     padding:25px 22px;
   }
 
-  .portal-big{
-    font-size:48px;
+  .portal-number{
+    top:25px;
+    left:22px;
   }
 
-  .placeholder{
+  .portal-photo{
+    width:105px;
+    height:105px;
+    top:20px;
+    right:20px;
+    border-width:3px;
+  }
+
+  .portal-title{
+    font-size:46px;
+    max-width:70%;
+  }
+
+  .portal-subtitle{
+    font-size:15px;
+  }
+
+  .content-section{
     min-height:70vh;
     padding:70px 20px;
   }
@@ -430,13 +466,12 @@ footer p{
 </style>
 </head>
 
-
 <body>
 
 
-<!-- =========================
-     INTRO
-========================= -->
+<!-- ========================================
+     OUVERTURE
+======================================== -->
 
 <header class="hero" id="top">
 
@@ -452,7 +487,7 @@ footer p{
     </h1>
 
     <div class="hero-gastro">
-      de Gastronomía
+      Gastronomía
     </div>
 
     <div class="hero-city">
@@ -466,132 +501,105 @@ footer p{
 </header>
 
 
-<!-- =========================
-     3 PORTES
-========================= -->
+<!-- ========================================
+     3 BLOCS
+======================================== -->
 
 <section class="portals">
 
 
-  <!-- 01 FESTIVAL -->
+  <!-- EL FESTIVAL -->
 
-  <a class="portal festival-card"
-     href="#festival">
+  <a class="portal portal-festival" href="#festival">
 
-    <div class="portal-content">
+    <div class="portal-number">
+      01 · DESDE 2004
+    </div>
 
-      <div class="portal-number">
-        01 · DESDE 2004
-      </div>
+    <div class="portal-photo">
+      <img src="galerie-03.jpg" alt="Festival Franco-Mexicano">
+    </div>
 
-      <div class="portal-big">
-        EL<br>FESTIVAL
-      </div>
+    <div class="portal-title">
+      EL<br>FESTIVAL
+    </div>
 
-      <div class="portal-title">
-        Más de veinte años de historia
-      </div>
+    <div class="portal-subtitle">
+      Más de veinte años de historia
+    </div>
 
-      <div class="portal-copy">
-        Descubrir la identidad, la trayectoria
-        y quienes han acompañado al Festival.
-      </div>
+    <div class="portal-info">
+      Identidad · Trayectoria · Encuentros
+    </div>
 
-      <div class="portal-bottom">
-
-        <span>
-          Descubrir
-        </span>
-
-        <span class="arrow">
-          →
-        </span>
-
-      </div>
-
+    <div class="portal-bottom">
+      <span>Descubrir</span>
+      <span class="arrow">→</span>
     </div>
 
   </a>
 
 
-  <!-- 02 2026 -->
+  <!-- 2026 -->
 
-  <a class="portal edition26-card"
-     href="#edition2026">
+  <a class="portal portal-2026" href="#edition2026">
 
-    <div class="portal-content">
+    <div class="portal-number">
+      02 · XX EDICIÓN
+    </div>
 
-      <div class="portal-number">
-        02 · XX EDICIÓN
-      </div>
+    <div class="portal-photo">
+      <img src="galerie-01.jpg" alt="Edición 2026">
+    </div>
 
-      <div class="portal-big">
-        2026
-      </div>
+    <div class="portal-title">
+      2026
+    </div>
 
-      <div class="portal-title">
-        La nueva etapa en Ciudad de México
-      </div>
+    <div class="portal-subtitle">
+      La nueva etapa en Ciudad de México
+    </div>
 
-      <div class="portal-copy">
-        Fotos, vídeo y prensa de la XX edición
-        del Festival Franco-Mexicano.
-      </div>
+    <div class="portal-info">
+      Fotos · Video · Prensa
+    </div>
 
-      <div class="portal-bottom">
-
-        <span>
-          Revivir 2026
-        </span>
-
-        <span class="arrow">
-          →
-        </span>
-
-      </div>
-
+    <div class="portal-bottom">
+      <span>Revivir 2026</span>
+      <span class="arrow">→</span>
     </div>
 
   </a>
 
 
-  <!-- 03 2027 -->
+  <!-- 2027 -->
 
-  <a class="portal edition27-card"
-     href="#edition2027">
+  <a class="portal portal-2027" href="#edition2027">
 
-    <div class="portal-content">
+    <div class="portal-number">
+      03 · XXI EDICIÓN
+    </div>
 
-      <div class="portal-number">
-        03 · XXI EDICIÓN
-      </div>
+    <div class="portal-photo">
+      <img src="galerie-08.jpg" alt="Edición 2027">
+    </div>
 
-      <div class="portal-big">
-        2027
-      </div>
+    <div class="portal-title">
+      2027
+    </div>
 
-      <div class="portal-title">
-        Lo que viene
-      </div>
+    <div class="portal-subtitle">
+      Lo que viene
+    </div>
 
-      <div class="portal-copy">
-        Ciudad de México · Abril 2027
-        <br>
-        Visión · Programa · Patrocinios
-      </div>
+    <div class="portal-info">
+      Ciudad de México · Abril 2027<br>
+      Visión · Programa · Patrocinios
+    </div>
 
-      <div class="portal-bottom">
-
-        <span>
-          Descubrir 2027
-        </span>
-
-        <span class="arrow">
-          →
-        </span>
-
-      </div>
-
+    <div class="portal-bottom">
+      <span>Descubrir 2027</span>
+      <span class="arrow">→</span>
     </div>
 
   </a>
@@ -600,15 +608,15 @@ footer p{
 </section>
 
 
-<!-- =========================
-     CONTENU À CONSTRUIRE
-========================= -->
+<!-- ========================================
+     CONTENU — À TRAVAILLER ENSUITE
+======================================== -->
 
-<section class="placeholder" id="festival">
+<section class="content-section" id="festival">
 
-  <div class="placeholder-inner">
+  <div class="content-inner">
 
-    <div class="placeholder-label">
+    <div class="content-label">
       01 · El Festival
     </div>
 
@@ -631,11 +639,11 @@ footer p{
 </section>
 
 
-<section class="placeholder" id="edition2026">
+<section class="content-section" id="edition2026">
 
-  <div class="placeholder-inner">
+  <div class="content-inner">
 
-    <div class="placeholder-label">
+    <div class="content-label">
       02 · XX Edición
     </div>
 
@@ -657,11 +665,11 @@ footer p{
 </section>
 
 
-<section class="placeholder" id="edition2027">
+<section class="content-section" id="edition2027">
 
-  <div class="placeholder-inner">
+  <div class="content-inner">
 
-    <div class="placeholder-label">
+    <div class="content-label">
       03 · XXI Edición
     </div>
 
@@ -671,8 +679,7 @@ footer p{
 
     <p>
       Aquí construiremos progresivamente la próxima edición:
-      visión, grandes ejes, territorios invitados
-      y oportunidades de patrocinio.
+      visión, grandes ejes y oportunidades de patrocinio.
     </p>
 
     <a class="back" href="#top">
@@ -683,10 +690,6 @@ footer p{
 
 </section>
 
-
-<!-- =========================
-     LOGO COMME SIGNATURE
-========================= -->
 
 <footer>
 
