@@ -1,4 +1,557 @@
-<img
-  src="accueil-france-mexique.jpg"
-  alt="Festival Franco-Mexicano de Gastronomía"
->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Festival Franco-Mexicano — Gastronomía · CDMX</title>
+
+<meta name="description"
+content="Festival Franco-Mexicano · Gastronomía · CDMX · Desde 2004 · XXI Edición 2027">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --white:#ffffff;
+  --black:#101010;
+  --blue:#183F74;
+  --red:#E1000F;
+  --green:#1F5A3F;
+  --grey:#747474;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--white);
+  color:var(--black);
+  font-family:'DM Sans',Arial,sans-serif;
+}
+
+
+/* ============================
+   OUVERTURE
+============================ */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:clamp(48px,6vw,78px) 20px clamp(32px,4vw,48px);
+}
+
+.hero::before{
+  content:"FR × MX";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  font-size:clamp(120px,23vw,330px);
+  font-weight:700;
+  letter-spacing:-.08em;
+  color:rgba(0,0,0,.025);
+  white-space:nowrap;
+  pointer-events:none;
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+}
+
+.hero-small{
+  margin-bottom:20px;
+  color:var(--grey);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font-size:clamp(52px,9.3vw,136px);
+  font-weight:700;
+  line-height:.80;
+  letter-spacing:-.072em;
+}
+
+.hero h1 span{
+  display:block;
+}
+
+.gastronomia{
+  margin-top:22px;
+  color:var(--red);
+  font-family:'Playfair Display',serif;
+  font-size:clamp(31px,4.5vw,59px);
+  font-style:italic;
+}
+
+.city{
+  margin-top:20px;
+  font-size:clamp(17px,2vw,23px);
+  font-weight:700;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+}
+
+.hero-line{
+  width:62px;
+  height:3px;
+  margin:21px auto 0;
+  background:var(--red);
+}
+
+
+/* ============================
+   PHOTO PANORAMIQUE
+============================ */
+
+.visual{
+  width:min(1400px,calc(100% - 44px));
+  margin:0 auto;
+  overflow:hidden;
+}
+
+.visual img{
+  display:block;
+  width:100%;
+  height:clamp(220px,28vw,390px);
+  object-fit:cover;
+  object-position:center;
+}
+
+
+/* ============================
+   3 BLOCS PRINCIPAUX
+============================ */
+
+.blocks{
+  width:min(1400px,calc(100% - 44px));
+  margin:10px auto 0;
+}
+
+.main-block{
+  position:relative;
+  min-height:390px;
+  padding:clamp(45px,7vw,90px);
+  color:#fff;
+  text-decoration:none;
+
+  display:flex;
+  align-items:center;
+
+  border-bottom:7px solid #fff;
+
+  transition:filter .25s ease;
+}
+
+.main-block:hover{
+  filter:brightness(1.06);
+}
+
+.blue{
+  background:var(--blue);
+}
+
+.red{
+  background:var(--red);
+}
+
+.green{
+  background:var(--green);
+}
+
+.block-content{
+  width:100%;
+  position:relative;
+}
+
+.block-number{
+  margin-bottom:17px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  opacity:.75;
+}
+
+.block-title{
+  font-size:clamp(55px,9vw,120px);
+  font-weight:700;
+  line-height:.83;
+  letter-spacing:-.065em;
+}
+
+.block-subtitle{
+  margin-top:28px;
+  max-width:620px;
+  font-size:clamp(17px,2vw,22px);
+  font-weight:500;
+}
+
+.block-info{
+  margin-top:10px;
+  max-width:650px;
+  color:rgba(255,255,255,.74);
+  font-size:14px;
+  line-height:1.6;
+}
+
+.block-link{
+  margin-top:35px;
+  padding-top:17px;
+  border-top:1px solid rgba(255,255,255,.32);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.arrow{
+  font-size:30px;
+  transition:transform .25s ease;
+}
+
+.main-block:hover .arrow{
+  transform:translateX(8px);
+}
+
+
+/* ============================
+   FOOTER
+============================ */
+
+footer{
+  background:#fff;
+  padding:32px 20px 38px;
+  text-align:center;
+}
+
+.socials{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px 25px;
+}
+
+.socials a{
+  color:#222;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.socials a:hover{
+  text-decoration:underline;
+}
+
+.footer-logo{
+  display:block;
+  width:55px;
+  height:55px;
+  margin:25px auto 12px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.footer-name{
+  color:#777;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+
+/* ============================
+   MOBILE
+============================ */
+
+@media(max-width:700px){
+
+  .hero{
+    padding:45px 14px 30px;
+  }
+
+  .hero h1{
+    line-height:.84;
+  }
+
+  .visual,
+  .blocks{
+    width:calc(100% - 20px);
+  }
+
+  .visual img{
+    height:210px;
+  }
+
+  .main-block{
+    min-height:330px;
+    padding:48px 25px;
+  }
+
+  .block-title{
+    font-size:58px;
+  }
+
+  .block-subtitle{
+    margin-top:22px;
+    font-size:17px;
+  }
+
+}
+
+@media(max-width:420px){
+
+  .hero h1{
+    font-size:47px;
+  }
+
+  .gastronomia{
+    font-size:31px;
+  }
+
+  .city{
+    font-size:17px;
+  }
+
+  .visual img{
+    height:185px;
+  }
+
+  .main-block{
+    min-height:300px;
+  }
+
+  .block-title{
+    font-size:51px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- OUVERTURE -->
+
+<header class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-small">
+      Desde 2004 · Francia × México
+    </div>
+
+    <h1>
+      <span>FESTIVAL</span>
+      <span>FRANCO-MEXICANO</span>
+    </h1>
+
+    <div class="gastronomia">
+      Gastronomía
+    </div>
+
+    <div class="city">
+      CDMX
+    </div>
+
+    <div class="hero-line"></div>
+
+  </div>
+
+</header>
+
+
+<!-- PHOTO UNIQUE -->
+
+<div class="visual">
+
+  <img
+    src="galerie-01.jpg"
+    alt="Festival Franco-Mexicano"
+  >
+
+</div>
+
+
+<!-- 3 BLOCS UNIQUEMENT -->
+
+<main class="blocks">
+
+
+  <!-- EL FESTIVAL -->
+
+  <a class="main-block blue" href="festival.html">
+
+    <div class="block-content">
+
+      <div class="block-number">
+        01 · Desde 2004
+      </div>
+
+      <div class="block-title">
+        EL FESTIVAL
+      </div>
+
+      <div class="block-subtitle">
+        Más de veinte años de historia
+      </div>
+
+      <div class="block-info">
+        Identidad · Trayectoria · Encuentros
+      </div>
+
+      <div class="block-link">
+        <span>Descubrir el Festival</span>
+        <span class="arrow">→</span>
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- 2026 -->
+
+  <a class="main-block red" href="2026.html">
+
+    <div class="block-content">
+
+      <div class="block-number">
+        02 · XX Edición
+      </div>
+
+      <div class="block-title">
+        2026
+      </div>
+
+      <div class="block-subtitle">
+        La nueva etapa en CDMX
+      </div>
+
+      <div class="block-info">
+        Fotos · Video · Prensa
+      </div>
+
+      <div class="block-link">
+        <span>Descubrir la edición 2026</span>
+        <span class="arrow">→</span>
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <!-- 2027 -->
+
+  <a class="main-block green" href="2027.html">
+
+    <div class="block-content">
+
+      <div class="block-number">
+        03 · XXI Edición
+      </div>
+
+      <div class="block-title">
+        2027
+      </div>
+
+      <div class="block-subtitle">
+        La próxima edición
+      </div>
+
+      <div class="block-info">
+        CDMX · Abril 2027<br>
+        Visión · Programa · Patrocinios
+      </div>
+
+      <div class="block-link">
+        <span>Descubrir 2027</span>
+        <span class="arrow">→</span>
+      </div>
+
+    </div>
+
+  </a>
+
+
+</main>
+
+
+<!-- RÉSEAUX / CONTACT -->
+
+<footer>
+
+  <div class="socials">
+
+    <a
+      href="https://www.instagram.com/festivalfrancomexicano"
+      target="_blank"
+      rel="noopener">
+      Instagram
+    </a>
+
+    <a
+      href="https://www.facebook.com/share/17njmKGrgN/"
+      target="_blank"
+      rel="noopener">
+      Facebook
+    </a>
+
+    <a
+      href="https://x.com/festivalfrances"
+      target="_blank"
+      rel="noopener">
+      X
+    </a>
+
+    <a href="#">
+      Contacto
+    </a>
+
+  </div>
+
+
+  <img
+    src="LOGO.jpg"
+    class="footer-logo"
+    alt="Festival Franco-Mexicano"
+  >
+
+
+  <div class="footer-name">
+    Festival Franco-Mexicano · CDMX
+  </div>
+
+</footer>
+
+
+</body>
+</html>
