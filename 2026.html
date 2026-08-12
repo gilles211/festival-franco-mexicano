@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>2026 — Festival Franco-Mexicano</title>
+
+<meta name="description"
+content="XX Festival Franco-Mexicano · Ciudad de México · 2026">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --white:#ffffff;
+  --black:#101010;
+  --red:#E1000F;
+  --blue:#183F74;
+  --green:#1F5A3F;
+  --grey:#747474;
+  --light:#f6f6f5;
+  --border:#d8d8d8;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  background:var(--light);
+}
+
+body{
+  margin:0;
+  padding:18px;
+  background:var(--light);
+  color:var(--black);
+  font-family:'DM Sans',Arial,sans-serif;
+}
+
+.page{
+  width:min(1280px,100%);
+  margin:0 auto;
+  background:#fff;
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+
+
+/* RETOUR */
+
+.topbar{
+  padding:20px 28px;
+  border-bottom:1px solid #e5e5e5;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.topbar a{
+  color:#111;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.topbar-year{
+  color:#777;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+
+/* HERO */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:70px 7% 65px;
+  background:var(--red);
+  color:#fff;
+}
+
+.hero::after{
+  content:"2026";
+  position:absolute;
+  right:-20px;
+  bottom:-65px;
+  font-size:clamp(180px,30vw,420px);
+  font-weight:700;
+  line-height:1;
+  letter-spacing:-.08em;
+  color:rgba(255,255,255,.07);
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+  max-width:900px;
+}
+
+.kicker{
+  margin-bottom:22px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.23em;
+  text-transform:uppercase;
+  opacity:.78;
+}
+
+.hero h1{
+  font-size:clamp(82px,15vw,190px);
+  line-height:.75;
+  letter-spacing:-.075em;
+}
+
+.hero-subtitle{
+  margin-top:35px;
+  max-width:700px;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4vw,52px);
+  font-style:italic;
+  line-height:1.05;
+}
+
+.hero-meta{
+  margin-top:32px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.35);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+
+/* INTRODUCTION */
+
+.intro{
+  padding:75px 8%;
+}
+
+.section-label{
+  margin-bottom:25px;
+  color:var(--red);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+.intro h2{
+  max-width:1000px;
+  font-size:clamp(38px,6vw,76px);
+  line-height:.95;
+  letter-spacing:-.045em;
+}
+
+.intro-text{
+  max-width:850px;
+  margin-top:35px;
+  color:#4d4d4d;
+  font-size:17px;
+  line-height:1.75;
+}
+
+
+/* CHIFFRES */
+
+.highlights{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+}
+
+.highlight{
+  min-height:210px;
+  padding:42px;
+  border-right:1px solid #ddd;
+}
+
+.highlight:last-child{
+  border-right:0;
+}
+
+.highlight-number{
+  color:var(--red);
+  font-size:clamp(45px,6vw,78px);
+  font-weight:700;
+  line-height:1;
+  letter-spacing:-.05em;
+}
+
+.highlight-text{
+  margin-top:15px;
+  color:#555;
+  font-size:13px;
+  line-height:1.55;
+}
+
+
+/* CONCOURS */
+
+.section{
+  padding:75px 8%;
+}
+
+.section.blue{
+  background:var(--blue);
+  color:#fff;
+}
+
+.section.green{
+  background:var(--green);
+  color:#fff;
+}
+
+.section.white{
+  background:#fff;
+  color:#111;
+}
+
+.section.red{
+  background:var(--red);
+  color:#fff;
+}
+
+.section-number{
+  margin-bottom:20px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  opacity:.7;
+}
+
+.section h2{
+  max-width:950px;
+  font-size:clamp(42px,6.5vw,82px);
+  line-height:.92;
+  letter-spacing:-.05em;
+}
+
+.section-subtitle{
+  margin-top:24px;
+  max-width:800px;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(24px,3vw,38px);
+  font-style:italic;
+  line-height:1.2;
+}
+
+.section-text{
+  max-width:850px;
+  margin-top:32px;
+  font-size:16px;
+  line-height:1.75;
+}
+
+.blue .section-text,
+.green .section-text,
+.red .section-text{
+  color:rgba(255,255,255,.84);
+}
+
+
+/* LISTE */
+
+.details{
+  max-width:850px;
+  margin-top:38px;
+  border-top:1px solid rgba(255,255,255,.3);
+}
+
+.detail{
+  padding:17px 0;
+  border-bottom:1px solid rgba(255,255,255,.2);
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:20px;
+}
+
+.detail-label{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  opacity:.7;
+}
+
+.detail-value{
+  font-size:14px;
+  line-height:1.5;
+}
+
+
+/* PALMARÈS */
+
+.winners{
+  margin-top:40px;
+  max-width:900px;
+}
+
+.winner{
+  padding:25px 0;
+  border-top:1px solid #ddd;
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:30px;
+}
+
+.winner-place{
+  color:var(--red);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.winner-name{
+  font-size:18px;
+  font-weight:600;
+  line-height:1.5;
+}
+
+
+/* HOMMAGE */
+
+.quote{
+  max-width:900px;
+  margin-top:35px;
+  padding-left:25px;
+  border-left:3px solid var(--red);
+  font-family:'Playfair Display',serif;
+  font-size:clamp(25px,3vw,38px);
+  font-style:italic;
+  line-height:1.35;
+}
+
+
+/* GALERIE */
+
+.gallery{
+  padding:75px 8%;
+  background:#111;
+  color:#fff;
+}
+
+.gallery h2{
+  font-size:clamp(42px,6vw,78px);
+  line-height:.95;
+  letter-spacing:-.05em;
+}
+
+.gallery-text{
+  margin-top:20px;
+  color:#aaa;
+  font-size:15px;
+}
+
+.gallery-link{
+  display:inline-flex;
+  margin-top:35px;
+  padding:16px 22px;
+  border:1px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.gallery-link:hover{
+  background:#fff;
+  color:#111;
+}
+
+
+/* FOOTER */
+
+footer{
+  padding:35px 20px;
+  text-align:center;
+}
+
+.footer-logo{
+  display:block;
+  width:50px;
+  height:50px;
+  margin:0 auto 13px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.footer-name{
+  color:#777;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.footer-home{
+  display:inline-block;
+  margin-top:18px;
+  color:#111;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+
+/* TABLETTE */
+
+@media(max-width:900px){
+
+  body{
+    padding:12px;
+  }
+
+  .highlights{
+    grid-template-columns:1fr;
+  }
+
+  .highlight{
+    min-height:auto;
+    border-right:0;
+    border-bottom:1px solid #ddd;
+  }
+
+  .highlight:last-child{
+    border-bottom:0;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  body{
+    padding:7px;
+  }
+
+  .topbar{
+    padding:17px 15px;
+  }
+
+  .hero{
+    padding:55px 25px 50px;
+  }
+
+  .hero h1{
+    font-size:90px;
+  }
+
+  .intro,
+  .section,
+  .gallery{
+    padding:55px 27px;
+  }
+
+  .intro-text,
+  .section-text{
+    font-size:15px;
+  }
+
+  .highlight{
+    padding:32px 27px;
+  }
+
+  .detail{
+    grid-template-columns:1fr;
+    gap:7px;
+  }
+
+  .winner{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+
+<!-- RETOUR -->
+
+<div class="topbar">
+
+  <a href="index.html">← Inicio</a>
+
+  <div class="topbar-year">
+    XX Edición
+  </div>
+
+</div>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="hero-content">
+
+    <div class="kicker">
+      Festival Franco-Mexicano · XX Edición
+    </div>
+
+    <h1>
+      2026
+    </h1>
+
+    <div class="hero-subtitle">
+      Una nueva etapa desde Ciudad de México
+    </div>
+
+    <div class="hero-meta">
+      Ciudad de México · 20 de mayo de 2026
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+  <div class="section-label">
+    XX Festival Franco-Mexicano
+  </div>
+
+  <h2>
+    Veinte años de encuentros entre Francia y México.
+  </h2>
+
+  <div class="intro-text">
+
+    <p>
+      En 2026, el Festival Franco-Mexicano celebró su XX edición
+      y abrió una nueva etapa de su historia desde Ciudad de México,
+      en el marco del Bicentenario de las relaciones diplomáticas
+      entre Francia y México.
+    </p>
+
+    <br>
+
+    <p>
+      Fundado en Acapulco en 2004, el Festival ha construido durante
+      dos décadas un espacio de encuentro alrededor de la gastronomía,
+      la transmisión, la formación y la cooperación cultural
+      franco-mexicana.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- REPÈRES -->
+
+<div class="highlights">
+
+  <div class="highlight">
+
+    <div class="highlight-number">
+      XX
+    </div>
+
+    <div class="highlight-text">
+      Edición del<br>
+      Festival Franco-Mexicano
+    </div>
+
+  </div>
+
+
+  <div class="highlight">
+
+    <div class="highlight-number">
+      XII
+    </div>
+
+    <div class="highlight-text">
+      Concurso del<br>
+      Joven Chef Mexicano
+    </div>
+
+  </div>
+
+
+  <div class="highlight">
+
+    <div class="highlight-number">
+      XIV
+    </div>
+
+    <div class="highlight-text">
+      Noche de<br>
+      Sabores
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- CONCOURS -->
+
+<section class="section blue">
+
+  <div class="section-number">
+    01 · Transmitir
+  </div>
+
+  <h2>
+    XII Concurso del Joven Chef Mexicano
+  </h2>
+
+  <div class="section-subtitle">
+    La nueva generación gastronómica
+  </div>
+
+  <div class="section-text">
+
+    El XII Concurso del Joven Chef Mexicano reunió a jóvenes talentos
+    del Colegio Superior de Gastronomía en una jornada culinaria
+    dedicada al diálogo entre técnicas francesas y productos mexicanos.
+
+  </div>
+
+
+  <div class="details">
+
+    <div class="detail">
+
+      <div class="detail-label">
+        Presidente del jurado
+      </div>
+
+      <div class="detail-value">
+        Chef Stéphane Thomas · Presidente de la Academia Culinaria
+        de Francia en México
+      </div>
+
+    </div>
+
+
+    <div class="detail">
+
+      <div class="detail-label">
+        Jurado
+      </div>
+
+      <div class="detail-value">
+        Eduardo Plascencia · Elizabeth Baliño Gaxiola ·
+        Christian Leroy · Patricia Acevedo Pacheco
+      </div>
+
+    </div>
+
+
+    <div class="detail">
+
+      <div class="detail-label">
+        Sede
+      </div>
+
+      <div class="detail-value">
+        Colegio Superior de Gastronomía · Condesa · Ciudad de México
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PALMARÈS -->
+
+<section class="section white">
+
+  <div class="section-number">
+    Concurso 2026
+  </div>
+
+  <h2>
+    Palmarés
+  </h2>
+
+
+  <div class="winners">
+
+    <div class="winner">
+
+      <div class="winner-place">
+        1er lugar
+      </div>
+
+      <div class="winner-name">
+        Equipo Croissant<br>
+        Alejandro Medina Salazar · María Fernanda Rice Anaya
+      </div>
+
+    </div>
+
+
+    <div class="winner">
+
+      <div class="winner-place">
+        2º lugar
+      </div>
+
+      <div class="winner-name">
+        Taller Métis<br>
+        Alejandra Rubio Flores · Diego Martínez Martínez
+      </div>
+
+    </div>
+
+
+    <div class="winner">
+
+      <div class="winner-place">
+        3er lugar
+      </div>
+
+      <div class="winner-name">
+        Les Gros Canard<br>
+        Gaspar Eduardo Contreras Campuzano · Víctor Guerra Salazar
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- HOMMAGE -->
+
+<section class="section red">
+
+  <div class="section-number">
+    02 · Memoria
+  </div>
+
+  <h2>
+    Homenaje a Olivier Lombard
+  </h2>
+
+  <div class="section-text">
+
+    La duodécima edición del Concurso del Joven Chef Mexicano
+    rindió homenaje a la memoria del chef Olivier Lombard,
+    figura emblemática de la gastronomía francesa en México
+    y co-creador del Concurso junto a Karim-Gilles Djellit.
+
+  </div>
+
+  <div class="quote">
+    Transmitir una cultura gastronómica es también transmitir
+    una historia, un saber y una memoria.
+  </div>
+
+</section>
+
+
+<!-- NOCHE DE SABORES -->
+
+<section class="section green">
+
+  <div class="section-number">
+    03 · Compartir
+  </div>
+
+  <h2>
+    XIV Noche de Sabores
+  </h2>
+
+  <div class="section-subtitle">
+    Francia y México alrededor de una misma mesa
+  </div>
+
+  <div class="section-text">
+
+    La XIV Noche de Sabores reunió a cocineras tradicionales
+    del Estado de Guerrero pertenecientes a Las Guardianas de
+    la Gastronomía de Guerrero, coordinadas por Patricia Acevedo,
+    junto a chefs, estudiantes, instituciones y actores du monde
+    gastronómico franco-mexicano.
+
+    <br><br>
+
+    La velada puso en valor el diálogo entre cocina francesa
+    contemporánea, tradiciones culinarias mexicanas y productos
+    de excelencia.
+
+  </div>
+
+</section>
+
+
+<!-- GALERIE -->
+
+<section class="gallery">
+
+  <div class="section-number">
+    2026 · Imágenes
+  </div>
+
+  <h2>
+    La edición<br>
+    en imágenes
+  </h2>
+
+  <div class="gallery-text">
+    Concurso · Premiación · Noche de Sabores · Encuentros
+  </div>
+
+  <a class="gallery-link" href="galeria.html">
+    Ver la galería →
+  </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <img
+    src="LOGO.jpg"
+    class="footer-logo"
+    alt="Festival Franco-Mexicano"
+  >
+
+  <div class="footer-name">
+    Festival Franco-Mexicano · CDMX
+  </div>
+
+  <a class="footer-home" href="index.html">
+    ← Volver al inicio
+  </a>
+
+</footer>
+
+
+</div>
+
+</body>
+</html>
