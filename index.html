@@ -44,6 +44,9 @@ body{
   font-family:'DM Sans',Arial,sans-serif;
 }
 
+
+/* CADRE GÉNÉRAL */
+
 .page{
   width:min(1280px,100%);
   margin:0 auto;
@@ -51,6 +54,9 @@ body{
   border:1px solid var(--border);
   overflow:hidden;
 }
+
+
+/* OUVERTURE */
 
 .hero{
   position:relative;
@@ -103,6 +109,9 @@ body{
   display:inline-block;
 }
 
+
+/* ANIMATION DU TITRE */
+
 @keyframes disparition1{
   0%,12%,18%,45%,51%,78%,84%,100%{opacity:1;}
   14%,16%,47%,49%,80%,82%{opacity:.05;}
@@ -130,6 +139,9 @@ body{
   animation:disparition3 12s ease-in-out infinite;
 }
 
+
+/* GASTRONOMÍA */
+
 .gastronomia{
   margin-top:18px;
   color:var(--red);
@@ -152,6 +164,9 @@ body{
   background:var(--red);
 }
 
+
+/* PHOTO */
+
 .visual{
   width:calc(100% - 32px);
   margin:0 auto 7px;
@@ -163,6 +178,9 @@ body{
   width:100%;
   height:auto;
 }
+
+
+/* TROIS BLOCS */
 
 .blocks{
   width:calc(100% - 32px);
@@ -237,6 +255,9 @@ body{
   font-size:27px;
 }
 
+
+/* FOOTER */
+
 footer{
   padding:31px 20px 32px;
   text-align:center;
@@ -259,16 +280,15 @@ footer{
   text-transform:uppercase;
 }
 
-/* LOGO 20 — FOND BLANC DU JPG MASQUÉ VISUELLEMENT */
+
+/* LOGO 21 PAGE PRINCIPALE */
 
 .footer-logo{
   display:block;
-  width:120px;
-  height:120px;
+  width:105px;
+  height:105px;
   margin:24px auto 12px;
   object-fit:contain;
-  mix-blend-mode:multiply;
-  background:transparent;
 }
 
 .footer-name{
@@ -278,6 +298,9 @@ footer{
   letter-spacing:.14em;
   text-transform:uppercase;
 }
+
+
+/* TABLETTE */
 
 @media(max-width:900px){
 
@@ -291,6 +314,9 @@ footer{
   }
 
 }
+
+
+/* MOBILE */
 
 @media(max-width:700px){
 
@@ -349,8 +375,8 @@ footer{
   }
 
   .footer-logo{
-    width:105px;
-    height:105px;
+    width:90px;
+    height:90px;
   }
 
 }
@@ -361,6 +387,7 @@ footer{
 <body>
 
 <div class="page">
+
 
 <header class="hero">
 
@@ -377,7 +404,7 @@ footer{
       </span>
 
       <span class="title-line">
-        <span class="letter a2">F</span><span class="letter">R</span><span class="letter a3">A</span><span class="letter">N</span><span class="letter a1">C</span><span class="letter">O</span><span class="letter">-</span><span class="letter">M</span><span class="letter a2">E</span><span class="letter">X</span><span class="letter a1">I</span><span class="letter">C</span><span class="letter a3">A</span><span class="letter">N</span><span class="letter">O</span>
+        <span class="letter a2">F</span><span class="letter">R</span><span class="letter a3">A</span><span class="letter">N</span><span class="letter a1">C</span><span class="letter">O</span><span class="letter">-</span><span class="letter">M</span><span class="letter a2">E</span><span class="letter">X</span><span class="letter a1">I</span><span class="letter">C</span><span class="letter a3">A</span><span class="letter">A</span><span class="letter">N</span><span class="letter">O</span>
       </span>
 
     </h1>
@@ -396,6 +423,7 @@ footer{
 
 </header>
 
+
 <div class="visual">
 
   <img
@@ -405,7 +433,9 @@ footer{
 
 </div>
 
+
 <main class="blocks">
+
 
   <a class="main-block blue" href="2026.html">
 
@@ -436,6 +466,7 @@ footer{
 
   </a>
 
+
   <a class="main-block red" href="2026.html">
 
     <div class="block-content">
@@ -464,6 +495,7 @@ footer{
     </div>
 
   </a>
+
 
   <a class="main-block green" href="patrocinadores-2027.html">
 
@@ -497,6 +529,7 @@ footer{
 
 </main>
 
+
 <footer>
 
   <div class="socials">
@@ -523,9 +556,9 @@ footer{
   </div>
 
   <img
-    src="LOGO.jpg"
+    src="LOGO-21.png"
     class="footer-logo"
-    alt="Festival Franco-Mexicano · 20"
+    alt="Festival Franco-Mexicano · XXI"
   >
 
   <div class="footer-name">
@@ -533,6 +566,7 @@ footer{
   </div>
 
 </footer>
+
 
 </div>
 
