@@ -25,21 +25,22 @@ body{
 /* LOGO ROND */
 .logo-wrap{
   position:absolute;
-  top:-64px;
+  top:-70px;
   left:50%;
   transform:translateX(-50%);
-  width:132px;
-  height:132px;
-  border-radius:50%;
-  overflow:hidden;
-  background:#fff;
-  box-shadow:0 18px 40px rgba(0,0,0,.25);
+  width:150px;
+  height:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
 }
 
 .logo{
+  display:block;
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:contain;
 }
 
 /* TITRES */
@@ -126,11 +127,36 @@ h1{
 }
 
 @media(max-width:800px){
-  .grid{grid-template-columns:repeat(2,1fr);}
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .logo-wrap{
+    width:135px;
+    height:135px;
+    top:-63px;
+  }
 }
 
 @media(max-width:500px){
-  .grid{grid-template-columns:1fr;}
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    margin:50px 10px 20px;
+    padding-top:78px;
+  }
+
+  .logo-wrap{
+    width:120px;
+    height:120px;
+    top:-56px;
+  }
+
+  h1{
+    font-size:34px;
+  }
 }
 </style>
 </head>
@@ -139,9 +165,13 @@ h1{
 
 <div class="card">
 
-  <!-- LOGO -->
+  <!-- LOGO 20 -->
   <div class="logo-wrap">
-    <img class="logo" src="LOGO.jpg">
+    <img
+      class="logo"
+      src="LOGO-20-transparent.png"
+      alt="20 Festival Franco-Mexicano"
+    >
   </div>
 
   <h1>Festival Franco-Mexicano</h1>
@@ -155,7 +185,7 @@ h1{
   <!-- YOUTUBE -->
   <a class="btn btn-youtube" href="festival_ffm_final_v3-1(1).mp4" target="_blank">
     Ver vídeo
-</a>
+  </a>
 
   <!-- RÉSEAUX -->
   <div class="social">
@@ -181,15 +211,15 @@ h1{
     <div class="ph"><img src="galerie-07.jpg"></div>
     <div class="ph"><img src="galerie-08.jpg"></div>
     <div class="ph"><img src="galerie-09.jpg"></div>
- <div class="ph"><img src="galerie-10.jpg"></div>
-<div class="ph"><img src="galerie-11.jpg"></div>
-<div class="ph"><img src="galerie-12.jpg"></div>
- <div class="ph"><img src="galerie-13.jpg"></div>
-<div class="ph"><img src="galerie-14.jpg"></div>
-<div class="ph"><img src="galerie-15.jpg"></div>
-<div class="ph"><img src="galerie-16.jpg"></div>
-<div class="ph"><img src="galerie-17.jpg"></div>
- <div class="ph"><img src="galerie-18.jpg"></div> 
+    <div class="ph"><img src="galerie-10.jpg"></div>
+    <div class="ph"><img src="galerie-11.jpg"></div>
+    <div class="ph"><img src="galerie-12.jpg"></div>
+    <div class="ph"><img src="galerie-13.jpg"></div>
+    <div class="ph"><img src="galerie-14.jpg"></div>
+    <div class="ph"><img src="galerie-15.jpg"></div>
+    <div class="ph"><img src="galerie-16.jpg"></div>
+    <div class="ph"><img src="galerie-17.jpg"></div>
+    <div class="ph"><img src="galerie-18.jpg"></div>
   </div>
 
 </div>
