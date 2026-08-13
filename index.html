@@ -44,9 +44,6 @@ body{
   font-family:'DM Sans',Arial,sans-serif;
 }
 
-
-/* CADRE GÉNÉRAL */
-
 .page{
   width:min(1280px,100%);
   margin:0 auto;
@@ -54,9 +51,6 @@ body{
   border:1px solid var(--border);
   overflow:hidden;
 }
-
-
-/* OUVERTURE */
 
 .hero{
   position:relative;
@@ -109,9 +103,6 @@ body{
   display:inline-block;
 }
 
-
-/* ANIMATION DU TITRE */
-
 @keyframes disparition1{
   0%,12%,18%,45%,51%,78%,84%,100%{opacity:1;}
   14%,16%,47%,49%,80%,82%{opacity:.05;}
@@ -127,20 +118,9 @@ body{
   40%,42%,73%,75%{opacity:.05;}
 }
 
-.a1{
-  animation:disparition1 12s ease-in-out infinite;
-}
-
-.a2{
-  animation:disparition2 12s ease-in-out infinite;
-}
-
-.a3{
-  animation:disparition3 12s ease-in-out infinite;
-}
-
-
-/* GASTRONOMÍA */
+.a1{animation:disparition1 12s ease-in-out infinite;}
+.a2{animation:disparition2 12s ease-in-out infinite;}
+.a3{animation:disparition3 12s ease-in-out infinite;}
 
 .gastronomia{
   margin-top:18px;
@@ -164,9 +144,6 @@ body{
   background:var(--red);
 }
 
-
-/* PHOTO */
-
 .visual{
   width:calc(100% - 32px);
   margin:0 auto 7px;
@@ -178,9 +155,6 @@ body{
   width:100%;
   height:auto;
 }
-
-
-/* TROIS BLOCS */
 
 .blocks{
   width:calc(100% - 32px);
@@ -255,9 +229,6 @@ body{
   font-size:27px;
 }
 
-
-/* FOOTER */
-
 footer{
   padding:31px 20px 32px;
   text-align:center;
@@ -280,9 +251,6 @@ footer{
   text-transform:uppercase;
 }
 
-
-/* LOGO 21 PAGE PRINCIPALE */
-
 .footer-logo{
   display:block;
   width:105px;
@@ -299,30 +267,17 @@ footer{
   text-transform:uppercase;
 }
 
-
-/* TABLETTE */
-
 @media(max-width:900px){
-
-  body{
-    padding:12px;
-  }
-
+  body{padding:12px;}
   .main-block{
     min-height:285px;
     padding:40px;
   }
-
 }
-
-
-/* MOBILE */
 
 @media(max-width:700px){
 
-  body{
-    padding:7px;
-  }
+  body{padding:7px;}
 
   .hero{
     padding:37px 12px 27px;
@@ -378,7 +333,6 @@ footer{
     width:90px;
     height:90px;
   }
-
 }
 
 </style>
@@ -388,48 +342,47 @@ footer{
 
 <div class="page">
 
-
 <header class="hero">
 
-  <div class="hero-content">
+<div class="hero-content">
 
-    <div class="hero-small">
-      Desde 2004 · Francia × México
-    </div>
+<div class="hero-small">
+Desde 2004 · Francia × México
+</div>
 
-    <h1>
+<h1>
 
-      <span class="title-line">
-        <span class="letter">F</span><span class="letter a1">E</span><span class="letter">S</span><span class="letter">T</span><span class="letter a2">I</span><span class="letter">V</span><span class="letter a3">A</span><span class="letter">L</span>
-      </span>
+<span class="title-line">
+<span class="letter">F</span><span class="letter a1">E</span><span class="letter">S</span><span class="letter">T</span><span class="letter a2">I</span><span class="letter">V</span><span class="letter a3">A</span><span class="letter">L</span>
+</span>
 
-      <span class="title-line">
-        <span class="letter a2">F</span><span class="letter">R</span><span class="letter a3">A</span><span class="letter">N</span><span class="letter a1">C</span><span class="letter">O</span><span class="letter">-</span><span class="letter">M</span><span class="letter a2">E</span><span class="letter">X</span><span class="letter a1">I</span><span class="letter">C</span><span class="letter a3">A</span><span class="letter">A</span><span class="letter">N</span><span class="letter">O</span>
-      </span>
+<span class="title-line">
+<span class="letter a2">F</span><span class="letter">R</span><span class="letter a3">A</span><span class="letter">N</span><span class="letter a1">C</span><span class="letter">O</span><span class="letter">-</span><span class="letter">M</span><span class="letter a2">E</span><span class="letter">X</span><span class="letter a1">I</span><span class="letter">C</span><span class="letter a3">A</span><span class="letter">N</span><span class="letter">O</span>
+</span>
 
-    </h1>
+</h1>
 
-    <div class="gastronomia">
-      Gastronomía
-    </div>
+<div class="gastronomia">
+Gastronomía
+</div>
 
-    <div class="city">
-      CDMX
-    </div>
+<div class="city">
+CDMX
+</div>
 
-    <div class="hero-line"></div>
+<div class="hero-line"></div>
 
-  </div>
+</div>
 
 </header>
 
 
 <div class="visual">
 
-  <img
-    src="file_000000006d8081fba5413ce628024f5f.png"
-    alt="Festival Franco-Mexicano"
-  >
+<img
+src="file_000000006d8081fba5413ce628024f5f.png"
+alt="Festival Franco-Mexicano"
+>
 
 </div>
 
@@ -437,136 +390,141 @@ footer{
 <main class="blocks">
 
 
-  <a class="main-block blue" href="2026.html">
+<!-- BLOC 1 : NE RENVOIE PLUS VERS 2026 -->
 
-    <div class="block-content">
+<div class="main-block blue">
 
-      <div class="block-number">
-        01 · DESDE 2004
-      </div>
+<div class="block-content">
 
-      <div class="block-title">
-        EL FESTIVAL
-      </div>
+<div class="block-number">
+01 · DESDE 2004
+</div>
 
-      <div class="block-subtitle">
-        Más de veinte años de historia
-      </div>
+<div class="block-title">
+EL FESTIVAL
+</div>
 
-      <div class="block-info">
-        Identidad · Trayectoria · Encuentros
-      </div>
+<div class="block-subtitle">
+Más de veinte años de historia
+</div>
 
-      <div class="block-link">
-        <span>Descubrir el Festival</span>
-        <span class="arrow">→</span>
-      </div>
+<div class="block-info">
+Identidad · Trayectoria · Encuentros
+</div>
 
-    </div>
+<div class="block-link">
+<span>El Festival</span>
+<span class="arrow">→</span>
+</div>
 
-  </a>
+</div>
 
-
-  <a class="main-block red" href="2026.html">
-
-    <div class="block-content">
-
-      <div class="block-number">
-        02 · XX EDICIÓN
-      </div>
-
-      <div class="block-title">
-        2026
-      </div>
-
-      <div class="block-subtitle">
-        La nueva etapa en CDMX
-      </div>
-
-      <div class="block-info">
-        Fotos · Video · Prensa
-      </div>
-
-      <div class="block-link">
-        <span>Descubrir la edición 2026</span>
-        <span class="arrow">→</span>
-      </div>
-
-    </div>
-
-  </a>
+</div>
 
 
-  <a class="main-block green" href="patrocinadores-2027.html">
+<!-- BLOC 2 : PAGE 2026 -->
 
-    <div class="block-content">
+<a class="main-block red" href="2026.html">
 
-      <div class="block-number">
-        03 · XXI EDICIÓN
-      </div>
+<div class="block-content">
 
-      <div class="block-title">
-        2027
-      </div>
+<div class="block-number">
+02 · XX EDICIÓN
+</div>
 
-      <div class="block-subtitle">
-        La próxima edición
-      </div>
+<div class="block-title">
+2026
+</div>
 
-      <div class="block-info">
-        CDMX · Abril 2027<br>
-        Visión · Programa · Patrocinios
-      </div>
+<div class="block-subtitle">
+La nueva etapa en CDMX
+</div>
 
-      <div class="block-link">
-        <span>Descubrir 2027</span>
-        <span class="arrow">→</span>
-      </div>
+<div class="block-info">
+Fotos · Video · Prensa
+</div>
 
-    </div>
+<div class="block-link">
+<span>Descubrir la edición 2026</span>
+<span class="arrow">→</span>
+</div>
 
-  </a>
+</div>
+
+</a>
+
+
+<!-- BLOC 3 : PAGE 2027 -->
+
+<a class="main-block green" href="patrocinadores-2027.html">
+
+<div class="block-content">
+
+<div class="block-number">
+03 · XXI EDICIÓN
+</div>
+
+<div class="block-title">
+2027
+</div>
+
+<div class="block-subtitle">
+La próxima edición
+</div>
+
+<div class="block-info">
+CDMX · Abril 2027<br>
+Visión · Programa · Patrocinios
+</div>
+
+<div class="block-link">
+<span>Descubrir 2027</span>
+<span class="arrow">→</span>
+</div>
+
+</div>
+
+</a>
 
 </main>
 
 
 <footer>
 
-  <div class="socials">
+<div class="socials">
 
-    <a href="https://www.instagram.com/festivalfrancomexicano"
-       target="_blank" rel="noopener">
-      Instagram
-    </a>
+<a href="https://www.instagram.com/festivalfrancomexicano"
+target="_blank" rel="noopener">
+Instagram
+</a>
 
-    <a href="https://www.facebook.com/share/17njmKGrgN/"
-       target="_blank" rel="noopener">
-      Facebook
-    </a>
+<a href="https://www.facebook.com/share/17njmKGrgN/"
+target="_blank" rel="noopener">
+Facebook
+</a>
 
-    <a href="https://x.com/festivalfrances"
-       target="_blank" rel="noopener">
-      X
-    </a>
+<a href="https://x.com/festivalfrances"
+target="_blank" rel="noopener">
+X
+</a>
 
-    <a href="#">
-      Contacto
-    </a>
+<a href="#">
+Contacto
+</a>
 
-  </div>
+</div>
 
-  <img
-    src="LOGO-21.png"
-    class="footer-logo"
-    alt="Festival Franco-Mexicano · XXI"
-  >
+<img
+src="LOGO-21.png"
+class="footer-logo"
+alt="Festival Franco-Mexicano · XXI"
+>
 
-  <div class="footer-name">
-    Festival Franco-Mexicano · Gastronomía · CDMX
-  </div>
+<div class="footer-name">
+Festival Franco-Mexicano · Gastronomía · CDMX
+</div>
 
 </footer>
-
 
 </div>
 
