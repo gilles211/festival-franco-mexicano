@@ -8,8 +8,8 @@
 <style>
 body{
   margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(#cdb892,#e6d6b8);
+  font-family:Arial, Helvetica, sans-serif;
+  background:linear-gradient(#cdb892,#e6d6b8);
 }
 
 .card{
@@ -23,6 +23,7 @@ body{
 }
 
 /* LOGO ROND */
+
 .logo-wrap{
   position:absolute;
   top:-70px;
@@ -73,7 +74,7 @@ h1{
   font-weight:bold;
 }
 
-/* bouton youtube */
+/* BOUTON VIDÉO */
 
 .btn-youtube{
   background:#c4302b;
@@ -142,6 +143,8 @@ h1{
   font-family:Georgia, "Times New Roman", serif;
   font-size:17px;
   line-height:1.7;
+  text-align:justify;
+  text-justify:inter-word;
 }
 
 .story strong{
@@ -247,7 +250,7 @@ h1{
 .quote{
   margin:28px 15px !important;
   color:#7a2e2e !important;
-  text-align:center;
+  text-align:center !important;
   font-style:italic;
   font-size:19px !important;
 }
@@ -279,7 +282,10 @@ h1{
   object-fit:cover;
 }
 
+/* TABLETTE */
+
 @media(max-width:800px){
+
   .grid{
     grid-template-columns:repeat(2,1fr);
   }
@@ -295,7 +301,10 @@ h1{
   }
 }
 
+/* MOBILE */
+
 @media(max-width:500px){
+
   .grid{
     grid-template-columns:1fr;
   }
@@ -326,6 +335,7 @@ h1{
 
   .story p{
     font-size:16px;
+    text-align:left;
   }
 
   .podium{
@@ -356,7 +366,7 @@ h1{
     Boletín de Prensa (PDF)
   </a>
 
-  <!-- YOUTUBE -->
+  <!-- VIDÉO -->
   <a class="btn btn-youtube" href="festival_ffm_final_v3-1(1).mp4" target="_blank">
     Ver vídeo
   </a>
@@ -373,7 +383,9 @@ h1{
   <!-- RÉCIT DE L'ÉDITION 2026 -->
   <section class="story">
 
-    <div class="story-kicker">XX Festival Franco-Mexicano · 2026</div>
+    <div class="story-kicker">
+      XX Festival Franco-Mexicano · 2026
+    </div>
 
     <h2>Sabores que unen naciones</h2>
 
