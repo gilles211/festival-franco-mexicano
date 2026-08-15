@@ -105,7 +105,160 @@ h1{
   color:#666;
 }
 
+/* RÉCIT 2026 */
+
+.story{
+  max-width:790px;
+  margin:42px auto 46px;
+  padding:38px 42px;
+  background:rgba(255,255,255,.28);
+  border-top:1px solid #cdbb99;
+  border-bottom:1px solid #cdbb99;
+}
+
+.story-kicker{
+  text-align:center;
+  color:#7a2e2e;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.story h2{
+  margin:0 0 28px;
+  text-align:center;
+  color:#24313c;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:34px;
+  line-height:1.1;
+  font-weight:normal;
+}
+
+.story p{
+  margin:0 0 18px;
+  color:#403a34;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:17px;
+  line-height:1.7;
+}
+
+.story strong{
+  color:#292521;
+}
+
+.story details{
+  margin-top:8px;
+}
+
+.story summary{
+  list-style:none;
+  cursor:pointer;
+  margin:28px auto 4px;
+  padding:13px 18px;
+  width:max-content;
+  max-width:100%;
+  color:#fff;
+  background:#2f4050;
+  border-radius:8px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-align:center;
+}
+
+.story summary::-webkit-details-marker{
+  display:none;
+}
+
+.story summary::after{
+  content:" ↓";
+}
+
+.story details[open] summary::after{
+  content:" ↑";
+}
+
+.story-more{
+  padding-top:28px;
+}
+
+.story-section{
+  margin-top:34px;
+  padding-top:28px;
+  border-top:1px solid #cdbb99;
+}
+
+.story-section h3{
+  margin:0 0 18px;
+  color:#7a2e2e;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:23px;
+  font-weight:normal;
+}
+
+.jury{
+  color:#5a5044;
+}
+
+.podium{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:28px 0 10px;
+}
+
+.podium-item{
+  padding:20px 12px;
+  text-align:center;
+  background:rgba(255,255,255,.48);
+  border:1px solid #d2c19f;
+}
+
+.podium-item.first{
+  border-color:#b08d57;
+}
+
+.rank{
+  margin-bottom:9px;
+  color:#7a2e2e;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.team-name{
+  margin-bottom:8px;
+  color:#24313c;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:19px;
+}
+
+.team-members{
+  color:#5a5044;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.quote{
+  margin:28px 15px !important;
+  color:#7a2e2e !important;
+  text-align:center;
+  font-style:italic;
+  font-size:19px !important;
+}
+
 /* GALERIE */
+
+.gallery-title{
+  text-align:center;
+  color:#666;
+  margin-bottom:14px;
+}
 
 .grid{
   display:grid;
@@ -136,6 +289,10 @@ h1{
     height:135px;
     top:-63px;
   }
+
+  .story{
+    padding:32px 28px;
+  }
 }
 
 @media(max-width:500px){
@@ -156,6 +313,23 @@ h1{
 
   h1{
     font-size:34px;
+  }
+
+  .story{
+    margin:32px 0 38px;
+    padding:28px 18px;
+  }
+
+  .story h2{
+    font-size:28px;
+  }
+
+  .story p{
+    font-size:16px;
+  }
+
+  .podium{
+    grid-template-columns:1fr;
   }
 }
 </style>
@@ -196,7 +370,145 @@ h1{
 
   <div class="email">festival.frances@gmail.com</div>
 
-  <div style="text-align:center;color:#666;margin-bottom:14px;">
+  <!-- RÉCIT DE L'ÉDITION 2026 -->
+  <section class="story">
+
+    <div class="story-kicker">XX Festival Franco-Mexicano · 2026</div>
+
+    <h2>Sabores que unen naciones</h2>
+
+    <p>
+      En el marco del Bicentenario de las relaciones diplomáticas entre Francia y México (1826–2026), el XX Festival Franco-Mexicano celebró en Ciudad de México una edición marcada por la gastronomía, la transmisión y el encuentro entre las culturas francesa y mexicana.
+    </p>
+
+    <p>
+      El <strong>XII Concurso del Joven Chef Mexicano</strong> reunió a una nueva generación de cocineros alrededor de un diálogo entre técnicas francesas y productos mexicanos. Presidido por el chef <strong>Stéphane Thomas</strong>, Presidente de la Academia Culinaria de Francia en México, el jurado distinguió al equipo <strong>Croissant</strong>, ganador de esta duodécima edición.
+    </p>
+
+    <p>
+      La jornada continuó con la <strong>XIV Noche de Sabores</strong>, que reunió a <strong>150 asistentes</strong> en un encuentro entre alta cocina francesa y tradiciones gastronómicas mexicanas, con la participación de las Guardianas de la Gastronomía de Guerrero.
+    </p>
+
+    <details>
+
+      <summary>Leer la historia completa</summary>
+
+      <div class="story-more">
+
+        <p>
+          Teniendo como sede el Colegio Superior de Gastronomía de la colonia Condesa, el evento reunió a chefs, cocineras tradicionales, estudiantes y personalidades de la cultura para fortalecer el diálogo culinario entre ambas naciones y transmitir este patrimonio a las nuevas generaciones.
+        </p>
+
+        <p>
+          Fundado en Acapulco en 2004 por Karim-Gilles Djellit con el impulso inicial del Estado de Guerrero, el Festival consolida 20 años de intercambios ininterrumpidos, posicionándose como la plataforma clave para la cooperación cultural y gastronómica bilateral.
+        </p>
+
+        <div class="story-section">
+
+          <h3>Un concurso dedicado a la nueva generación gastronómica</h3>
+
+          <p>
+            El XII Concurso del Joven Chef Mexicano reunió al talento emergente en una intensa jornada culinaria. El jurado estuvo presidido por el chef <strong>Stéphane Thomas</strong>, Presidente de la Academia Culinaria de Francia en México y chef ejecutivo del Hotel Presidente InterContinental Ciudad de México.
+          </p>
+
+          <p class="jury">
+            Lo acompañaron el chef investigador <strong>Eduardo Plascencia</strong>, miembro de l'Académie Culinaire de France y fundador de CIG México; la chef <strong>Elizabeth Baliño Gaxiola</strong>, chef ejecutiva de la Residencia de Estados Unidos de América; el chef <strong>Christian Leroy</strong>, miembro de Les Disciples d'Auguste Escoffier International y ex chef ejecutivo de Le Cordon Bleu México; y <strong>Patricia Acevedo Pacheco</strong>, destacada cocinera tradicional y maestra mezcalera del Estado de Guerrero.
+          </p>
+
+          <p>
+            Durante el certamen, los equipos participantes deslumbraron al jurado mediante el diálogo perfecto entre técnicas francesas y productos endémicos de México. Tras una reñida deliberación, se coronó a los tres equipos finalistas — el primer lugar se llevó, para cada integrante, un vuelo a Francia.
+          </p>
+
+          <div class="podium">
+
+            <div class="podium-item">
+              <div class="rank">2° Lugar</div>
+              <div class="team-name">Taller Métis</div>
+              <div class="team-members">
+                Chef Alejandra Rubio Flores<br>
+                Sous chef Diego Martínez Martínez
+              </div>
+            </div>
+
+            <div class="podium-item first">
+              <div class="rank">1er Lugar</div>
+              <div class="team-name">Croissant</div>
+              <div class="team-members">
+                Chef Alejandro Medina Salazar<br>
+                Sous chef María Fernanda Rice Anaya
+              </div>
+            </div>
+
+            <div class="podium-item">
+              <div class="rank">3er Lugar</div>
+              <div class="team-name">Les Gros Canard</div>
+              <div class="team-members">
+                Chef Gaspar Eduardo Contreras Campuzano<br>
+                Sous chef Víctor Guerra Salazar
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="story-section">
+
+          <h3>Un homenaje a Olivier Lombard y a la continuidad del proyecto</h3>
+
+          <p>
+            Esta duodécima edición rindió un emotivo tributo a la memoria del chef <strong>Olivier Lombard</strong>, figura icónica de la cocina francesa en México y co-creador de este concurso.
+          </p>
+
+          <p class="quote">
+            “Dos décadas después, su legado de mentoría encuentra una continuidad natural en el compromiso del chef Stéphane Thomas, quien toma la batuta para seguir impulsando a las nuevas generaciones de cocineros.”
+          </p>
+
+        </div>
+
+        <div class="story-section">
+
+          <h3>Diploma de Honor de la Académie Culinaire de France</h3>
+
+          <p>
+            Con motivo del 20º aniversario del Festival Franco-Mexicano, la <strong>Académie Culinaire de France</strong> otorgó a <strong>Karim-Gilles Djellit</strong> su Diploma de Honor, en reconocimiento a su trayectoria y a su compromiso con la promoción de la gastronomía y el fortalecimiento de los vínculos entre Francia y México.
+          </p>
+
+          <p>
+            La distinción fue entregada por el chef <strong>Stéphane Thomas</strong>, Presidente Delegado para México, Centroamérica y el Caribe de la Académie Culinaire de France y Chef Ejecutivo del Hotel Presidente InterContinental Ciudad de México.
+          </p>
+
+          <p class="quote">
+            “El Diploma de Honor reconoce el trabajo realizado a lo largo de dos décadas y la contribución al desarrollo de una relación gastronómica franco-mexicana basada en el intercambio, la transmisión y la amistad.”
+          </p>
+
+          <p>
+            Este reconocimiento adquiere un significado especial en el marco de los veinte años del Festival, durante los cuales la gastronomía se ha consolidado como uno de sus principales pilares y como un espacio privilegiado de encuentro entre las culturas francesa y mexicana. Desde sus inicios, el Festival ha reunido a chefs, jóvenes talentos, instituciones y profesionales de ambos países, favoreciendo el intercambio de conocimientos, la transmisión y la creación de nuevas colaboraciones entre Francia y México.
+          </p>
+
+        </div>
+
+        <div class="story-section">
+
+          <h3>La XIV Noche de Sabores: el encuentro de dos mundos</h3>
+
+          <p>
+            Como broche de oro, se llevó a cabo la XIV Noche de Sabores, una velada que congregó a <strong>150 asistentes</strong> en una atmósfera de celebración y alta cocina. El evento inició formalmente con el tradicional corte de listón, inaugurando una noche sofisticada y festiva, impregnada de los aromas tradicionales de Guerrero y las técnicas de la alta cocina gala.
+          </p>
+
+          <p>
+            La propuesta gastronómica fusionó la sofisticación de la cocina francesa contemporánea con ingredientes de excelencia como el foie gras Rougié y las profundas raíces culinarias de México, representadas por la asociación Las Guardianas de la Gastronomía.
+          </p>
+
+        </div>
+
+      </div>
+
+    </details>
+
+  </section>
+
+  <div class="gallery-title">
     Galería de fotos
   </div>
 
