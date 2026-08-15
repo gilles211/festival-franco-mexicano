@@ -258,9 +258,40 @@ body{
 footer{
   width:calc(100% - 32px);
   margin:0 auto;
-  padding:25px 20px 27px;
+  padding:0 20px 30px;
   text-align:center;
-  border-top:1px solid #e2e2e2;
+  background:#fff;
+}
+
+/* LIGNE BLEU ROUGE VERT */
+
+.footer-colors{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  width:100%;
+  height:4px;
+  margin:0 0 27px;
+}
+
+.footer-colors span:nth-child(1){
+  background:var(--blue);
+}
+
+.footer-colors span:nth-child(2){
+  background:var(--red);
+}
+
+.footer-colors span:nth-child(3){
+  background:var(--green);
+}
+
+.follow-title{
+  margin-bottom:15px;
+  color:#777;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
 }
 
 .socials{
@@ -268,45 +299,55 @@ footer{
   justify-content:center;
   align-items:center;
   flex-wrap:wrap;
-  gap:10px 12px;
+  gap:10px;
 }
 
 .socials a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:34px;
-  padding:0 15px;
-  color:#303030;
-  background:#f5f5f4;
-  border:1px solid #e4e4e2;
-  border-radius:18px;
+  min-width:108px;
+  padding:11px 18px;
+  color:#222;
+  background:#fff;
+  border:1px solid #d7d7d7;
+  border-radius:50px;
   text-decoration:none;
   font-size:10px;
   font-weight:700;
-  letter-spacing:.11em;
+  letter-spacing:.12em;
   text-transform:uppercase;
-  transition:background .2s ease, border-color .2s ease;
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease;
 }
 
 .socials a:hover{
-  background:#ededeb;
-  border-color:#d2d2cf;
+  transform:translateY(-2px);
+  background:#f7f7f5;
+  border-color:#aaa;
 }
 
 .footer-logo{
   display:block;
-  width:125px;
-  height:125px;
-  margin:20px auto 5px;
+  width:140px;
+  height:140px;
+  margin:24px auto 7px;
   object-fit:contain;
 }
 
 .footer-name{
-  color:#777;
+  color:#696969;
   font-size:9px;
   font-weight:600;
-  letter-spacing:.14em;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.footer-years{
+  margin-top:7px;
+  color:#aaa;
+  font-size:8px;
+  font-weight:600;
+  letter-spacing:.17em;
   text-transform:uppercase;
 }
 
@@ -383,7 +424,12 @@ footer{
 
   footer{
     width:calc(100% - 14px);
-    padding:22px 10px 24px;
+    padding:0 10px 25px;
+  }
+
+  .footer-colors{
+    height:3px;
+    margin-bottom:23px;
   }
 
   .socials{
@@ -391,20 +437,23 @@ footer{
   }
 
   .socials a{
-    min-height:32px;
-    padding:0 12px;
+    min-width:95px;
+    padding:10px 13px;
     font-size:9px;
   }
 
   .footer-logo{
-    width:110px;
-    height:110px;
-    margin:17px auto 4px;
+    width:120px;
+    height:120px;
+    margin-top:21px;
   }
 
   .footer-name{
     font-size:8px;
-    line-height:1.5;
+  }
+
+  .footer-years{
+    font-size:7px;
   }
 
 }
@@ -560,6 +609,16 @@ footer{
 
 <footer>
 
+  <div class="footer-colors">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="follow-title">
+    Síguenos
+  </div>
+
   <div class="socials">
 
     <a href="https://www.instagram.com/festivalfrancomexicano"
@@ -594,6 +653,10 @@ footer{
 
   <div class="footer-name">
     Festival Franco-Mexicano · Gastronomía · CDMX
+  </div>
+
+  <div class="footer-years">
+    Desde 2004 · Francia × México
   </div>
 
 </footer>
