@@ -153,19 +153,29 @@ body{
 }
 
 
-/* PHOTO D'ENTRÉE */
+/* CARROUSEL PHOTO D'ENTRÉE */
 
 .visual{
+  position:relative;
   width:calc(100% - 32px);
   margin:0 auto 7px;
   overflow:hidden;
+  background:#111;
+  aspect-ratio:16 / 9;
 }
 
-.visual img{
-  display:block;
+.visual-slide{
+  position:absolute;
+  inset:0;
   width:100%;
-  max-width:100%;
-  height:auto;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+}
+
+.visual-slide.active{
+  opacity:1;
 }
 
 
@@ -262,8 +272,6 @@ footer{
   text-align:center;
   background:#fff;
 }
-
-/* LIGNE BLEU ROUGE VERT */
 
 .footer-colors{
   display:grid;
@@ -504,7 +512,44 @@ footer{
 <div class="visual">
 
   <img
+    class="visual-slide active"
     src="./galerie-19.jpg"
+    alt="Festival Franco-Mexicano"
+  >
+
+  <img
+    class="visual-slide"
+    src="./accueil-02.jpg"
+    alt="Festival Franco-Mexicano"
+  >
+
+  <img
+    class="visual-slide"
+    src="./accueil-03.jpg"
+    alt="Festival Franco-Mexicano"
+  >
+
+  <img
+    class="visual-slide"
+    src="./accueil-04.jpg"
+    alt="Festival Franco-Mexicano"
+  >
+
+  <img
+    class="visual-slide"
+    src="./accueil-05.jpg"
+    alt="Festival Franco-Mexicano"
+  >
+
+  <img
+    class="visual-slide"
+    src="./accueil-06.jpg"
+    alt="Festival Franco-Mexicano"
+  >
+
+  <img
+    class="visual-slide"
+    src="./accueil-07.jpg"
     alt="Festival Franco-Mexicano"
   >
 
@@ -663,6 +708,26 @@ footer{
 
 
 </div>
+
+
+<script>
+
+const slides = document.querySelectorAll('.visual-slide');
+let currentSlide = 0;
+
+function nextSlide(){
+
+  slides[currentSlide].classList.remove('active');
+
+  currentSlide = (currentSlide + 1) % slides.length;
+
+  slides[currentSlide].classList.add('active');
+
+}
+
+setInterval(nextSlide, 3000);
+
+</script>
 
 </body>
 </html>
