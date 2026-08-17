@@ -1,863 +1,780 @@
-patrocinadores-2027.html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patrocinadores 2027 — Festival Franco-Mexicano de Gastronomía</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    :root {
- --navy: #2F2F2F;
-  --gold: #C58B39;
- --gold-light: #1F5B4A;
-  --cream: #F7F1E7;
-  --dark: #2F2F2F;
-  --mid: #5E5E5E;
-  --rule: #D8CBB4;
+<title>2027 — Festival Franco-Mexicano · XXI Edición</title>
+
+<meta name="description"
+content="XXI Edición del Festival Franco-Mexicano · Ciudad de México · Abril 2027">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --white:#ffffff;
+  --paper:#fbfbf8;
+  --black:#111111;
+  --grey:#6f6f6f;
+  --light-grey:#ededE8;
+  --blue:#183F74;
+  --red:#E1000F;
+  --green:#1F5A3F;
 }
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      color: var(--dark);
-      background: var(--cream);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    /* ── HERO ── */
-    .hero{
-  background: var(--cream);
-}
-      color: #fff;
-      padding: 72px 24px 64px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 60% 0%, rgba(184,150,62,0.18) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .hero-eyebrow {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #1F5B4A;
-      margin-bottom: 20px;
-    }
- .hero h1 {
-  font-family: 'EB Garamond', serif;
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  font-weight: 400;
-  line-height: 1.15;
-  color: #2F2F2F;
-  max-width: 700px;
-  margin: 0 auto 18px;
-}
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-   .hero-sub {
-  font-size: 15px;
-  color: #666666;
-  max-width: 480px;
-  margin: 0 auto 36px;
-  font-weight: 300;
-  text-align: center;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-.hero-stats {
-
-      font-size: 15px;
-      color: rgba(255,255,255,0.65);
-      max-width: 480px;
-      margin: 0 auto 36px;
-      font-weight: 300;
-    }
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      border-top: 1px solid rgba(184,150,62,0.3);
-      padding-top: 32px;
-      margin-top: 8px;
-    }
-    .hero-stat strong {
-      display: block;
-      font-family: 'EB Garamond', serif;
-      font-size: 2.4rem;
-      color: var(--gold-light);
-      line-height: 1;
-    }
-    .hero-stat span {
-  color: #6B6B6B;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-    /* ── SECTIONS ── */
-    section { padding: 72px 24px; }
-
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-   .section-label,
-.hero-kicker{
-  color:#1F5B4A;
-}
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    h2 {
-      font-family: 'EB Garamond', serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      font-weight: 400;
-      color: var(--navy);
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    p {
-      color: var(--mid);
-      font-size: 15px;
-      margin-bottom: 16px;
-      max-width: 620px;
-    }
-
-    /* ── RULE DIVIDER ── */
-    .rule {
-      border: none;
-      border-top: 1px solid var(--rule);
-      margin: 0;
-    }
-
-    /* ── PHOTO PLACEHOLDER ── */
-    .photo-band {
-      background: var(--navy);
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 3px;
-    }
-    .photo-band img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      display: block;
-      filter: brightness(0.88) saturate(0.9);
-      transition: filter 0.3s;
-    }
-    .photo-band img:hover {
-      filter: brightness(1) saturate(1.1);
-    }
-    @media (max-width: 700px) {
-      .photo-band { grid-template-columns: repeat(3, 1fr); }
-      .photo-band img { height: 110px; }
-    }
-
-    /* ── BENEFICIOS GRID ── */
-    .beneficios-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2px;
-      background: var(--rule);
-      border: 1px solid var(--rule);
-      margin-top: 36px;
-    }
-    .beneficio {
-      background: var(--cream);
-      padding: 28px 24px;
-    }
-    .beneficio-icon {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-    .beneficio h3 {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-    .beneficio p {
-      font-size: 13px;
-      margin: 0;
-      color: var(--mid);
-      max-width: none;
-    }
-
-    /* ── TIEMPOS FUERTES ── */
-    .tiempos {
-      background: var(--navy);
-      color: #fff;
-    }
-    .tiempos .container {}
-    .tiempos .section-label { color: var(--gold-light); }
-    .tiempos h2 { color: #fff; }
-    .tiempos p { color: rgba(255,255,255,0.6); }
-    .tiempos-list {
-      margin-top: 32px;
-      display: grid;
-      gap: 1px;
-      background: rgba(184,150,62,0.2);
-    }
-    .tiempo-item {
-      background: rgba(255,255,255,0.04);
-      padding: 20px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    .tiempo-num {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.5rem;
-      color: var(--gold-light);
-      line-height: 1;
-      min-width: 28px;
-    }
-    .tiempo-text h4 {
-      font-family: 'EB Garamond', serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 3px;
-    }
-    .tiempo-text p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-      margin: 0;
-    }
-
-    /* ── ALIADOS ── */
-    .aliados-logos {
-      margin-top: 32px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .aliado-tag {
-      background: #fff;
-      border: 1px solid var(--rule);
-      padding: 10px 18px;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      color: var(--navy);
-    }
-
-    /* ── FORMULARIO ── */
-    .formulario-section {
-      background: #fff;
-      border-top: 3px solid var(--gold);
-    }
-    .formulario-section h2 { margin-bottom: 8px; }
-    .formulario-section > .container > p { margin-bottom: 32px; }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    @media (max-width: 520px) {
-      .form-grid { grid-template-columns: 1fr; }
-    }
-    .form-full { grid-column: 1 / -1; }
-
-    label {
-      display: block;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #D5CAB8;
-      background: var(--cream);
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      color: var(--dark);
-      outline: none;
-      transition: border-color 0.2s;
-      border-radius: 0;
-      appearance: none;
-    }
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--gold);
-    }
-    textarea { resize: vertical; min-height: 90px; }
-
-    .btn-submit {
-  margin-top: 24px;
-  background: #23463F;
-  color: #fff;
-  border: none;
-  padding: 16px 40px;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.2s;
-  width: 100%;
+html{
+  scroll-behavior:smooth;
+  background:#f4f4f1;
 }
 
-.btn-submit:hover {
-  background: #1F5B4A;
-}
-    .btn-submit:hover { background: var(--gold); }
-
-    .form-note {
-      margin-top: 12px;
-      font-size: 12px;
-      color: #999;
-      text-align: center;
-    }
-
-    /* ── SUCCESS ── */
-    #success-msg {
-      display: none;
-      background: #EEF5E8;
-      border: 1px solid #8BB870;
-      padding: 20px 24px;
-      margin-top: 16px;
-      font-size: 14px;
-      color: #3A6B24;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.4);
-      text-align: center;
-      padding: 32px 24px;
-      font-size: 12px;
-      letter-spacing: 0.05em;
-    }
-    footer strong { color: rgba(255,255,255,0.7); }
-
-    @media (max-width: 600px) {
-      .hero-stats { gap: 24px; }
-      section { padding: 52px 20px; }
-    }
-@media (max-width: 600px) {
-    .hero-stats { gap: 24px; }
-    section { padding: 52px 20px; }
+body{
+  margin:0;
+  padding:18px;
+  background:#f4f4f1;
+  color:var(--black);
+  font-family:'DM Sans',Arial,sans-serif;
 }
 
-/* Section Programa - version élégante */
-
-.tiempos{
-    background:#5A534B !important;
+.page{
+  position:relative;
+  width:min(1280px,100%);
+  min-height:calc(100vh - 36px);
+  margin:0 auto;
+  background:var(--paper);
+  border:1px solid #deded8;
+  overflow:hidden;
 }
 
-.tiempos h2,
-.tiempos h3{
-    color:#F5F1E8 !important;
-}
 
-.tiempos p{
-    color:rgba(255,255,255,0.80) !important;
-}
-
-.tiempos-list{
-    background:transparent !important;
-}
-
-.tiempos-list > div{
-    border-color:rgba(255,255,255,0.10) !important;
-}
-
-.tiempos span,
-.tiempos .numero,
-.tiempos .roman{
-    color:#C8A46A !important;
-} /* Programme - vert bouteille */
-.tiempos {
-  background: #23463F !important;
-  color: #F7F1E7 !important;
-}
-
-.tiempos h2,
-.tiempos h3,
-.tiempos h4 {
-  color: #F7F1E7 !important;
-}
-
-.tiempos p {
-  color: rgba(247,241,231,0.82) !important;
-}
-
-.tiempos-list,
-.tiempo-item {
-  background: rgba(255,255,255,0.06) !important;
-}
-
-.tiempo-item {
-  border-color: rgba(255,255,255,0.12) !important;
-}
-
-.tiempo-num {
-  color: #C8A46A !important;
-}
-/* Correction HERO */
-.hero-eyebrow {
-  display: none !important;
-}
-
-.hero-stats {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: flex-start !important;
-  gap: 70px !important;
-  flex-wrap: nowrap !important;
-}
-
-.hero-stat {
-  min-width: 160px !important;
-  text-align: center !important;
-}
-
-.hero-stat strong {
-  display: block !important;
-}
-
-.hero-stat span {
-  display: block !important;
-}
- @media (max-width: 768px) {
+/* =========================
+   HERO
+   ========================= */
 
 .hero{
-    text-align:center !important;
-    padding-left:20px !important;
-    padding-right:20px !important;
+  position:relative;
+  min-height:720px;
+  padding:55px 30px 65px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
 }
 
-.hero img{
-    display:block;
-    margin:0 auto 24px auto !important;
+
+/* GRAND 2027 EN ARRIÈRE-PLAN */
+
+.year-background{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-52%);
+  font-size:clamp(180px,28vw,390px);
+  line-height:.75;
+  font-weight:700;
+  letter-spacing:-.09em;
+  color:rgba(31,90,63,.035);
+  white-space:nowrap;
+  pointer-events:none;
+  user-select:none;
 }
+
+
+/* PETITE LIGNE SUPÉRIEURE */
+
+.edition-line{
+  position:relative;
+  z-index:2;
+  margin-bottom:31px;
+  color:var(--green);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+
+/* LOGO */
+
+.logo-zone{
+  position:relative;
+  z-index:2;
+  width:min(330px,62vw);
+  margin:0 auto 27px;
+}
+
+.logo{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  transform-origin:center;
+  animation:logoBreath 5s ease-in-out infinite;
+}
+
+@keyframes logoBreath{
+
+  0%,100%{
+    transform:translateY(0) scale(1);
+  }
+
+  50%{
+    transform:translateY(-7px) scale(1.025);
+  }
+
+}
+
+
+/* PETITS TRAITS FR / MX */
+
+.color-line{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:7px;
+  margin:0 auto 29px;
+}
+
+.color-line span{
+  display:block;
+  height:3px;
+  border-radius:10px;
+  animation:linePulse 4s ease-in-out infinite;
+}
+
+.color-line .fr{
+  width:38px;
+  background:var(--blue);
+}
+
+.color-line .mx{
+  width:38px;
+  background:var(--green);
+}
+
+.color-line .red{
+  width:18px;
+  background:var(--red);
+}
+
+@keyframes linePulse{
+
+  0%,100%{
+    opacity:.55;
+    transform:scaleX(.9);
+  }
+
+  50%{
+    opacity:1;
+    transform:scaleX(1.12);
+  }
+
+}
+
+
+/* TITRES */
 
 .hero h1{
-    font-size:52px !important;
-    line-height:1.08 !important;
+  position:relative;
+  z-index:2;
+  max-width:850px;
+  margin:0 auto;
+  font-size:clamp(40px,6.2vw,82px);
+  font-weight:700;
+  line-height:.94;
+  letter-spacing:-.055em;
 }
 
-.hero-sub{
-    max-width:100% !important;
-    margin:0 auto !important;
+.hero h1 span{
+  color:var(--green);
 }
 
-.hero-stats{
-    display:flex !important;
-    justify-content:center !important;
-    align-items:flex-start !important;
-    gap:24px !important;
-}
-}
- /* CORRECTION MOBILE — centrage général */
-
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+.hero-subtitle{
+  position:relative;
+  z-index:2;
+  max-width:650px;
+  margin:25px auto 0;
+  color:#545454;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(20px,2.5vw,30px);
+  font-style:italic;
+  line-height:1.35;
 }
 
-.container {
-  width: 100%;
-  max-width: 760px;
-  margin-left: auto !important;
-  margin-right: auto !important;
+
+/* =========================
+   BANDE ANIMÉE
+   ========================= */
+
+.moving-band{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  padding:15px 0;
+  background:var(--green);
+  color:#fff;
 }
 
-/* Photos centrées */
-.photo-band {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto !important;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-  background: var(--cream);
+.moving-track{
+  display:flex;
+  width:max-content;
+  white-space:nowrap;
+  animation:moveText 30s linear infinite;
 }
 
-.photo-band img {
-  width: 100%;
-  height: 110px;
-  object-fit: cover;
+.moving-track span{
+  padding-right:48px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.19em;
+  text-transform:uppercase;
 }
 
-/* Bloc vert centré */
-.tiempos {
-  width: 100%;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-}
+@keyframes moveText{
 
-.tiempos .container {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto !important;
-}
-
-.tiempos-list {
-  width: 100%;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Correction du débordement des chiffres 21 / 2004 / 2 */
-@media (max-width: 768px) {
-  .hero-stats {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    gap: 18px !important;
-    flex-wrap: nowrap !important;
+  from{
+    transform:translateX(0);
   }
 
-  .hero-stat {
-    min-width: 0 !important;
-    width: 33.33% !important;
-    text-align: center !important;
+  to{
+    transform:translateX(-50%);
   }
 
-  .hero-stat strong {
-    font-size: 2rem !important;
+}
+
+
+/* =========================
+   PROCHAINEMENT
+   ========================= */
+
+.coming{
+  position:relative;
+  padding:95px 30px 90px;
+  text-align:center;
+  background:#fff;
+}
+
+.coming-small{
+  margin-bottom:15px;
+  color:var(--red);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+.coming h2{
+  margin:0;
+  color:var(--black);
+  font-size:clamp(38px,6vw,74px);
+  font-weight:700;
+  line-height:.95;
+  letter-spacing:-.055em;
+}
+
+.coming h2 span{
+  color:var(--green);
+}
+
+.coming-text{
+  max-width:580px;
+  margin:27px auto 0;
+  color:#666;
+  font-size:15px;
+  line-height:1.7;
+}
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact{
+  padding:70px 30px 75px;
+  text-align:center;
+  background:var(--paper);
+  border-top:1px solid var(--light-grey);
+}
+
+.contact-label{
+  margin-bottom:11px;
+  color:var(--green);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+.contact h2{
+  margin-bottom:13px;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(28px,4vw,43px);
+  font-weight:600;
+}
+
+.contact-intro{
+  max-width:570px;
+  margin:0 auto 33px;
+  color:#686868;
+  font-size:14px;
+  line-height:1.65;
+}
+
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.contact-button{
+  min-width:205px;
+  padding:15px 25px;
+  border-radius:50px;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    color .2s ease;
+}
+
+.email-button{
+  color:#fff;
+  background:var(--green);
+  border:1px solid var(--green);
+}
+
+.whatsapp-button{
+  color:var(--green);
+  background:transparent;
+  border:1px solid var(--green);
+}
+
+.contact-button:hover{
+  transform:translateY(-3px);
+}
+
+.email-button:hover{
+  background:#174a34;
+}
+
+.whatsapp-button:hover{
+  color:#fff;
+  background:var(--green);
+}
+
+
+/* =========================
+   RÉSEAUX
+   ========================= */
+
+.social-area{
+  padding:30px 20px 33px;
+  background:#fff;
+  text-align:center;
+  border-top:1px solid var(--light-grey);
+}
+
+.social-title{
+  margin-bottom:13px;
+  color:#999;
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.23em;
+  text-transform:uppercase;
+}
+
+.socials{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.socials a{
+  color:#444;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.socials a:hover{
+  color:var(--green);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+  padding:25px 20px 27px;
+  text-align:center;
+  background:#fff;
+}
+
+.footer-colors{
+  display:flex;
+  justify-content:center;
+  gap:5px;
+  margin-bottom:17px;
+}
+
+.footer-colors span{
+  width:24px;
+  height:2px;
+}
+
+.footer-colors .blue{
+  background:var(--blue);
+}
+
+.footer-colors .red{
+  background:var(--red);
+}
+
+.footer-colors .green{
+  background:var(--green);
+}
+
+.footer-name{
+  color:#777;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.footer-year{
+  margin-top:6px;
+  color:#aaa;
+  font-size:8px;
+  font-weight:600;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+
+/* =========================
+   TABLETTE
+   ========================= */
+
+@media(max-width:900px){
+
+  body{
+    padding:12px;
   }
 
-  .hero-stat span {
-    font-size: 10px !important;
-    line-height: 1.25 !important;
+  .hero{
+    min-height:650px;
+    padding-top:48px;
+    padding-bottom:55px;
   }
 
-  .hero h1 {
-    font-size: 38px !important;
+  .logo-zone{
+    width:min(300px,58vw);
   }
-}
- /* CORRECTION FINALE BOUTON + FOOTER */
 
-.btn-submit,
-.btn-submit:hover,
-.btn-submit:active,
-.btn-submit:focus,
-.btn-submit:visited {
-  background: #23463F !important;
-  color: #ffffff !important;
 }
 
-footer {
-  background: #23463F !important;
-  color: rgba(255,255,255,0.75) !important;
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:700px){
+
+  body{
+    padding:7px;
+  }
+
+  .page{
+    min-height:calc(100vh - 14px);
+  }
+
+  .hero{
+    min-height:590px;
+    padding:39px 15px 48px;
+  }
+
+  .edition-line{
+    margin-bottom:26px;
+    font-size:9px;
+    letter-spacing:.12em;
+  }
+
+  .logo-zone{
+    width:min(235px,67vw);
+    margin-bottom:22px;
+  }
+
+  .year-background{
+    font-size:44vw;
+  }
+
+  .hero h1{
+    font-size:clamp(39px,12vw,58px);
+  }
+
+  .hero-subtitle{
+    max-width:340px;
+    margin-top:20px;
+    font-size:20px;
+  }
+
+  .moving-track span{
+    font-size:9px;
+    padding-right:35px;
+  }
+
+  .coming{
+    padding:67px 20px 64px;
+  }
+
+  .coming h2{
+    font-size:clamp(39px,12vw,56px);
+  }
+
+  .coming-text{
+    font-size:14px;
+  }
+
+  .contact{
+    padding:58px 20px 60px;
+  }
+
+  .contact-buttons{
+    flex-direction:column;
+  }
+
+  .contact-button{
+    width:min(310px,100%);
+  }
+
 }
 
-footer p {
-  color: rgba(255,255,255,0.75) !important;
+
+/* ACCESSIBILITÉ : SUPPRIME LES ANIMATIONS
+   SI LE VISITEUR LES A DÉSACTIVÉES */
+
+@media(prefers-reduced-motion:reduce){
+
+  .logo,
+  .color-line span,
+  .moving-track{
+    animation:none;
+  }
+
 }
 
-footer + footer {
-  display: none !important;
-}
-  </style>
+</style>
 </head>
-<bodY>
+
+
+<body>
+
+<div class="page">
+
 
 <!-- HERO -->
+
 <header class="hero">
-  <p class="hero-eyebrow">XXI Edición · Ciudad de México · 2027</p>
- <div style="text-align:center;margin-bottom:30px;">
-  <img src="logo21-v2.png" alt="Festival Franco-Mexicano XXI Edición" style="max-width:260px;width:100%;height:auto;">
-</div> <h1>Un puente entre dos <em>culturas gastronómicas</em></h1>
-  <p class="hero-sub">Únase a los patrocinadores del Festival Franco-Mexicano de Gastronomía y posicione su marca en el corazón de la cooperación culinaria bilateral.</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><strong>21</strong><span>años de historia</span></div>
-    <div class="hero-stat"><strong>2004</strong><span>fundado en Acapulco</span></div>
-    <div class="hero-stat"><strong>2</strong><span>países, una visión</span></div>
+
+  <div class="year-background">
+    2027
   </div>
+
+  <div class="edition-line">
+    XXI EDICIÓN · CDMX · ABRIL 2027
+  </div>
+
+  <div class="logo-zone">
+
+    <img
+      src="./logo21-v2.png"
+      class="logo"
+      alt="Festival Franco-Mexicano · XXI Edición"
+    >
+
+  </div>
+
+  <div class="color-line">
+    <span class="fr"></span>
+    <span class="red"></span>
+    <span class="mx"></span>
+  </div>
+
+  <h1>
+    Una nueva edición<br>
+    <span>se prepara.</span>
+  </h1>
+
+  <div class="hero-subtitle">
+    Francia y México vuelven a encontrarse en Ciudad de México.
+  </div>
+
 </header>
 
-<!-- FOTOS -->
-<div class="photo-band">
-  <img src="https://festival-franco-mexicano.com/galerie-01.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-02.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-03.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-04.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-05.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-06.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-07.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-08.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-09.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-10.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-11.jpg" alt="Festival Franco-Mexicano" />
-  <img src="https://festival-franco-mexicano.com/galerie-12.jpg" alt="Festival Franco-Mexicano" />
+
+<!-- BANDE ANIMÉE -->
+
+<div class="moving-band">
+
+  <div class="moving-track">
+
+    <span>
+      FESTIVAL FRANCO-MEXICANO · XXI EDICIÓN · CDMX · ABRIL 2027 · PROGRAMA PRÓXIMAMENTE ·
+    </span>
+
+    <span>
+      FESTIVAL FRANCO-MEXICANO · XXI EDICIÓN · CDMX · ABRIL 2027 · PROGRAMA PRÓXIMAMENTE ·
+    </span>
+
+  </div>
+
 </div>
 
-<hr class="rule" />
 
-<!-- EL FESTIVAL -->
-<section>
-  <div class="container">
-    <p class="section-label">El Festival</p>
+<!-- PROGRAMME À VENIR -->
 
-    <h2>Descubra el Festival Franco-Mexicano de Gastronomía</h2>
+<section class="coming">
 
-    <p>La <strong>XXI edición</strong> del Festival Franco-Mexicano de Gastronomía está prevista <strong>la semana del 19 de abril de 2027 (fecha por confirmar)</strong>.</p>
-
-    <p>Le invitamos a descubrir el universo del festival a través de nuestro sitio oficial: su historia desde 2004, las ediciones anteriores, fotografías, videos, repercusiones en la prensa, así como toda la actualidad y los preparativos de la edición 2027.</p>
-
-    <p><strong>Sitio oficial:</strong><br>
-    <a href="https://festival-franco-mexicano.com" target="_blank">
-      festival-franco-mexicano.com
-    </a></p>
+  <div class="coming-small">
+    XXI EDICIÓN
   </div>
+
+  <h2>
+    PROGRAMA<br>
+    <span>PRÓXIMAMENTE</span>
+  </h2>
+
+  <p class="coming-text">
+    Estamos preparando la próxima edición del Festival Franco-Mexicano.
+    Las novedades y la programación 2027 se darán a conocer progresivamente.
+  </p>
+
 </section>
 
-<hr class="rule" />
 
-<!-- BENEFICIOS -->
-<section>
-  <div class="container">
-    <p class="section-label">¿Por qué patrocinar?</p>
-    <h2>Su marca, en el centro de la excelencia culinaria bilateral</h2>
-    <p>El festival reúne a un público calificado: chefs, directores de instituciones, diplomáticos, periodistas gastronómicos y empresas del sector alimentario y cultural. Un entorno privilegiado para la visibilidad y la construcción de relaciones.</p>
- <div class="beneficios-grid">
-  <div class="beneficio">
-    <h3>Visibilidad institucional</h3>
-    <p>Presencia en materiales oficiales, comunicación digital, relaciones públicas y soportes vinculados al festival.</p>
+<!-- CONTACT -->
+
+<section class="contact">
+
+  <div class="contact-label">
+    Contacto
   </div>
 
-  <div class="beneficio">
-    <h3>Red estratégica franco-mexicana</h3>
-    <p>Acceso a una red de chefs, escuelas, empresas, instituciones y actores culturales de Francia y México.</p>
-  </div>
+  <h2>
+    Hablemos.
+  </h2>
 
-  <div class="beneficio">
-    <h3>Prestigio y posicionamiento</h3>
-    <p>Asociación con un evento gastronómico binacional respaldado por actores culinarios, educativos e institucionales franceses y mexicanos.</p>
-  </div>
+  <p class="contact-intro">
+    Para información, colaboración o participación en la edición 2027,
+    puede ponerse en contacto directamente con el Festival.
+  </p>
 
-  <div class="beneficio">
-    <h3>Comunicación y medios</h3>
-    <p>Difusión en medios especializados, prensa generalista, redes sociales y canales institucionales del festival.</p>
-  </div>
+  <div class="contact-buttons">
 
-  <div class="beneficio">
-    <h3>Formación y nuevas generaciones</h3>
-    <p>Su marca asociada al apoyo a jóvenes talentos mexicanos, la transmisión de saberes y la promoción de productos emblemáticos de Francia y México.</p>
-  </div>
-
-  <div class="beneficio">
-    <h3>Cooperación gastronómica</h3>
-    <p><p>Visibilidad en iniciativas desarrolladas en México y Francia, vinculadas a la gastronomía, la formación profesional y la cooperación cultural franco-mexicana.</p></p>
-  </div>
-</div>
-</section>
-
-<!-- TIEMPOS FUERTES -->
-<section class="tiempos">
-  <div class="container">
-    <p class="section-label">Programa</p>
-    <h2>Los pilares de la edición 2027</h2>
-<p>Los principales tiempos fuertes de la edición 2027.</p>
-    <div class="tiempos-list">
-      <div class="tiempo-item">
-        <span class="tiempo-num">I</span>
-        <div class="tiempo-text">
-          <h4>XIII Concurso del Joven Chef Mexicano</h4>
-          <p>Competencia de alto nivel para los mejores estudiantes de gastronomía del país, con jurado internacional.</p>
-        </div>
-      </div>
-      <div class="tiempo-item">
-        <span class="tiempo-num">II</span>
-        <div class="tiempo-text">
-          <h4>XV Noche de Sabores</h4>
-          <p>Gala gastronómica que celebra el encuentro de las cocinas francesa y mexicana ante un público selecto.</p>
-        </div>
-      </div>
-      <div class="tiempo-item">
-        <span class="tiempo-num">III</span>
-        <div class="tiempo-text">
-          <h4>Masterclasses</h4>
-          <p>Talleres de formación impartidos por chefs invitados de Francia y México para profesionales del sector.</p>
-        </div>
-      </div>
-      <div class="tiempo-item">
-        <span class="tiempo-num">IV</span>
-        <div class="tiempo-text">
-          <h4>Foro Franco-Mexicano</h4>
-          <p>Mesa de reflexión sobre cooperación culinaria, patrimonio gastronómico y formación profesional.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<!-- ALIADOS -->
-<section>
-  <div class="container">
-    <p class="section-label">Aliados institucionales</p>
-    <h2>Un respaldo reconocido a ambos lados del Atlántico</h2>
-    <p>El festival cuenta con el apoyo de instituciones culinarias, diplomáticas y educativas de primer nivel.</p>
-    <div class="aliados-logos">
-      <span class="aliado-tag">Académie Culinaire de France</span>
-     <span class="aliado-tag">Instituciones Francesas</span>
-      <span class="aliado-tag">Colegio Superior de Gastronomía</span>
-      <span class="aliado-tag">Guardianas de la Gastronomía de Guerrero</span>
-      <span class="aliado-tag">Rougié Gastronomie</span>
-      <span class="aliado-tag">[ Su empresa aquí ]</span>
-    </div>
-  </div>
-</section>
-
-<hr class="rule" />
-<!-- EL FESTIVAL -->
-<section>
-  <div class="container">
-    <p class="section-label">El Festival</p>
-
-    <h2>Descubra el Festival Franco-Mexicano de Gastronomía</h2>
-
-    <p>La <strong>XXI edición</strong> del Festival Franco-Mexicano de Gastronomía está prevista la <strong>semana del 19 de abril de 2027 (fecha por confirmar)</strong>.</p>
-
-    <p>Le invitamos a descubrir el universo del festival a través de nuestro sitio oficial: su historia desde 2004, las ediciones anteriores, fotografías, videos, repercusiones en la prensa, así como toda la actualidad y los preparativos de la edición 2027.</p>
-
-    <p><strong>Sitio oficial:</strong><br>
-    <a href="https://festival-franco-mexicano.com" target="_blank">
-      https://festival-franco-mexicano.com
-    </a></p>
-  </div>
-</section>
-
-<hr class="rule" />
-
-<hr class="rule" />
-
-<!-- ¿POR QUÉ ASOCIARSE? -->
-<section>
-  <div class="container">
-
-    <p class="section-label">¿Por qué asociarse?</p>
-
-    <h2>Mucho más que un patrocinio</h2>
-
-    <p>Asociarse con el Festival Franco-Mexicano de Gastronomía significa vincular su marca a un proyecto reconocido por su excelencia, su dimensión internacional y su compromiso con la formación, la gastronomía y la cooperación entre Francia y México.</p>
-
-    <div class="beneficios-grid">
-
-      <div class="beneficio">
-        <h3>Visibilidad premium</h3>
-        <p>Presencia antes, durante y después del festival a través de nuestros soportes de comunicación, relaciones públicas y acciones promocionales.</p>
-      </div>
-
-      <div class="beneficio">
-        <h3>Red franco-mexicana</h3>
-        <p>Acceso privilegiado a chefs, instituciones, escuelas, empresas y actores económicos de Francia y México.</p>
-      </div>
-
-      <div class="beneficio">
-        <h3>Prestigio e imagen</h3>
-        <p>Asocie su empresa a un evento reconocido por la calidad de su programación y su proyección internacional.</p>
-      </div>
-
-      <div class="beneficio">
-        <h3>Relaciones estratégicas</h3>
-        <p>Encuentros con responsables institucionales, profesionales del sector gastronómico y líderes de opinión.</p>
-      </div>
-
-      <div class="beneficio">
-        <h3>Formación y talento</h3>
-        <p>Contribuya al desarrollo de la nueva generación de chefs y a la cooperación educativa franco-mexicana.</p>
-      </div>
-
-      <div class="beneficio">
-        <h3>Colaboración personalizada</h3>
-        <p>Cada propuesta de patrocinio se adapta a los objetivos y necesidades específicas de cada empresa.</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-  <!-- CONTACTO -->
-<section class="formulario-section">
-  <div class="container">
-    <p class="section-label">Contacto</p>
-
-    <h2>Hablemos de su participación</h2>
-
-    <p>Para cualquier información sobre patrocinio, colaboración o asociación con el Festival Franco-Mexicano de Gastronomía, estaremos encantados de atenderle.</p>
-
-    <p>
-      <strong>Email:</strong><br>
-      <a href="mailto:festival.frances@gmail.com">festival.frances@gmail.com</a>
-    </p>
-
-    <p>
-      <strong>WhatsApp:</strong><br>
-      <a href="https://wa.me/525611039276" target="_blank">+52 56 1103 9276</a>
-    </p>
-
-    <a href="https://wa.me/525611039276?text=Hola%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20patrocinio%202027%20del%20Festival%20Franco-Mexicano."
-       class="btn-submit"
-       target="_blank"
-       style="display:block;text-align:center;text-decoration:none;">
-      Contactar por WhatsApp
+    <a
+      class="contact-button email-button"
+      href="mailto:festival.frances@gmail.com">
+      Email
     </a>
+
+    <a
+      class="contact-button whatsapp-button"
+      href="https://wa.me/525611039276"
+      target="_blank"
+      rel="noopener">
+      WhatsApp
+    </a>
+
   </div>
+
 </section>
+
+
+<!-- RÉSEAUX SOCIAUX -->
+
+<div class="social-area">
+
+  <div class="social-title">
+    Síguenos
+  </div>
+
+  <div class="socials">
+
+    <a
+      href="https://www.instagram.com/festivalfrancomexicano"
+      target="_blank"
+      rel="noopener">
+      Instagram
+    </a>
+
+    <a
+      href="https://www.facebook.com/share/17njmKGrgN/"
+      target="_blank"
+      rel="noopener">
+      Facebook
+    </a>
+
+    <a
+      href="https://x.com/festivalfrances"
+      target="_blank"
+      rel="noopener">
+      X
+    </a>
+
+  </div>
+
+</div>
+
 
 <!-- FOOTER -->
+
 <footer>
-  <p><strong>Festival Franco-Mexicano de Gastronomía</strong></p>
-  <p style="margin-top:6px;">XXI Edición · Ciudad de México · 2027 &nbsp;·&nbsp; festival-franco-mexicano.com</p>
+
+  <div class="footer-colors">
+    <span class="blue"></span>
+    <span class="red"></span>
+    <span class="green"></span>
+  </div>
+
+  <div class="footer-name">
+    Festival Franco-Mexicano · Gastronomía · CDMX
+  </div>
+
+  <div class="footer-year">
+    XXI Edición · 2027
+  </div>
+
 </footer>
 
+
+</div>
+
 </body>
-</html>
-
-<!-- FOOTER -->
-<footer>
-  <p><strong>Festival Franco-Mexicano de Gastronomía</strong></p>
-  <p style="margin-top:6px;">XXI Edición · Ciudad de México · 2027 &nbsp;·&nbsp; festival-franco-mexicano.com</p>
-</footer>  
-
-<script>
-  function handleSubmit() {
-    const email = document.getElementById('email').value.trim();
-    const nombre = document.getElementById('nombre').value.trim();
-    if (!nombre || !email) {
-      alert('Por favor ingrese su nombre y correo electrónico.');
-      return;
-    }
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('success-msg').style.display = 'block';
-    // → Aquí se puede conectar a un servicio de formularios (Formspree, Netlify Forms, etc.)
-  }
-</script>
-
-</bodY>
 </html>
