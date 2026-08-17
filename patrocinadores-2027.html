@@ -18,12 +18,13 @@ content="XXI Edición del Festival Franco-Mexicano · Ciudad de México · Abril
 
 :root{
   --white:#ffffff;
-  --paper:#fbfbf8;
+  --paper:#f7f8f8;
   --black:#111111;
-  --grey:#6f6f6f;
-  --light-grey:#ededE8;
+  --grey:#6f7377;
+  --border:#dfe2e3;
+
   --blue:#183F74;
-  --red:#E1000F;
+  --red:#D80621;
   --green:#1F5A3F;
 }
 
@@ -35,24 +36,22 @@ content="XXI Edición del Festival Franco-Mexicano · Ciudad de México · Abril
 
 html{
   scroll-behavior:smooth;
-  background:#f4f4f1;
+  background:#eceeef;
 }
 
 body{
   margin:0;
   padding:18px;
-  background:#f4f4f1;
+  background:#eceeef;
   color:var(--black);
   font-family:'DM Sans',Arial,sans-serif;
 }
 
 .page{
-  position:relative;
   width:min(1280px,100%);
-  min-height:calc(100vh - 36px);
   margin:0 auto;
-  background:var(--paper);
-  border:1px solid #deded8;
+  background:var(--white);
+  border:1px solid #d6dadd;
   overflow:hidden;
 }
 
@@ -64,44 +63,48 @@ body{
 .hero{
   position:relative;
   min-height:720px;
-  padding:55px 30px 65px;
+  padding:54px 25px 70px;
   display:flex;
   flex-direction:column;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   text-align:center;
   overflow:hidden;
+  background:
+    radial-gradient(circle at 15% 18%, rgba(24,63,116,.06), transparent 24%),
+    radial-gradient(circle at 85% 78%, rgba(31,90,63,.06), transparent 25%),
+    #ffffff;
 }
 
 
-/* GRAND 2027 EN ARRIÈRE-PLAN */
+/* GRAND 2027 */
 
 .year-background{
   position:absolute;
   left:50%;
   top:50%;
-  transform:translate(-50%,-52%);
-  font-size:clamp(180px,28vw,390px);
+  transform:translate(-50%,-50%);
+  font-size:clamp(190px,30vw,410px);
   line-height:.75;
   font-weight:700;
-  letter-spacing:-.09em;
-  color:rgba(31,90,63,.035);
+  letter-spacing:-.10em;
+  color:rgba(17,17,17,.028);
   white-space:nowrap;
   pointer-events:none;
   user-select:none;
 }
 
 
-/* PETITE LIGNE SUPÉRIEURE */
+/* DATE */
 
 .edition-line{
   position:relative;
-  z-index:2;
+  z-index:3;
   margin-bottom:31px;
   color:var(--green);
   font-size:11px;
   font-weight:700;
-  letter-spacing:.19em;
+  letter-spacing:.17em;
   text-transform:uppercase;
   white-space:nowrap;
 }
@@ -109,11 +112,11 @@ body{
 
 /* LOGO */
 
-.logo-zone{
+.logo-stage{
   position:relative;
-  z-index:2;
+  z-index:3;
   width:min(330px,62vw);
-  margin:0 auto 27px;
+  margin:0 auto 25px;
 }
 
 .logo{
@@ -121,62 +124,136 @@ body{
   width:100%;
   height:auto;
   object-fit:contain;
-  transform-origin:center;
-  animation:logoBreath 5s ease-in-out infinite;
+  transform-origin:center center;
+  animation:
+    logoIntro 1.25s cubic-bezier(.2,.8,.2,1) both,
+    logoAlive 8s ease-in-out 1.4s infinite;
 }
 
-@keyframes logoBreath{
+
+/* ENTRÉE PLUS DYNAMIQUE */
+
+@keyframes logoIntro{
+
+  0%{
+    opacity:0;
+    transform:
+      translateY(35px)
+      rotate(-24deg)
+      scale(.72);
+  }
+
+  65%{
+    opacity:1;
+    transform:
+      translateY(-6px)
+      rotate(4deg)
+      scale(1.035);
+  }
+
+  82%{
+    transform:
+      translateY(2px)
+      rotate(-2deg)
+      scale(.99);
+  }
+
+  100%{
+    opacity:1;
+    transform:
+      translateY(0)
+      rotate(0)
+      scale(1);
+  }
+
+}
+
+
+/* RESPIRATION APRÈS L'ARRIVÉE */
+
+@keyframes logoAlive{
 
   0%,100%{
-    transform:translateY(0) scale(1);
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+  }
+
+  25%{
+    transform:
+      translateY(-5px)
+      rotate(-1.5deg)
+      scale(1.018);
   }
 
   50%{
-    transform:translateY(-7px) scale(1.025);
+    transform:
+      translateY(-8px)
+      rotate(1.2deg)
+      scale(1.028);
+  }
+
+  75%{
+    transform:
+      translateY(-4px)
+      rotate(-.8deg)
+      scale(1.015);
   }
 
 }
 
 
-/* PETITS TRAITS FR / MX */
+/* ACCENTS COULEURS */
 
-.color-line{
+.color-signature{
   position:relative;
-  z-index:2;
+  z-index:3;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   gap:7px;
-  margin:0 auto 29px;
+  margin-bottom:28px;
 }
 
-.color-line span{
+.color-signature span{
   display:block;
-  height:3px;
+  height:4px;
   border-radius:10px;
-  animation:linePulse 4s ease-in-out infinite;
 }
 
-.color-line .fr{
-  width:38px;
+.color-signature .blue{
+  width:42px;
   background:var(--blue);
 }
 
-.color-line .mx{
-  width:38px;
-  background:var(--green);
-}
-
-.color-line .red{
-  width:18px;
+.color-signature .red{
+  width:22px;
   background:var(--red);
 }
 
-@keyframes linePulse{
+.color-signature .green{
+  width:42px;
+  background:var(--green);
+}
+
+.color-signature span{
+  animation:signaturePulse 4.5s ease-in-out infinite;
+}
+
+.color-signature span:nth-child(2){
+  animation-delay:.25s;
+}
+
+.color-signature span:nth-child(3){
+  animation-delay:.5s;
+}
+
+@keyframes signaturePulse{
 
   0%,100%{
     opacity:.55;
-    transform:scaleX(.9);
+    transform:scaleX(.88);
   }
 
   50%{
@@ -187,29 +264,30 @@ body{
 }
 
 
-/* TITRES */
+/* TITRE */
 
 .hero h1{
   position:relative;
-  z-index:2;
-  max-width:850px;
-  margin:0 auto;
-  font-size:clamp(40px,6.2vw,82px);
+  z-index:3;
+  max-width:870px;
+  margin:0;
+  color:#121212;
+  font-size:clamp(44px,6.6vw,88px);
   font-weight:700;
-  line-height:.94;
-  letter-spacing:-.055em;
+  line-height:.91;
+  letter-spacing:-.06em;
 }
 
-.hero h1 span{
+.hero h1 .accent{
   color:var(--green);
 }
 
 .hero-subtitle{
   position:relative;
-  z-index:2;
-  max-width:650px;
+  z-index:3;
+  max-width:680px;
   margin:25px auto 0;
-  color:#545454;
+  color:#52575a;
   font-family:'Playfair Display',Georgia,serif;
   font-size:clamp(20px,2.5vw,30px);
   font-style:italic;
@@ -218,34 +296,44 @@ body{
 
 
 /* =========================
-   BANDE ANIMÉE
+   BANDE EN MOUVEMENT
    ========================= */
 
 .moving-band{
-  position:relative;
   overflow:hidden;
   width:100%;
-  padding:15px 0;
-  background:var(--green);
+  background:#121212;
   color:#fff;
+  border-top:4px solid var(--green);
 }
 
 .moving-track{
   display:flex;
   width:max-content;
   white-space:nowrap;
-  animation:moveText 30s linear infinite;
+  padding:15px 0;
+  animation:marquee 26s linear infinite;
+  will-change:transform;
 }
 
 .moving-track span{
   padding-right:48px;
-  font-size:11px;
+  font-size:10px;
   font-weight:700;
-  letter-spacing:.19em;
+  letter-spacing:.18em;
   text-transform:uppercase;
 }
 
-@keyframes moveText{
+.moving-track strong{
+  color:#ffffff;
+}
+
+.moving-track em{
+  color:#7aa88d;
+  font-style:normal;
+}
+
+@keyframes marquee{
 
   from{
     transform:translateX(0);
@@ -259,14 +347,34 @@ body{
 
 
 /* =========================
-   PROCHAINEMENT
+   PROGRAMA PRÓXIMAMENTE
    ========================= */
 
 .coming{
   position:relative;
-  padding:95px 30px 90px;
+  padding:92px 28px 88px;
   text-align:center;
-  background:#fff;
+  background:#f7f8f8;
+  overflow:hidden;
+}
+
+.coming::before{
+  content:"PRÓXIMAMENTE";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-53%);
+  color:rgba(24,63,116,.035);
+  font-size:clamp(70px,13vw,175px);
+  font-weight:700;
+  letter-spacing:-.06em;
+  white-space:nowrap;
+  pointer-events:none;
+}
+
+.coming-content{
+  position:relative;
+  z-index:2;
 }
 
 .coming-small{
@@ -279,12 +387,11 @@ body{
 }
 
 .coming h2{
-  margin:0;
-  color:var(--black);
-  font-size:clamp(38px,6vw,74px);
+  color:#111;
+  font-size:clamp(40px,6vw,76px);
   font-weight:700;
-  line-height:.95;
-  letter-spacing:-.055em;
+  line-height:.92;
+  letter-spacing:-.06em;
 }
 
 .coming h2 span{
@@ -292,28 +399,28 @@ body{
 }
 
 .coming-text{
-  max-width:580px;
+  max-width:610px;
   margin:27px auto 0;
-  color:#666;
+  color:#626669;
   font-size:15px;
   line-height:1.7;
 }
 
 
 /* =========================
-   CONTACT
+   CONTACTO
    ========================= */
 
 .contact{
-  padding:70px 30px 75px;
+  padding:72px 28px 76px;
   text-align:center;
-  background:var(--paper);
-  border-top:1px solid var(--light-grey);
+  background:#ffffff;
+  border-top:1px solid var(--border);
 }
 
 .contact-label{
   margin-bottom:11px;
-  color:var(--green);
+  color:var(--blue);
   font-size:10px;
   font-weight:700;
   letter-spacing:.22em;
@@ -321,16 +428,17 @@ body{
 }
 
 .contact h2{
-  margin-bottom:13px;
+  margin:0;
+  color:#111;
   font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(28px,4vw,43px);
+  font-size:clamp(31px,4vw,46px);
   font-weight:600;
 }
 
 .contact-intro{
   max-width:570px;
-  margin:0 auto 33px;
-  color:#686868;
+  margin:15px auto 32px;
+  color:#666b6e;
   font-size:14px;
   line-height:1.65;
 }
@@ -344,18 +452,19 @@ body{
 }
 
 .contact-button{
-  min-width:205px;
-  padding:15px 25px;
+  min-width:215px;
+  padding:15px 27px;
   border-radius:50px;
   text-decoration:none;
   font-size:11px;
   font-weight:700;
-  letter-spacing:.13em;
+  letter-spacing:.12em;
   text-transform:uppercase;
   transition:
     transform .2s ease,
     background .2s ease,
-    color .2s ease;
+    color .2s ease,
+    border-color .2s ease;
 }
 
 .email-button{
@@ -365,9 +474,9 @@ body{
 }
 
 .whatsapp-button{
-  color:var(--green);
-  background:transparent;
-  border:1px solid var(--green);
+  color:#111;
+  background:#fff;
+  border:1px solid #aeb5b7;
 }
 
 .contact-button:hover{
@@ -375,12 +484,13 @@ body{
 }
 
 .email-button:hover{
-  background:#174a34;
+  background:#174933;
 }
 
 .whatsapp-button:hover{
   color:#fff;
-  background:var(--green);
+  background:var(--blue);
+  border-color:var(--blue);
 }
 
 
@@ -389,10 +499,10 @@ body{
    ========================= */
 
 .social-area{
-  padding:30px 20px 33px;
-  background:#fff;
+  padding:31px 20px 32px;
   text-align:center;
-  border-top:1px solid var(--light-grey);
+  background:#f7f8f8;
+  border-top:1px solid var(--border);
 }
 
 .social-title{
@@ -400,7 +510,7 @@ body{
   color:#999;
   font-size:8px;
   font-weight:700;
-  letter-spacing:.23em;
+  letter-spacing:.22em;
   text-transform:uppercase;
 }
 
@@ -413,16 +523,17 @@ body{
 }
 
 .socials a{
-  color:#444;
+  color:#373a3c;
   text-decoration:none;
   font-size:10px;
   font-weight:700;
-  letter-spacing:.13em;
+  letter-spacing:.12em;
   text-transform:uppercase;
+  transition:color .2s ease;
 }
 
 .socials a:hover{
-  color:var(--green);
+  color:var(--red);
 }
 
 
@@ -431,7 +542,7 @@ body{
    ========================= */
 
 footer{
-  padding:25px 20px 27px;
+  padding:25px 20px 28px;
   text-align:center;
   background:#fff;
 }
@@ -444,8 +555,8 @@ footer{
 }
 
 .footer-colors span{
-  width:24px;
-  height:2px;
+  width:25px;
+  height:3px;
 }
 
 .footer-colors .blue{
@@ -461,19 +572,19 @@ footer{
 }
 
 .footer-name{
-  color:#777;
+  color:#73777a;
   font-size:9px;
   font-weight:600;
-  letter-spacing:.15em;
+  letter-spacing:.14em;
   text-transform:uppercase;
 }
 
 .footer-year{
   margin-top:6px;
-  color:#aaa;
+  color:#a2a5a7;
   font-size:8px;
   font-weight:600;
-  letter-spacing:.16em;
+  letter-spacing:.15em;
   text-transform:uppercase;
 }
 
@@ -491,11 +602,11 @@ footer{
   .hero{
     min-height:650px;
     padding-top:48px;
-    padding-bottom:55px;
+    padding-bottom:57px;
   }
 
-  .logo-zone{
-    width:min(300px,58vw);
+  .logo-stage{
+    width:min(300px,60vw);
   }
 
 }
@@ -511,51 +622,51 @@ footer{
     padding:7px;
   }
 
-  .page{
-    min-height:calc(100vh - 14px);
-  }
-
   .hero{
-    min-height:590px;
-    padding:39px 15px 48px;
+    min-height:585px;
+    padding:38px 15px 48px;
   }
 
   .edition-line{
-    margin-bottom:26px;
+    margin-bottom:25px;
     font-size:9px;
-    letter-spacing:.12em;
+    letter-spacing:.10em;
   }
 
-  .logo-zone{
-    width:min(235px,67vw);
-    margin-bottom:22px;
+  .logo-stage{
+    width:min(235px,68vw);
+    margin-bottom:21px;
   }
 
   .year-background{
-    font-size:44vw;
+    font-size:45vw;
   }
 
   .hero h1{
-    font-size:clamp(39px,12vw,58px);
+    font-size:clamp(40px,12vw,58px);
   }
 
   .hero-subtitle{
-    max-width:340px;
+    max-width:350px;
     margin-top:20px;
     font-size:20px;
   }
 
+  .moving-track{
+    animation-duration:22s;
+  }
+
   .moving-track span{
+    padding-right:34px;
     font-size:9px;
-    padding-right:35px;
   }
 
   .coming{
-    padding:67px 20px 64px;
+    padding:65px 20px 63px;
   }
 
   .coming h2{
-    font-size:clamp(39px,12vw,56px);
+    font-size:clamp(40px,12vw,57px);
   }
 
   .coming-text{
@@ -577,22 +688,20 @@ footer{
 }
 
 
-/* ACCESSIBILITÉ : SUPPRIME LES ANIMATIONS
-   SI LE VISITEUR LES A DÉSACTIVÉES */
+/* ACCESSIBILITÉ */
 
 @media(prefers-reduced-motion:reduce){
 
   .logo,
-  .color-line span,
+  .color-signature span,
   .moving-track{
-    animation:none;
+    animation:none !important;
   }
 
 }
 
 </style>
 </head>
-
 
 <body>
 
@@ -611,7 +720,7 @@ footer{
     XXI EDICIÓN · CDMX · ABRIL 2027
   </div>
 
-  <div class="logo-zone">
+  <div class="logo-stage">
 
     <img
       src="./logo21-v2.png"
@@ -621,15 +730,15 @@ footer{
 
   </div>
 
-  <div class="color-line">
-    <span class="fr"></span>
+  <div class="color-signature">
+    <span class="blue"></span>
     <span class="red"></span>
-    <span class="mx"></span>
+    <span class="green"></span>
   </div>
 
   <h1>
     Una nueva edición<br>
-    <span>se prepara.</span>
+    <span class="accent">se prepara.</span>
   </h1>
 
   <div class="hero-subtitle">
@@ -646,11 +755,11 @@ footer{
   <div class="moving-track">
 
     <span>
-      FESTIVAL FRANCO-MEXICANO · XXI EDICIÓN · CDMX · ABRIL 2027 · PROGRAMA PRÓXIMAMENTE ·
+      <strong>FESTIVAL FRANCO-MEXICANO</strong> · XXI EDICIÓN · CDMX · ABRIL 2027 · <em>PROGRAMA PRÓXIMAMENTE</em> ·
     </span>
 
     <span>
-      FESTIVAL FRANCO-MEXICANO · XXI EDICIÓN · CDMX · ABRIL 2027 · PROGRAMA PRÓXIMAMENTE ·
+      <strong>FESTIVAL FRANCO-MEXICANO</strong> · XXI EDICIÓN · CDMX · ABRIL 2027 · <em>PROGRAMA PRÓXIMAMENTE</em> ·
     </span>
 
   </div>
@@ -658,23 +767,27 @@ footer{
 </div>
 
 
-<!-- PROGRAMME À VENIR -->
+<!-- PROGRAMME -->
 
 <section class="coming">
 
-  <div class="coming-small">
-    XXI EDICIÓN
+  <div class="coming-content">
+
+    <div class="coming-small">
+      XXI EDICIÓN
+    </div>
+
+    <h2>
+      PROGRAMA<br>
+      <span>PRÓXIMAMENTE</span>
+    </h2>
+
+    <p class="coming-text">
+      Estamos preparando la próxima edición del Festival Franco-Mexicano.
+      Las novedades y la programación 2027 se darán a conocer progresivamente.
+    </p>
+
   </div>
-
-  <h2>
-    PROGRAMA<br>
-    <span>PRÓXIMAMENTE</span>
-  </h2>
-
-  <p class="coming-text">
-    Estamos preparando la próxima edición del Festival Franco-Mexicano.
-    Las novedades y la programación 2027 se darán a conocer progresivamente.
-  </p>
 
 </section>
 
@@ -717,7 +830,7 @@ footer{
 </section>
 
 
-<!-- RÉSEAUX SOCIAUX -->
+<!-- RÉSEAUX -->
 
 <div class="social-area">
 
