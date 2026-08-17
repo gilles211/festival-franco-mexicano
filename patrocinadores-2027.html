@@ -26,7 +26,7 @@ content="XXI Edición del Festival Franco-Mexicano · Ciudad de México · Abril
   --blue:#173f7a;
   --blue-deep:#0b2854;
   --red:#d80621;
-  --green:#16734c;
+  --green:#006847;
 }
 
 *{
@@ -37,22 +37,22 @@ content="XXI Edición del Festival Franco-Mexicano · Ciudad de México · Abril
 
 html{
   scroll-behavior:smooth;
-  background:#101010;
+  background:#eceeef;
 }
 
 body{
   margin:0;
-  padding:0;
-  background:#101010;
+  padding:18px;
+  background:#eceeef;
   color:var(--black);
   font-family:'DM Sans',Arial,sans-serif;
 }
 
 .page{
-  width:100%;
-  max-width:1440px;
+  width:min(1280px,100%);
   margin:0 auto;
   background:#fff;
+  border:1px solid #d6dadd;
   overflow:hidden;
 }
 
@@ -163,7 +163,7 @@ body{
   position:absolute;
   width:180px;
   height:8px;
-  background:#4eb782;
+  background:#006847;
   right:8%;
   bottom:24%;
   transform:rotate(8deg);
@@ -246,7 +246,6 @@ body{
     logoAlive 7s ease-in-out 1.2s infinite;
 }
 
-
 @keyframes logoIntro{
 
   0%{
@@ -281,7 +280,6 @@ body{
   }
 
 }
-
 
 @keyframes logoAlive{
 
@@ -347,7 +345,7 @@ body{
 
 .color-signature .green{
   width:47px;
-  background:#55c28c;
+  background:#006847;
 }
 
 .color-signature span:nth-child(2){
@@ -390,7 +388,6 @@ body{
 
 .hero h1 .accent{
   color:#006847;
-}
 }
 
 .hero-subtitle{
@@ -721,7 +718,7 @@ footer{
 }
 
 .footer-colors .green{
-  background:#45a979;
+  background:var(--green);
 }
 
 .footer-name{
@@ -747,6 +744,10 @@ footer{
    ======================================== */
 
 @media(max-width:900px){
+
+  body{
+    padding:12px;
+  }
 
   .hero{
     min-height:690px;
@@ -774,6 +775,10 @@ footer{
    ======================================== */
 
 @media(max-width:700px){
+
+  body{
+    padding:7px;
+  }
 
   .hero{
     min-height:620px;
