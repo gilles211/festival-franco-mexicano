@@ -18,14 +18,15 @@ content="XXI Edición del Festival Franco-Mexicano · Ciudad de México · Abril
 
 :root{
   --white:#ffffff;
-  --paper:#f7f8f8;
-  --black:#111111;
-  --grey:#6f7377;
-  --border:#dfe2e3;
+  --paper:#f4f2ed;
+  --black:#101010;
+  --grey:#666a6d;
+  --border:#dedede;
 
-  --blue:#183F74;
-  --red:#D80621;
-  --green:#1F5A3F;
+  --blue:#173f7a;
+  --blue-deep:#0b2854;
+  --red:#d80621;
+  --green:#16734c;
 }
 
 *{
@@ -36,44 +37,50 @@ content="XXI Edición del Festival Franco-Mexicano · Ciudad de México · Abril
 
 html{
   scroll-behavior:smooth;
-  background:#eceeef;
+  background:#101010;
 }
 
 body{
   margin:0;
-  padding:18px;
-  background:#eceeef;
+  padding:0;
+  background:#101010;
   color:var(--black);
   font-family:'DM Sans',Arial,sans-serif;
 }
 
 .page{
-  width:min(1280px,100%);
+  width:100%;
+  max-width:1440px;
   margin:0 auto;
-  background:var(--white);
-  border:1px solid #d6dadd;
+  background:#fff;
   overflow:hidden;
 }
 
 
-/* =========================
-   HERO
-   ========================= */
+/* ========================================
+   HERO 2027
+   ======================================== */
 
 .hero{
   position:relative;
-  min-height:720px;
-  padding:54px 25px 70px;
+  min-height:760px;
+  padding:52px 30px 72px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   text-align:center;
   overflow:hidden;
+
   background:
-    radial-gradient(circle at 15% 18%, rgba(24,63,116,.06), transparent 24%),
-    radial-gradient(circle at 85% 78%, rgba(31,90,63,.06), transparent 25%),
-    #ffffff;
+    radial-gradient(
+      circle at 50% 25%,
+      #24579c 0%,
+      var(--blue) 38%,
+      var(--blue-deep) 100%
+    );
+
+  color:#fff;
 }
 
 
@@ -82,16 +89,109 @@ body{
 .year-background{
   position:absolute;
   left:50%;
-  top:50%;
+  top:49%;
   transform:translate(-50%,-50%);
-  font-size:clamp(190px,30vw,410px);
-  line-height:.75;
+  font-size:clamp(210px,34vw,500px);
+  line-height:.72;
   font-weight:700;
-  letter-spacing:-.10em;
-  color:rgba(17,17,17,.028);
+  letter-spacing:-.11em;
+  color:rgba(255,255,255,.055);
   white-space:nowrap;
   pointer-events:none;
   user-select:none;
+
+  animation:yearMove 14s ease-in-out infinite;
+}
+
+@keyframes yearMove{
+
+  0%,100%{
+    transform:
+      translate(-50%,-50%)
+      scale(1);
+  }
+
+  50%{
+    transform:
+      translate(-48%,-51%)
+      scale(1.035);
+  }
+
+}
+
+
+/* FORMES GRAPHIQUES */
+
+.hero-shape-red{
+  position:absolute;
+  width:380px;
+  height:380px;
+  border-radius:50%;
+  background:var(--red);
+  right:-190px;
+  top:-155px;
+  opacity:.95;
+
+  animation:redFloat 10s ease-in-out infinite;
+}
+
+.hero-shape-green{
+  position:absolute;
+  width:430px;
+  height:430px;
+  border-radius:50%;
+  background:var(--green);
+  left:-250px;
+  bottom:-245px;
+  opacity:.9;
+
+  animation:greenFloat 12s ease-in-out infinite;
+}
+
+.hero-line-red{
+  position:absolute;
+  width:210px;
+  height:8px;
+  background:var(--red);
+  left:8%;
+  top:26%;
+  transform:rotate(-8deg);
+  opacity:.9;
+}
+
+.hero-line-green{
+  position:absolute;
+  width:180px;
+  height:8px;
+  background:#4eb782;
+  right:8%;
+  bottom:24%;
+  transform:rotate(8deg);
+  opacity:.8;
+}
+
+@keyframes redFloat{
+
+  0%,100%{
+    transform:translate(0,0);
+  }
+
+  50%{
+    transform:translate(-25px,30px);
+  }
+
+}
+
+@keyframes greenFloat{
+
+  0%,100%{
+    transform:translate(0,0);
+  }
+
+  50%{
+    transform:translate(35px,-25px);
+  }
+
 }
 
 
@@ -99,12 +199,12 @@ body{
 
 .edition-line{
   position:relative;
-  z-index:3;
-  margin-bottom:31px;
-  color:var(--green);
+  z-index:4;
+  margin-bottom:30px;
+  color:rgba(255,255,255,.82);
   font-size:11px;
   font-weight:700;
-  letter-spacing:.17em;
+  letter-spacing:.22em;
   text-transform:uppercase;
   white-space:nowrap;
 }
@@ -114,46 +214,60 @@ body{
 
 .logo-stage{
   position:relative;
-  z-index:3;
+  z-index:4;
   width:min(330px,62vw);
   margin:0 auto 25px;
 }
 
+.logo-stage::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:82%;
+  height:82%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:rgba(255,255,255,.10);
+  filter:blur(20px);
+}
+
 .logo{
+  position:relative;
   display:block;
   width:100%;
   height:auto;
   object-fit:contain;
+  filter:drop-shadow(0 18px 25px rgba(0,0,0,.20));
   transform-origin:center center;
+
   animation:
-    logoIntro 1.25s cubic-bezier(.2,.8,.2,1) both,
-    logoAlive 8s ease-in-out 1.4s infinite;
+    logoIntro 1.15s cubic-bezier(.16,.8,.25,1) both,
+    logoAlive 7s ease-in-out 1.2s infinite;
 }
 
-
-/* ENTRÉE PLUS DYNAMIQUE */
 
 @keyframes logoIntro{
 
   0%{
     opacity:0;
     transform:
-      translateY(35px)
-      rotate(-24deg)
-      scale(.72);
+      translateY(45px)
+      rotate(-28deg)
+      scale(.65);
   }
 
   65%{
     opacity:1;
     transform:
-      translateY(-6px)
-      rotate(4deg)
-      scale(1.035);
+      translateY(-8px)
+      rotate(5deg)
+      scale(1.05);
   }
 
   82%{
     transform:
-      translateY(2px)
+      translateY(3px)
       rotate(-2deg)
       scale(.99);
   }
@@ -169,8 +283,6 @@ body{
 }
 
 
-/* RESPIRATION APRÈS L'ARRIVÉE */
-
 @keyframes logoAlive{
 
   0%,100%{
@@ -182,63 +294,60 @@ body{
 
   25%{
     transform:
-      translateY(-5px)
-      rotate(-1.5deg)
-      scale(1.018);
+      translateY(-7px)
+      rotate(-1.7deg)
+      scale(1.02);
   }
 
   50%{
     transform:
-      translateY(-8px)
-      rotate(1.2deg)
-      scale(1.028);
+      translateY(-12px)
+      rotate(1.5deg)
+      scale(1.035);
   }
 
   75%{
     transform:
-      translateY(-4px)
-      rotate(-.8deg)
+      translateY(-5px)
+      rotate(-1deg)
       scale(1.015);
   }
 
 }
 
 
-/* ACCENTS COULEURS */
+/* TROIS COULEURS */
 
 .color-signature{
   position:relative;
-  z-index:3;
+  z-index:4;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:7px;
-  margin-bottom:28px;
+  gap:6px;
+  margin-bottom:29px;
 }
 
 .color-signature span{
   display:block;
-  height:4px;
+  height:5px;
   border-radius:10px;
+  animation:signaturePulse 3.8s ease-in-out infinite;
 }
 
 .color-signature .blue{
-  width:42px;
-  background:var(--blue);
+  width:47px;
+  background:#75a5e8;
 }
 
 .color-signature .red{
-  width:22px;
-  background:var(--red);
+  width:25px;
+  background:#ff2440;
 }
 
 .color-signature .green{
-  width:42px;
-  background:var(--green);
-}
-
-.color-signature span{
-  animation:signaturePulse 4.5s ease-in-out infinite;
+  width:47px;
+  background:#55c28c;
 }
 
 .color-signature span:nth-child(2){
@@ -252,13 +361,13 @@ body{
 @keyframes signaturePulse{
 
   0%,100%{
-    opacity:.55;
-    transform:scaleX(.88);
+    opacity:.6;
+    transform:scaleX(.82);
   }
 
   50%{
     opacity:1;
-    transform:scaleX(1.12);
+    transform:scaleX(1.18);
   }
 
 }
@@ -268,69 +377,70 @@ body{
 
 .hero h1{
   position:relative;
-  z-index:3;
-  max-width:870px;
+  z-index:4;
+  max-width:900px;
   margin:0;
-  color:#121212;
-  font-size:clamp(44px,6.6vw,88px);
+  color:#fff;
+  font-size:clamp(48px,7vw,96px);
   font-weight:700;
-  line-height:.91;
-  letter-spacing:-.06em;
+  line-height:.87;
+  letter-spacing:-.065em;
+  text-shadow:0 8px 30px rgba(0,0,0,.12);
 }
 
 .hero h1 .accent{
-  color:var(--green);
+  color:#75d5a7;
 }
 
 .hero-subtitle{
   position:relative;
-  z-index:3;
+  z-index:4;
   max-width:680px;
-  margin:25px auto 0;
-  color:#52575a;
+  margin:28px auto 0;
+  color:rgba(255,255,255,.83);
   font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(20px,2.5vw,30px);
+  font-size:clamp(20px,2.5vw,31px);
   font-style:italic;
   line-height:1.35;
 }
 
 
-/* =========================
-   BANDE EN MOUVEMENT
-   ========================= */
+/* ========================================
+   BANDE DYNAMIQUE
+   ======================================== */
 
 .moving-band{
   overflow:hidden;
   width:100%;
-  background:#121212;
+  background:var(--red);
   color:#fff;
-  border-top:4px solid var(--green);
 }
 
 .moving-track{
   display:flex;
   width:max-content;
   white-space:nowrap;
-  padding:15px 0;
-  animation:marquee 26s linear infinite;
+  padding:17px 0;
+  animation:marquee 23s linear infinite;
   will-change:transform;
 }
 
 .moving-track span{
-  padding-right:48px;
+  padding-right:55px;
   font-size:10px;
   font-weight:700;
-  letter-spacing:.18em;
+  letter-spacing:.19em;
   text-transform:uppercase;
 }
 
 .moving-track strong{
-  color:#ffffff;
+  color:#fff;
 }
 
 .moving-track em{
-  color:#7aa88d;
+  color:#fff;
   font-style:normal;
+  opacity:.78;
 }
 
 @keyframes marquee{
@@ -346,30 +456,46 @@ body{
 }
 
 
-/* =========================
-   PROGRAMA PRÓXIMAMENTE
-   ========================= */
+/* ========================================
+   PROGRAMME
+   ======================================== */
 
 .coming{
   position:relative;
-  padding:92px 28px 88px;
+  min-height:520px;
+  padding:105px 28px 100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
-  background:#f7f8f8;
+  background:#f1f0eb;
   overflow:hidden;
 }
 
 .coming::before{
-  content:"PRÓXIMAMENTE";
+  content:"2027";
   position:absolute;
   left:50%;
   top:50%;
-  transform:translate(-50%,-53%);
-  color:rgba(24,63,116,.035);
-  font-size:clamp(70px,13vw,175px);
+  transform:translate(-50%,-51%);
+  color:rgba(23,63,122,.055);
+  font-size:clamp(190px,30vw,420px);
   font-weight:700;
-  letter-spacing:-.06em;
+  line-height:.75;
+  letter-spacing:-.1em;
   white-space:nowrap;
   pointer-events:none;
+}
+
+.coming::after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:var(--green);
+  right:-130px;
+  bottom:-125px;
 }
 
 .coming-content{
@@ -378,9 +504,12 @@ body{
 }
 
 .coming-small{
-  margin-bottom:15px;
-  color:var(--red);
-  font-size:10px;
+  display:inline-block;
+  margin-bottom:18px;
+  padding:8px 15px;
+  color:#fff;
+  background:var(--red);
+  font-size:9px;
   font-weight:700;
   letter-spacing:.22em;
   text-transform:uppercase;
@@ -388,39 +517,59 @@ body{
 
 .coming h2{
   color:#111;
-  font-size:clamp(40px,6vw,76px);
+  font-size:clamp(46px,7vw,94px);
   font-weight:700;
-  line-height:.92;
-  letter-spacing:-.06em;
+  line-height:.84;
+  letter-spacing:-.065em;
 }
 
 .coming h2 span{
-  color:var(--green);
+  color:var(--blue);
 }
 
 .coming-text{
   max-width:610px;
-  margin:27px auto 0;
-  color:#626669;
+  margin:32px auto 0;
+  color:#555a5e;
   font-size:15px;
   line-height:1.7;
 }
 
 
-/* =========================
-   CONTACTO
-   ========================= */
+/* ========================================
+   CONTACT
+   ======================================== */
 
 .contact{
-  padding:72px 28px 76px;
+  position:relative;
+  padding:88px 28px 92px;
   text-align:center;
-  background:#ffffff;
-  border-top:1px solid var(--border);
+  background:#fff;
+  overflow:hidden;
+}
+
+.contact::before{
+  content:"CONTACTO";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-55%);
+  color:rgba(0,0,0,.025);
+  font-size:clamp(80px,15vw,200px);
+  font-weight:700;
+  letter-spacing:-.06em;
+  white-space:nowrap;
+  pointer-events:none;
+}
+
+.contact-content{
+  position:relative;
+  z-index:2;
 }
 
 .contact-label{
-  margin-bottom:11px;
-  color:var(--blue);
+  margin-bottom:12px;
+  color:var(--red);
   font-size:10px;
   font-weight:700;
   letter-spacing:.22em;
@@ -430,14 +579,15 @@ body{
 .contact h2{
   margin:0;
   color:#111;
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(31px,4vw,46px);
-  font-weight:600;
+  font-size:clamp(42px,6vw,72px);
+  font-weight:700;
+  line-height:.9;
+  letter-spacing:-.055em;
 }
 
 .contact-intro{
   max-width:570px;
-  margin:15px auto 32px;
+  margin:22px auto 34px;
   color:#666b6e;
   font-size:14px;
   line-height:1.65;
@@ -452,9 +602,9 @@ body{
 }
 
 .contact-button{
-  min-width:215px;
-  padding:15px 27px;
-  border-radius:50px;
+  min-width:220px;
+  padding:16px 28px;
+  border-radius:100px;
   text-decoration:none;
   font-size:11px;
   font-weight:700;
@@ -462,55 +612,44 @@ body{
   text-transform:uppercase;
   transition:
     transform .2s ease,
-    background .2s ease,
-    color .2s ease,
-    border-color .2s ease;
+    box-shadow .2s ease,
+    background .2s ease;
 }
 
 .email-button{
+  color:#fff;
+  background:var(--blue);
+  border:1px solid var(--blue);
+}
+
+.whatsapp-button{
   color:#fff;
   background:var(--green);
   border:1px solid var(--green);
 }
 
-.whatsapp-button{
-  color:#111;
-  background:#fff;
-  border:1px solid #aeb5b7;
-}
-
 .contact-button:hover{
-  transform:translateY(-3px);
-}
-
-.email-button:hover{
-  background:#174933;
-}
-
-.whatsapp-button:hover{
-  color:#fff;
-  background:var(--blue);
-  border-color:var(--blue);
+  transform:translateY(-4px);
+  box-shadow:0 10px 22px rgba(0,0,0,.13);
 }
 
 
-/* =========================
+/* ========================================
    RÉSEAUX
-   ========================= */
+   ======================================== */
 
 .social-area{
-  padding:31px 20px 32px;
+  padding:37px 20px;
   text-align:center;
-  background:#f7f8f8;
-  border-top:1px solid var(--border);
+  background:#101010;
 }
 
 .social-title{
-  margin-bottom:13px;
-  color:#999;
+  margin-bottom:16px;
+  color:#777;
   font-size:8px;
   font-weight:700;
-  letter-spacing:.22em;
+  letter-spacing:.23em;
   text-transform:uppercase;
 }
 
@@ -519,48 +658,61 @@ body{
   justify-content:center;
   align-items:center;
   flex-wrap:wrap;
-  gap:20px;
+  gap:28px;
 }
 
 .socials a{
-  color:#373a3c;
+  position:relative;
+  color:#fff;
   text-decoration:none;
   font-size:10px;
   font-weight:700;
-  letter-spacing:.12em;
+  letter-spacing:.14em;
   text-transform:uppercase;
   transition:color .2s ease;
 }
 
-.socials a:hover{
-  color:var(--red);
+.socials a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:-5px;
+  height:2px;
+  background:var(--red);
+  transition:right .25s ease;
+}
+
+.socials a:hover::after{
+  right:0;
 }
 
 
-/* =========================
+/* ========================================
    FOOTER
-   ========================= */
+   ======================================== */
 
 footer{
-  padding:25px 20px 28px;
+  padding:27px 20px 30px;
   text-align:center;
-  background:#fff;
+  background:#101010;
+  border-top:1px solid #292929;
 }
 
 .footer-colors{
   display:flex;
   justify-content:center;
   gap:5px;
-  margin-bottom:17px;
+  margin-bottom:18px;
 }
 
 .footer-colors span{
-  width:25px;
+  width:27px;
   height:3px;
 }
 
 .footer-colors .blue{
-  background:var(--blue);
+  background:#4d82c9;
 }
 
 .footer-colors .red{
@@ -568,11 +720,11 @@ footer{
 }
 
 .footer-colors .green{
-  background:var(--green);
+  background:#45a979;
 }
 
 .footer-name{
-  color:#73777a;
+  color:#aaa;
   font-size:9px;
   font-weight:600;
   letter-spacing:.14em;
@@ -580,8 +732,8 @@ footer{
 }
 
 .footer-year{
-  margin-top:6px;
-  color:#a2a5a7;
+  margin-top:7px;
+  color:#666;
   font-size:8px;
   font-weight:600;
   letter-spacing:.15em;
@@ -589,84 +741,109 @@ footer{
 }
 
 
-/* =========================
+/* ========================================
    TABLETTE
-   ========================= */
+   ======================================== */
 
 @media(max-width:900px){
 
-  body{
-    padding:12px;
-  }
-
   .hero{
-    min-height:650px;
-    padding-top:48px;
-    padding-bottom:57px;
+    min-height:690px;
   }
 
   .logo-stage{
     width:min(300px,60vw);
   }
 
+  .hero-shape-red{
+    width:300px;
+    height:300px;
+  }
+
+  .hero-shape-green{
+    width:350px;
+    height:350px;
+  }
+
 }
 
 
-/* =========================
+/* ========================================
    MOBILE
-   ========================= */
+   ======================================== */
 
 @media(max-width:700px){
 
-  body{
-    padding:7px;
-  }
-
   .hero{
-    min-height:585px;
-    padding:38px 15px 48px;
+    min-height:620px;
+    padding:38px 17px 50px;
   }
 
   .edition-line{
-    margin-bottom:25px;
+    margin-bottom:24px;
     font-size:9px;
-    letter-spacing:.10em;
+    letter-spacing:.11em;
   }
 
   .logo-stage{
-    width:min(235px,68vw);
-    margin-bottom:21px;
+    width:min(230px,66vw);
+    margin-bottom:20px;
   }
 
   .year-background{
-    font-size:45vw;
+    font-size:48vw;
   }
 
   .hero h1{
-    font-size:clamp(40px,12vw,58px);
+    font-size:clamp(43px,12.5vw,62px);
   }
 
   .hero-subtitle{
-    max-width:350px;
-    margin-top:20px;
+    max-width:360px;
+    margin-top:22px;
     font-size:20px;
   }
 
+  .hero-shape-red{
+    width:220px;
+    height:220px;
+    right:-135px;
+    top:-90px;
+  }
+
+  .hero-shape-green{
+    width:260px;
+    height:260px;
+    left:-165px;
+    bottom:-160px;
+  }
+
+  .hero-line-red{
+    width:100px;
+    left:-20px;
+  }
+
+  .hero-line-green{
+    width:100px;
+    right:-20px;
+  }
+
   .moving-track{
-    animation-duration:22s;
+    animation-duration:19s;
   }
 
   .moving-track span{
-    padding-right:34px;
+    padding-right:35px;
     font-size:9px;
   }
 
   .coming{
-    padding:65px 20px 63px;
+    min-height:450px;
+    padding:75px 20px;
   }
 
   .coming h2{
-    font-size:clamp(40px,12vw,57px);
+    font-size:clamp(44px,13vw,63px);
   }
 
   .coming-text{
@@ -674,7 +851,11 @@ footer{
   }
 
   .contact{
-    padding:58px 20px 60px;
+    padding:67px 20px 70px;
+  }
+
+  .contact h2{
+    font-size:49px;
   }
 
   .contact-buttons{
@@ -693,6 +874,9 @@ footer{
 @media(prefers-reduced-motion:reduce){
 
   .logo,
+  .year-background,
+  .hero-shape-red,
+  .hero-shape-green,
   .color-signature span,
   .moving-track{
     animation:none !important;
@@ -715,6 +899,12 @@ footer{
   <div class="year-background">
     2027
   </div>
+
+  <div class="hero-shape-red"></div>
+  <div class="hero-shape-green"></div>
+
+  <div class="hero-line-red"></div>
+  <div class="hero-line-green"></div>
 
   <div class="edition-line">
     XXI EDICIÓN · CDMX · ABRIL 2027
@@ -796,34 +986,38 @@ footer{
 
 <section class="contact">
 
-  <div class="contact-label">
-    Contacto
-  </div>
+  <div class="contact-content">
 
-  <h2>
-    Hablemos.
-  </h2>
+    <div class="contact-label">
+      Contacto
+    </div>
 
-  <p class="contact-intro">
-    Para información, colaboración o participación en la edición 2027,
-    puede ponerse en contacto directamente con el Festival.
-  </p>
+    <h2>
+      Hablemos.
+    </h2>
 
-  <div class="contact-buttons">
+    <p class="contact-intro">
+      Para información, colaboración o participación en la edición 2027,
+      puede ponerse en contacto directamente con el Festival.
+    </p>
 
-    <a
-      class="contact-button email-button"
-      href="mailto:festival.frances@gmail.com">
-      Email
-    </a>
+    <div class="contact-buttons">
 
-    <a
-      class="contact-button whatsapp-button"
-      href="https://wa.me/525611039276"
-      target="_blank"
-      rel="noopener">
-      WhatsApp
-    </a>
+      <a
+        class="contact-button email-button"
+        href="mailto:festival.frances@gmail.com">
+        Email
+      </a>
+
+      <a
+        class="contact-button whatsapp-button"
+        href="https://wa.me/525611039276"
+        target="_blank"
+        rel="noopener">
+        WhatsApp
+      </a>
+
+    </div>
 
   </div>
 
