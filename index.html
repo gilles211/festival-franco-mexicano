@@ -263,64 +263,63 @@ body{
 }
 
 
-/* ACTUALIDAD */
+/* NOVEDADES */
 
-.actualidad-footer{
+.novedades{
   width:calc(100% - 32px);
+  min-height:230px;
   margin:7px auto 16px;
+  padding:clamp(32px,4.5vw,52px) clamp(38px,5.3vw,68px);
   background:var(--black);
   color:#fff;
+  display:flex;
+  align-items:center;
 }
 
-.actualidad{
+.novedades-content{
   width:100%;
 }
 
-.actualidad summary{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:34px clamp(28px,5.3vw,68px);
-  cursor:pointer;
-  list-style:none;
-  user-select:none;
-  font-size:clamp(30px,4vw,50px);
+.novedades-number{
+  margin-bottom:13px;
+  color:rgba(255,255,255,.65);
+  font-size:10px;
   font-weight:700;
-  line-height:1;
-  letter-spacing:-.04em;
+  letter-spacing:.22em;
+  text-transform:uppercase;
 }
 
-.actualidad summary::-webkit-details-marker{
-  display:none;
+.novedades-title{
+  font-size:clamp(42px,5.7vw,72px);
+  font-weight:700;
+  line-height:.88;
+  letter-spacing:-.055em;
 }
 
-.actualidad summary::after{
-  content:"+";
-  font-size:38px;
-  font-weight:400;
-  line-height:1;
+.novedades-subtitle{
+  margin-top:16px;
+  color:rgba(255,255,255,.82);
+  font-size:15px;
+  font-weight:500;
 }
 
-.actualidad[open] summary::after{
-  content:"−";
-}
-
-.actualidad-links{
+.novedades-links{
   display:flex;
   flex-wrap:wrap;
-  gap:10px;
-  padding:24px clamp(28px,5.3vw,68px) 34px;
-  border-top:1px solid rgba(255,255,255,.18);
+  gap:9px;
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.22);
 }
 
-.actualidad-links a{
-  padding:11px 18px;
+.novedades-links a{
+  padding:10px 16px;
   color:#fff;
   background:transparent;
   border:1px solid rgba(255,255,255,.35);
   border-radius:50px;
   text-decoration:none;
-  font-size:10px;
+  font-size:9px;
   font-weight:700;
   letter-spacing:.12em;
   text-transform:uppercase;
@@ -330,10 +329,10 @@ body{
     transform .2s ease;
 }
 
-.actualidad-links a:hover{
+.novedades-links a:hover{
   transform:translateY(-2px);
   background:rgba(255,255,255,.08);
-  border-color:rgba(255,255,255,.7);
+  border-color:rgba(255,255,255,.75);
 }
 
 
@@ -348,6 +347,10 @@ body{
   .main-block{
     min-height:285px;
     padding:40px;
+  }
+
+  .novedades{
+    min-height:215px;
   }
 
 }
@@ -407,29 +410,32 @@ body{
     margin-top:22px;
   }
 
-  .actualidad-footer{
+  .novedades{
     width:calc(100% - 14px);
+    min-height:190px;
     margin-top:4px;
     margin-bottom:7px;
+    padding:30px 23px;
   }
 
-  .actualidad summary{
-    padding:27px 23px;
-    font-size:31px;
+  .novedades-title{
+    font-size:43px;
   }
 
-  .actualidad summary::after{
-    font-size:32px;
+  .novedades-subtitle{
+    margin-top:13px;
+    font-size:13px;
   }
 
-  .actualidad-links{
-    gap:8px;
-    padding:20px 23px 27px;
+  .novedades-links{
+    gap:7px;
+    margin-top:18px;
+    padding-top:16px;
   }
 
-  .actualidad-links a{
-    padding:10px 14px;
-    font-size:9px;
+  .novedades-links a{
+    padding:9px 12px;
+    font-size:8px;
   }
 
 }
@@ -626,15 +632,23 @@ body{
 </main>
 
 
-<footer class="actualidad-footer">
+<section class="novedades">
 
-  <details class="actualidad">
+  <div class="novedades-content">
 
-    <summary>
-      ACTUALIDAD
-    </summary>
+    <div class="novedades-number">
+      04 · MANTENTE AL DÍA
+    </div>
 
-    <div class="actualidad-links">
+    <div class="novedades-title">
+      NOVEDADES
+    </div>
+
+    <div class="novedades-subtitle">
+      Síguenos y mantente al día
+    </div>
+
+    <div class="novedades-links">
 
       <a href="https://www.instagram.com/festivalfrancomexicano"
          target="_blank"
@@ -666,9 +680,9 @@ body{
 
     </div>
 
-  </details>
+  </div>
 
-</footer>
+</section>
 
 
 </div>
