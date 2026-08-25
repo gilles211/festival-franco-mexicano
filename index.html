@@ -263,59 +263,61 @@ body{
 }
 
 
-/* FOOTER */
+/* ACTUALIDAD */
 
-footer{
+.actualidad-footer{
   width:calc(100% - 32px);
-  margin:0 auto;
-  padding:0 20px 30px;
-  text-align:center;
-  background:#fff;
+  margin:7px auto 16px;
+  background:var(--black);
+  color:#fff;
 }
 
-.footer-colors{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+.actualidad{
   width:100%;
-  height:4px;
-  margin:0 0 27px;
 }
 
-.footer-colors span:nth-child(1){
-  background:var(--blue);
-}
-
-.footer-colors span:nth-child(2){
-  background:var(--red);
-}
-
-.footer-colors span:nth-child(3){
-  background:var(--green);
-}
-
-.follow-title{
-  margin-bottom:15px;
-  color:#777;
-  font-size:9px;
-  font-weight:700;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-}
-
-.socials{
+.actualidad summary{
   display:flex;
-  justify-content:center;
+  justify-content:space-between;
   align-items:center;
+  padding:34px clamp(28px,5.3vw,68px);
+  cursor:pointer;
+  list-style:none;
+  user-select:none;
+  font-size:clamp(30px,4vw,50px);
+  font-weight:700;
+  line-height:1;
+  letter-spacing:-.04em;
+}
+
+.actualidad summary::-webkit-details-marker{
+  display:none;
+}
+
+.actualidad summary::after{
+  content:"+";
+  font-size:38px;
+  font-weight:400;
+  line-height:1;
+}
+
+.actualidad[open] summary::after{
+  content:"−";
+}
+
+.actualidad-links{
+  display:flex;
   flex-wrap:wrap;
   gap:10px;
+  padding:24px clamp(28px,5.3vw,68px) 34px;
+  border-top:1px solid rgba(255,255,255,.18);
 }
 
-.socials a{
-  min-width:108px;
+.actualidad-links a{
   padding:11px 18px;
-  color:#222;
-  background:#fff;
-  border:1px solid #d7d7d7;
+  color:#fff;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.35);
   border-radius:50px;
   text-decoration:none;
   font-size:10px;
@@ -323,40 +325,15 @@ footer{
   letter-spacing:.12em;
   text-transform:uppercase;
   transition:
-    transform .2s ease,
+    background .2s ease,
     border-color .2s ease,
-    background .2s ease;
+    transform .2s ease;
 }
 
-.socials a:hover{
+.actualidad-links a:hover{
   transform:translateY(-2px);
-  background:#f7f7f5;
-  border-color:#aaa;
-}
-
-.footer-logo{
-  display:block;
-  width:140px;
-  height:140px;
-  margin:24px auto 7px;
-  object-fit:contain;
-}
-
-.footer-name{
-  color:#696969;
-  font-size:9px;
-  font-weight:600;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-}
-
-.footer-years{
-  margin-top:7px;
-  color:#aaa;
-  font-size:8px;
-  font-weight:600;
-  letter-spacing:.17em;
-  text-transform:uppercase;
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.7);
 }
 
 
@@ -430,38 +407,29 @@ footer{
     margin-top:22px;
   }
 
-  footer{
+  .actualidad-footer{
     width:calc(100% - 14px);
-    padding:0 10px 25px;
+    margin-top:4px;
+    margin-bottom:7px;
   }
 
-  .footer-colors{
-    height:3px;
-    margin-bottom:23px;
+  .actualidad summary{
+    padding:27px 23px;
+    font-size:31px;
   }
 
-  .socials{
+  .actualidad summary::after{
+    font-size:32px;
+  }
+
+  .actualidad-links{
     gap:8px;
+    padding:20px 23px 27px;
   }
 
-  .socials a{
-    min-width:95px;
-    padding:10px 13px;
+  .actualidad-links a{
+    padding:10px 14px;
     font-size:9px;
-  }
-
-  .footer-logo{
-    width:120px;
-    height:120px;
-    margin-top:21px;
-  }
-
-  .footer-name{
-    font-size:8px;
-  }
-
-  .footer-years{
-    font-size:7px;
   }
 
 }
@@ -658,63 +626,47 @@ footer{
 </main>
 
 
-<footer>
+<footer class="actualidad-footer">
 
-  <div class="footer-colors">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <details class="actualidad">
 
-  <div class="follow-title">
-    Síguenos
-  </div>
+    <summary>
+      ACTUALIDAD
+    </summary>
 
-  <div class="socials">
+    <div class="actualidad-links">
 
-    <a href="https://www.instagram.com/festivalfrancomexicano"
-       target="_blank"
-       rel="noopener">
-      Instagram
-    </a>
+      <a href="https://www.instagram.com/festivalfrancomexicano"
+         target="_blank"
+         rel="noopener">
+        Instagram
+      </a>
 
-    <a href="https://www.facebook.com/share/17njmKGrgN/"
-       target="_blank"
-       rel="noopener">
-      Facebook
-    </a>
+      <a href="https://www.facebook.com/share/17njmKGrgN/"
+         target="_blank"
+         rel="noopener">
+        Facebook
+      </a>
 
-    <a href="https://x.com/festivalfrances"
-       target="_blank"
-       rel="noopener">
-      X
-    </a>
+      <a href="https://x.com/festivalfrances"
+         target="_blank"
+         rel="noopener">
+        X
+      </a>
 
-    <a href="mailto:info@festival-franco-mexicano.com">
-      Contacto
-    </a>
+      <a href="https://wa.me/525611039276"
+         target="_blank"
+         rel="noopener">
+        WhatsApp
+      </a>
 
-    <a href="https://wa.me/525611039276"
-       target="_blank"
-       rel="noopener">
-      WhatsApp
-    </a>
+      <a href="mailto:info@festival-franco-mexicano.com">
+        Escríbenos
+      </a>
 
-  </div>
+    </div>
 
-  <img
-    src="./logo21-v2.png"
-    class="footer-logo"
-    alt="Festival Franco-Mexicano · XXI"
-  >
-
-  <div class="footer-name">
-    Festival Franco-Mexicano · Gastronomía · CDMX
-  </div>
-
-  <div class="footer-years">
-    Desde 2004 · Francia × México
-  </div>
+  </details>
 
 </footer>
 
