@@ -57,9 +57,7 @@ body{
 }
 
 
-/* ========================================
-   HERO 2027
-   ======================================== */
+/* HERO */
 
 .hero{
   position:relative;
@@ -83,9 +81,6 @@ body{
   color:#fff;
 }
 
-
-/* GRAND 2027 */
-
 .year-background{
   position:absolute;
   left:50%;
@@ -99,28 +94,17 @@ body{
   white-space:nowrap;
   pointer-events:none;
   user-select:none;
-
   animation:yearMove 14s ease-in-out infinite;
 }
 
 @keyframes yearMove{
-
   0%,100%{
-    transform:
-      translate(-50%,-50%)
-      scale(1);
+    transform:translate(-50%,-50%) scale(1);
   }
-
   50%{
-    transform:
-      translate(-48%,-51%)
-      scale(1.035);
+    transform:translate(-48%,-51%) scale(1.035);
   }
-
 }
-
-
-/* FORMES GRAPHIQUES */
 
 .hero-shape-red{
   position:absolute;
@@ -131,7 +115,6 @@ body{
   right:-190px;
   top:-155px;
   opacity:.95;
-
   animation:redFloat 10s ease-in-out infinite;
 }
 
@@ -144,7 +127,6 @@ body{
   left:-250px;
   bottom:-245px;
   opacity:.9;
-
   animation:greenFloat 12s ease-in-out infinite;
 }
 
@@ -171,31 +153,22 @@ body{
 }
 
 @keyframes redFloat{
-
   0%,100%{
     transform:translate(0,0);
   }
-
   50%{
     transform:translate(-25px,30px);
   }
-
 }
 
 @keyframes greenFloat{
-
   0%,100%{
     transform:translate(0,0);
   }
-
   50%{
     transform:translate(35px,-25px);
   }
-
 }
-
-
-/* DATE */
 
 .edition-line{
   position:relative;
@@ -247,74 +220,46 @@ body{
 }
 
 @keyframes logoIntro{
-
   0%{
     opacity:0;
-    transform:
-      translateY(45px)
-      rotate(-28deg)
-      scale(.65);
+    transform:translateY(45px) rotate(-28deg) scale(.65);
   }
 
   65%{
     opacity:1;
-    transform:
-      translateY(-8px)
-      rotate(5deg)
-      scale(1.05);
+    transform:translateY(-8px) rotate(5deg) scale(1.05);
   }
 
   82%{
-    transform:
-      translateY(3px)
-      rotate(-2deg)
-      scale(.99);
+    transform:translateY(3px) rotate(-2deg) scale(.99);
   }
 
   100%{
     opacity:1;
-    transform:
-      translateY(0)
-      rotate(0)
-      scale(1);
+    transform:translateY(0) rotate(0) scale(1);
   }
-
 }
 
 @keyframes logoAlive{
-
   0%,100%{
-    transform:
-      translateY(0)
-      rotate(0deg)
-      scale(1);
+    transform:translateY(0) rotate(0deg) scale(1);
   }
 
   25%{
-    transform:
-      translateY(-7px)
-      rotate(-1.7deg)
-      scale(1.02);
+    transform:translateY(-7px) rotate(-1.7deg) scale(1.02);
   }
 
   50%{
-    transform:
-      translateY(-12px)
-      rotate(1.5deg)
-      scale(1.035);
+    transform:translateY(-12px) rotate(1.5deg) scale(1.035);
   }
 
   75%{
-    transform:
-      translateY(-5px)
-      rotate(-1deg)
-      scale(1.015);
+    transform:translateY(-5px) rotate(-1deg) scale(1.015);
   }
-
 }
 
 
-/* TROIS COULEURS */
+/* COULEURS */
 
 .color-signature{
   position:relative;
@@ -357,7 +302,6 @@ body{
 }
 
 @keyframes signaturePulse{
-
   0%,100%{
     opacity:.6;
     transform:scaleX(.82);
@@ -367,7 +311,6 @@ body{
     opacity:1;
     transform:scaleX(1.18);
   }
-
 }
 
 
@@ -403,9 +346,7 @@ body{
 }
 
 
-/* ========================================
-   BANDE DYNAMIQUE
-   ======================================== */
+/* BANDE */
 
 .moving-band{
   overflow:hidden;
@@ -442,7 +383,6 @@ body{
 }
 
 @keyframes marquee{
-
   from{
     transform:translateX(0);
   }
@@ -450,13 +390,10 @@ body{
   to{
     transform:translateX(-50%);
   }
-
 }
 
 
-/* ========================================
-   PROGRAMME
-   ======================================== */
+/* PROGRAMME */
 
 .coming{
   position:relative;
@@ -534,9 +471,7 @@ body{
 }
 
 
-/* ========================================
-   CONTACT
-   ======================================== */
+/* CONTACT */
 
 .contact{
   position:relative;
@@ -632,9 +567,7 @@ body{
 }
 
 
-/* ========================================
-   RÉSEAUX
-   ======================================== */
+/* RÉSEAUX */
 
 .social-area{
   padding:37px 20px;
@@ -686,9 +619,7 @@ body{
 }
 
 
-/* ========================================
-   FOOTER
-   ======================================== */
+/* FOOTER */
 
 footer{
   padding:27px 20px 30px;
@@ -739,9 +670,7 @@ footer{
 }
 
 
-/* ========================================
-   TABLETTE
-   ======================================== */
+/* TABLETTE */
 
 @media(max-width:900px){
 
@@ -766,13 +695,10 @@ footer{
     width:350px;
     height:350px;
   }
-
 }
 
 
-/* ========================================
-   MOBILE
-   ======================================== */
+/* MOBILE */
 
 @media(max-width:700px){
 
@@ -871,7 +797,6 @@ footer{
   .contact-button{
     width:min(310px,100%);
   }
-
 }
 
 
@@ -887,7 +812,6 @@ footer{
   .moving-track{
     animation:none !important;
   }
-
 }
 
 </style>
@@ -1011,7 +935,7 @@ footer{
 
       <a
         class="contact-button email-button"
-        href="mailto:festival.frances@gmail.com">
+        href="mailto:info@festival-franco-mexicano.com">
         Email
       </a>
 
